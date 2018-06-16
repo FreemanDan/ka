@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;GAGG;ACyDH,0CAA0C;;ADlDxC;eAAG;EACD,KAAK,EAAE,KAAK;;;;AAKd,aAAG;EACD,MAAM,EAAE,aAAa",
+"sources": ["../sass/tabs-rtl.scss","../sass/_custom.scss"],
+"names": [],
+"file": "tabs-rtl.css"
+}

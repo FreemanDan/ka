@@ -1,0 +1,19 @@
+<?php
+/**
+* Implements hook_node_prepare().
+*/
+function pathautodefault_node_prepare($node) {
+	$spisok = array('simpleads', 'simpleads_campaign', );
+   if (!isset($node->path['pathauto']) &&  in_array($node->type, $spisok)) {
+    // Default the Pathauto checkbox to be unchecked for new page nodes. 
+    $node->path['pathauto'] = FALSE;
+   } 
+}
+function pathautodefault_form_alter(&$form, &$form_state, $form_id) {
+     $spisok = array('ad_groups', 'prise_groups');
+/* drupal_set_message("Form ID is : " . $form_id);
+drupal_set_message("vocab : " . $form['#term']['vocabulary_machine_name']);  */
+	if ($form_id == 'taxonomy_form_term'  &&  in_array($form['vocabulary_machine_name']['#value'] , $spisok) ) { 
+	$form['path']['pathauto']['#default_value'] = FALSE;
+	   } 
+  }

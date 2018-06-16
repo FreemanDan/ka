@@ -1,0 +1,177 @@
+@charset "UTF-8";
+/* gradient backgrounds and reflections */
+/* line 5, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs {
+  padding: 0 46px;
+}
+
+/* line 9, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs .arrow,
+.galleryformatter-greenarrows .gallery-thumbs .wrapper,
+.galleryformatter-greenarrows .gallery-thumbs li.active a,
+.galleryformatter-greenarrows .gallery-thumbs li a:hover,
+.galleryformatter-greenarrows .view-full {
+  background: url("images/sprite.png") no-repeat scroll 0 0 transparent;
+}
+
+/* line 14, ../sass/greenarrows.scss */
+.overlay-inner h4 {
+  font-size: 0.7em;
+  font-weight: normal;
+}
+
+/* line 18, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-slides .panel-overlay {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0;
+  background: transparent url(images/bg-trans.png) repeat;
+  width: 100%;
+  color: white;
+}
+
+/* line 25, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-slides .panel-overlay .overlay-inner {
+  padding: 4px;
+}
+
+/* line 26, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs .wrapper {
+  overflow: auto;
+  line-height: 0;
+  background-position: center -326px;
+  background-repeat: repeat-x;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+/* line 33, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .view-full {
+  background-position: center -205px;
+  height: 46px;
+  width: 46px;
+  margin: 10px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-indent: -9999px;
+}
+
+/* line 41, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows a:hover .view-full {
+  background-position: center -252px;
+}
+
+/* line 44, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs ul {
+  list-style: none;
+}
+
+/* line 45, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs li {
+  float: left;
+  background: transparent none;
+  overflow: hidden;
+  padding-top: 3px;
+}
+
+/* line 51, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs li a {
+  display: block;
+  padding: 19px 0 7px;
+}
+
+/* line 55, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs li a:hover {
+  background-position: center -307px;
+}
+
+/* line 56, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs li.active a {
+  background-position: center -303px;
+}
+
+/* line 58, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs li.active img,
+.galleryformatter-greenarrows .gallery-thumbs li a:hover img {
+  filter: alpha(opacity=100);
+  -ms-filter: ”alpha(opacity=100) ”;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+
+/* line 66, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs li img {
+  filter: alpha(opacity=60);
+  -ms-filter: ”alpha(opacity=60) ”;
+  -moz-opacity: 0.6;
+  -khtml-opacity: 0.6;
+  opacity: 0.6;
+}
+
+/* line 74, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs .arrow {
+  bottom: 0;
+  display: block;
+  height: 46px;
+  position: absolute;
+  text-indent: -9999px;
+  width: 46px;
+}
+
+/* line 83, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs .forward {
+  background-position: 0px 0;
+  right: 0;
+}
+
+/* line 88, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs .back {
+  background-position: -4px -102px;
+  left: 0;
+}
+
+/* line 93, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs .forward:hover {
+  background-position: 0px -52px;
+}
+
+/* line 95, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .gallery-thumbs .back:hover {
+  background-position: -4px -156px;
+}
+
+/* line 97, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .slide-button {
+  background: transparent url(images/next-prev.png) no-repeat top left;
+  height: 64px;
+  width: 32px;
+  top: 43%;
+  text-indent: -9999px;
+  filter: alpha(opacity=20);
+  -ms-filter: ”alpha(opacity=20) ”;
+  -moz-opacity: 0.2;
+  -khtml-opacity: 0.2;
+  opacity: 0.2;
+}
+
+/* line 110, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .prev-slide {
+  background-position: top left;
+}
+
+/* line 113, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .next-slide {
+  background-position: top right;
+}
+
+/* line 116, ../sass/greenarrows.scss */
+.galleryformatter-greenarrows .slide-button:hover {
+  filter: alpha(opacity=100);
+  -ms-filter: ”alpha(opacity=100) ”;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  opacity: 1;
+}
+
+/*# sourceMappingURL=greenarrows.css.map */

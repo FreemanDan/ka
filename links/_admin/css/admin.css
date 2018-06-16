@@ -1,0 +1,195 @@
+body {font-family: Verdana; font-size: 11px; MARGIN: 0px 0px 0px }
+.help {	font-family: Verdana; COLOR: #999999;  FONT: 10px; }
+
+.instrument_name 
+{ 
+font-family: Verdana; 
+COLOR: #3377dd;  
+FONT: bold 14px; 
+padding-bottom:5px;
+margin-bottom:5px;
+border-bottom: 2px solid;
+border-color: #3377dd;
+}
+
+.catalog_path 
+{ 
+background-color: #fefaea;
+margin:0px 0px 3px 0px;
+padding:5px 5px 5px 5px;
+}
+
+.maintable { border: 0px; background-color: #444444; padding: 0px; margin: 0px; FONT: 11px Verdana; }
+TD { FONT: 11px Verdana; }
+.maintitle { vertical-align: middle; font-weight: bold; font-size: 14px; color: #FFFFFF; background-color: #66a8cc; background-image:  url(../icons/title_bg.gif);}
+.middletitle { vertical-align: middle; font-weight: bold; font-size: 12px; color: #000000; background-color: #f4f4f4; }
+
+.rowlight { background-color: #FFFFFF; font-size: 11px; }
+.rowdark { background-color: #F1FFFF; font-size: 11px; }
+.rowred { background-color: #FFE8EA; font-size: 11px; }
+.rowyellow { background-color: #FFFFCC; font-size: 11px; }
+.rowgreen { background-color: #F1FFF1; font-size: 11px; }
+.rowblue { background-color: #F1F1FF; font-size: 11px; }
+
+a { COLOR: #000080; FONT: 11px Verdana; text-decoration:none;}
+a:visited { COLOR: #000080; FONT: 11px Verdana; text-decoration:none;}
+a:hover { COLOR: #000000; FONT: 11px Verdana; text-decoration:underline;}
+a:active { COLOR: #000080; FONT: 11px Verdana; text-decoration:none;}
+
+a.memory { COLOR: #000080; FONT: 11px Verdana; text-decoration:none;}
+a.memory:visited { COLOR: #707070; FONT: 11px Verdana; text-decoration:none;}
+a.memory:hover { COLOR: #000000; FONT: 11px Verdana; text-decoration:underline;}
+a.memory:active { COLOR: #000080; FONT: 11px Verdana; text-decoration:none;}
+
+.atext { border: collapse; border: 1px solid; background: #fafafa; FONT: 11px Verdana; }
+.atextarea { border: collapse; border: 1px solid; background: #fafafa; FONT: 11px Verdana; }
+.asubmit {border: collapse; text-decoration: none; border: 1px solid; background: #f4f4f4; cursor:hand; FONT: 12px Verdana;}
+.afile { border: collapse; border: 1px solid; background: #fafafa; FONT: 11px Verdana; }
+.acheckbox { border: collapse; border: 0px solid; background: #fafafa; FONT: 11px Verdana; }
+.aradiobutton { border: collapse; border: 0px solid; background: #fafafa; FONT: 11px Verdana; }
+.aselect { border: collapse; border: 0px solid; background: #fafafa; FONT: 11px Verdana; }
+.aradio { border: collapse; border: 0px solid; background: #fafafa; FONT: 11px Verdana; }
+
+.normal { COLOR: #000000;  FONT: 11px Verdana;}
+.header { COLOR: #f4f4f4;  FONT: 18px Verdana; font-weight: bold;}
+
+
+.normal_red {COLOR: #ff0000;}
+.normal_red a:link, .normal_red a:visited, .normal_red a:active {
+	color: #FF0000;
+	text-decoration: none;
+}
+.normal_red a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+
+
+.normal_blue {COLOR: #000080;}
+.normal_blue a:link, .normal_blue a:visited, .normal_blue a:active {
+	color: #000080;
+	text-decoration: none;
+}
+.normal_blue a:hover {
+	color: #000080;
+	text-decoration: underline;
+}
+
+.normal_green {COLOR: #008000;}
+.normal_green a:link, .normal_green a:visited, .normal_green a:active {
+	color: #008000;
+	text-decoration: none;
+}
+.normal_green a:hover {
+	color: #008000;
+	text-decoration: underline;
+}
+
+.middle_red {FONT: bold 14px; COLOR: #ff0000;}
+.middle_blue {FONT: bold 14px; COLOR: #000080;}
+.middle_green {FONT: bold 14px; COLOR: #008000;}
+.big_red {FONT: bold 17px; COLOR: #ff0000;}
+.big_blue {FONT: bold 17px; COLOR: #000080;}
+.big_green {FONT: bold 17px; COLOR: #008000;}
+
+.good_fieldset
+{
+margin-top:10px;
+margin-bottom:10px;
+padding:5px;
+border: 1px solid;
+border-color: #008000;
+background-color: #fdfffd;
+}
+
+.good_fieldset legend
+{
+FONT: bold;	
+COLOR: #008000;
+}
+
+.normal_fieldset
+{
+margin-top:10px;
+margin-bottom:10px;
+padding:5px;
+border: 1px solid;
+border-color: #000080;
+}
+
+.normal_fieldset legend
+{
+FONT: bold;	
+COLOR: #000000;
+}
+
+.alert_fieldset
+{
+margin-top:10px;
+margin-bottom:10px;
+padding:5px;
+border: 1px solid;
+border-color: #ff0000;
+background-color: #fffafa;
+}
+
+.alert_fieldset legend
+{
+FONT: bold;
+COLOR: #ff0000;
+}
+
+.help_fieldset
+{
+margin-top:10px;
+margin-bottom:10px;
+padding:5px;
+border: 1px solid;
+border-color: #444444;
+background-color: #f4f4f4;
+}
+
+.help_fieldset legend
+{
+FONT: bold;
+COLOR: #444444;
+}
+
+.admin_menu_block
+{
+margin-top:5px;
+margin-bottom:5px;
+border: 1px solid;
+border-color: #000080;
+}
+
+.admin_menu_block legend
+{
+FONT: bold;	
+COLOR: #000000;
+}
+
+
+.admin_content
+{
+background-color: #ffffff;
+}
+
+
+.admin_menu_no_sel {
+	background-image: url(../icons/item.gif);
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	text-align: left;
+	padding:5px 0px 5px 25px;
+	width:200px;
+}
+
+.admin_menu_sel {
+	background-image: url(../icons/item_select.gif);
+	background-repeat: no-repeat;
+	background-position: 7px 7px;
+	text-align: left;
+	padding:5px 0px 5px 25px;
+	width:200px;
+}

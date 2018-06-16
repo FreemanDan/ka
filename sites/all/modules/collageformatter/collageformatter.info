@@ -1,0 +1,13 @@
+name = Collage Formatter
+description = Provides collage formatter for Image fields.
+core = 7.x
+package = Fields
+dependencies[] = image
+files[] = views/collageformatter_plugin_style_collage.inc
+
+; Information added by Drupal.org packaging script on 2016-03-30
+version = "7.x-1.0-rc7"
+core = "7.x"
+project = "collageformatter"
+datestamp = "1459346906"
+

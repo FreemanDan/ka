@@ -1,0 +1,553 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 9, ../../sass/custom/custom.scss */
+.quotebox {
+  padding-top: 72px;
+  padding-bottom: 24px;
+  margin: 0;
+  position: relative;
+}
+/* line 15, ../../sass/custom/custom.scss */
+.quotebox .quote {
+  margin: 0 20px;
+  font-style: italic;
+  font-size: 28px;
+  line-height: 48px;
+}
+/* line 20, ../../sass/custom/custom.scss */
+.quotebox .quote:before {
+  color: #c7e6df;
+  content: "\201C";
+  display: block;
+  font-size: 290px;
+  left: -176px;
+  position: absolute;
+  top: 218px;
+}
+/* line 29, ../../sass/custom/custom.scss */
+.quotebox .quote:after {
+  color: #c7e6df;
+  content: "\201C";
+  display: block;
+  font-size: 290px;
+  left: -176px;
+  position: absolute;
+  top: 218px;
+}
+/* line 39, ../../sass/custom/custom.scss */
+.quotebox .byline {
+  float: right;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/* line 48, ../../sass/custom/custom.scss */
+blockquote:before {
+  color: #bbb;
+  content: "\201C";
+  /* Непечатаемый символ слева */
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-right: 0.2em;
+  vertical-align: -.4em;
+}
+
+/* line 57, ../../sass/custom/custom.scss */
+blockquote:after {
+  color: #bbb;
+  content: "\201D";
+  /* Непечатаемый символ справа */
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -.45em;
+}
+
+/* line 65, ../../sass/custom/custom.scss */
+blockquote > p:first-child {
+  display: inline;
+}
+
+/* line 69, ../../sass/custom/custom.scss */
+.blackbkg {
+  background-color: rgba(0, 0, 0, 0.71) !important;
+  color: white;
+  padding: 12px;
+}
+
+/* line 74, ../../sass/custom/custom.scss */
+.whitebg {
+  background-color: rgba(255, 255, 255, 0.71);
+  padding: 12px;
+}
+
+/* line 80, ../../sass/custom/custom.scss */
+.whitecolor {
+  color: white;
+}
+
+/* line 84, ../../sass/custom/custom.scss */
+h1, h2, h3 {
+  text-align: center;
+}
+
+/* line 87, ../../sass/custom/custom.scss */
+h2 {
+  font-size: 30px;
+  line-height: 48px;
+  margin-top: 72px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 24px;
+}
+
+/* line 99, ../../sass/custom/custom.scss */
+.modal-body {
+  overflow: auto;
+}
+
+/* line 102, ../../sass/custom/custom.scss */
+.navbar-default {
+  border-bottom: 3px solid #068D98;
+}
+/* line 103, ../../sass/custom/custom.scss */
+.navbar-default .navbar-header {
+  position: relative;
+}
+/* line 109, ../../sass/custom/custom.scss */
+.navbar-default .logo {
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+/* line 115, ../../sass/custom/custom.scss */
+.navbar-default .name {
+  margin-top: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 12px;
+  font-size: 18px;
+  line-height: 24px;
+  padding-left: 60px;
+  color: #068D98;
+  height: inherit;
+  max-width: 280px;
+}
+/* line 126, ../../sass/custom/custom.scss */
+.navbar-default .navbar-nav {
+  margin-top: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 12px;
+}
+/* line 128, ../../sass/custom/custom.scss */
+.navbar-default .navbar-nav li {
+  list-style-type: none;
+}
+/* line 129, ../../sass/custom/custom.scss */
+.navbar-default .navbar-nav li .fa {
+  margin-right: 5px;
+}
+/* line 136, ../../sass/custom/custom.scss */
+.navbar-default .navbar-nav li a:hover {
+  color: #0a4a50;
+}
+/* line 139, ../../sass/custom/custom.scss */
+.navbar-default .navbar-nav li a:visited {
+  color: #068D98;
+}
+/* line 145, ../../sass/custom/custom.scss */
+.navbar-default #topphone {
+  margin-top: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 12px;
+  font-size: 32px;
+  line-height: 48px;
+  float: right;
+  color: #d9534f;
+}
+/* line 150, ../../sass/custom/custom.scss */
+.navbar-default #topphone i {
+  margin-right: 10px;
+}
+/* line 154, ../../sass/custom/custom.scss */
+.navbar-default .nav-phone {
+  margin-top: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 12px;
+  font-size: 32px;
+  line-height: 48px;
+  float: left;
+  padding-left: 30px;
+  color: #d9534f;
+}
+/* line 160, ../../sass/custom/custom.scss */
+.navbar-default .nav-phone i {
+  margin-right: 10px;
+}
+
+/* line 171, ../../sass/custom/custom.scss */
+#registration p {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+/* line 176, ../../sass/custom/custom.scss */
+#node-8 #perubckgr {
+  background: url("peru.jpg") no-repeat fixed center 100px transparent;
+  margin-top: 0px;
+  padding-top: 0px;
+  padding-bottom: 24px;
+  margin-bottom: 0px;
+}
+/* line 181, ../../sass/custom/custom.scss */
+#node-8 #screen-5 h2 {
+  color: white;
+}
+/* line 184, ../../sass/custom/custom.scss */
+#node-8 .peruheading {
+  font-size: 60px;
+  line-height: 72px;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 60px;
+}
+/* line 190, ../../sass/custom/custom.scss */
+#node-8 .perucountry {
+  font-size: 22px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: black;
+  letter-spacing: 40px;
+}
+/* line 196, ../../sass/custom/custom.scss */
+#node-8 .leftblk {
+  margin-top: 72px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+/* line 198, ../../sass/custom/custom.scss */
+#node-8 .leftblk a.btn {
+  font-size: 25px;
+  line-height: 48px;
+}
+/* line 202, ../../sass/custom/custom.scss */
+#node-8 .rightblk {
+  margin-top: 72px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: #068b97;
+}
+/* line 205, ../../sass/custom/custom.scss */
+#node-8 .rightblk .d1 {
+  font-size: 48px;
+  line-height: 48px;
+}
+/* line 208, ../../sass/custom/custom.scss */
+#node-8 .rightblk .d2 {
+  font-size: 48px;
+  line-height: 48px;
+}
+/* line 211, ../../sass/custom/custom.scss */
+#node-8 .rightblk .d3 {
+  font-size: 70px;
+  line-height: 72px;
+}
+/* line 215, ../../sass/custom/custom.scss */
+#node-8 .peru-edinst {
+  font-size: 25px;
+  line-height: 48px;
+  color: #068b97;
+}
+/* line 219, ../../sass/custom/custom.scss */
+#node-8 .peru-onural {
+  font-size: 36px;
+  line-height: 48px;
+  color: #068b97;
+}
+/* line 223, ../../sass/custom/custom.scss */
+#node-8 .peru-time1 {
+  font-size: 22px;
+  line-height: 48px;
+}
+/* line 226, ../../sass/custom/custom.scss */
+#node-8 .peru-time {
+  font-size: 27px;
+  line-height: 48px;
+  color: #068b97;
+}
+/* line 230, ../../sass/custom/custom.scss */
+#node-8 .peru-chel {
+  font-size: 63px;
+  line-height: 72px;
+  color: #068b97;
+}
+/* line 234, ../../sass/custom/custom.scss */
+#node-8 .dover-prirod {
+  margin-top: 72px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  background-color: rgba(9, 160, 173, 0.52);
+  color: white;
+  text-transform: uppercase;
+}
+/* line 239, ../../sass/custom/custom.scss */
+#node-8 .dover-prirod .d1 {
+  font-size: 48px;
+  line-height: 72px;
+}
+/* line 242, ../../sass/custom/custom.scss */
+#node-8 .dover-prirod .d2 {
+  font-size: 20px;
+  line-height: 48px;
+}
+@media (max-width: 768px) {
+  /* line 175, ../../sass/custom/custom.scss */
+  #node-8 {
+    background-size: cover;
+    background-position: 50% 116px !important;
+  }
+  /* line 249, ../../sass/custom/custom.scss */
+  #node-8 .peruheading {
+    letter-spacing: 9px;
+    font-size: 50px;
+    line-height: 72px;
+  }
+  /* line 254, ../../sass/custom/custom.scss */
+  #node-8 .perucountry {
+    letter-spacing: 17px;
+  }
+  /* line 257, ../../sass/custom/custom.scss */
+  #node-8 .leftblk {
+    margin-top: 432px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  /* line 260, ../../sass/custom/custom.scss */
+  #node-8 .leftblk br {
+    display: none;
+  }
+  /* line 264, ../../sass/custom/custom.scss */
+  #node-8 .leftblk span:after {
+    content: " ";
+  }
+  /* line 268, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-edinst, #node-8 .leftblk .peru-time, #node-8 .leftblk .peru-time1, #node-8 .leftblk .peru-chel1, #node-8 .leftblk .peru-onural {
+    font-size: 20px;
+    line-height: 48px;
+  }
+  /* line 273, ../../sass/custom/custom.scss */
+  #node-8 .rightblk {
+    margin-top: 0px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin-bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  /* line 276, ../../sass/custom/custom.scss */
+  #node-8 .rightblk br {
+    display: none;
+  }
+  /* line 280, ../../sass/custom/custom.scss */
+  #node-8 .rightblk span:after {
+    content: " ";
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  /* line 175, ../../sass/custom/custom.scss */
+  #node-8 {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 24px;
+    margin-bottom: 0px;
+  }
+  /* line 289, ../../sass/custom/custom.scss */
+  #node-8 .peru-edinst {
+    font-size: 16px;
+    line-height: 24px;
+    color: #068b97;
+  }
+  /* line 294, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-onural {
+    font-size: 24px;
+    line-height: 48px;
+    color: #068b97;
+  }
+  /* line 298, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-time1 {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  /* line 301, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-time {
+    font-size: 17px;
+    line-height: 24px;
+    color: #068b97;
+    font-weight: bold;
+  }
+  /* line 306, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-chel {
+    font-size: 40px;
+    line-height: 48px;
+    color: #068b97;
+  }
+  /* line 310, ../../sass/custom/custom.scss */
+  #node-8 .leftblk a.btn {
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+  /* line 316, ../../sass/custom/custom.scss */
+  #node-8 .rightblk .d1 {
+    font-size: 37px;
+    line-height: 48px;
+  }
+  /* line 319, ../../sass/custom/custom.scss */
+  #node-8 .rightblk .d2 {
+    font-size: 39px;
+    line-height: 48px;
+  }
+  /* line 322, ../../sass/custom/custom.scss */
+  #node-8 .rightblk .d3 {
+    font-size: 55px;
+    line-height: 72px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* line 175, ../../sass/custom/custom.scss */
+  #node-8 {
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-bottom: 24px;
+    margin-bottom: 0px;
+  }
+  /* line 330, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-edinst {
+    font-size: 20px;
+    line-height: 24px;
+    color: #068b97;
+  }
+  /* line 334, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-onural {
+    font-size: 29px;
+    line-height: 48px;
+    color: #068b97;
+  }
+  /* line 338, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-time1 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  /* line 341, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-time {
+    font-size: 21px;
+    line-height: 48px;
+    color: #068b97;
+    font-weight: bold;
+  }
+  /* line 346, ../../sass/custom/custom.scss */
+  #node-8 .leftblk .peru-chel {
+    font-size: 50px;
+    line-height: 72px;
+    color: #068b97;
+  }
+  /* line 350, ../../sass/custom/custom.scss */
+  #node-8 .leftblk a.btn {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: bold;
+  }
+}
+
+/* line 357, ../../sass/custom/custom.scss */
+#allpartners {
+  margin-top: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 48px;
+}
+/* line 359, ../../sass/custom/custom.scss */
+#allpartners .partnerlogo {
+  margin-top: 12px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 12px;
+  height: 72px;
+}
+/* line 362, ../../sass/custom/custom.scss */
+#allpartners .partnerlogo img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  margin: auto;
+}
+
+/* line 375, ../../sass/custom/custom.scss */
+.main-container {
+  margin-top: 72px;
+}
+
+/* line 379, ../../sass/custom/custom.scss */
+.logged-in .main-container {
+  margin-top: 120px;
+}
+/* line 383, ../../sass/custom/custom.scss */
+.logged-in .navbar-default {
+  margin-top: 48px;
+}
+
+/* line 391, ../../sass/custom/custom.scss */
+.block-title {
+  text-align: center;
+}
+
+/* line 400, ../../sass/custom/custom.scss */
+#block-webform-client-block-11 h2 {
+  display: none;
+}
+/* line 403, ../../sass/custom/custom.scss */
+#block-webform-client-block-11 .input-lg, #block-webform-client-block-11 .btn-lg {
+  margin: 12px 0;
+}
+
+/* line 407, ../../sass/custom/custom.scss */
+#sub button:hover {
+  color: #ffffff;
+  background-color: #ec7063;
+  border-color: #ec7063;
+}
+
+/* line 412, ../../sass/custom/custom.scss */
+.scrn1 {
+  padding-left: 40px;
+  float: left;
+  width: 50%;
+}
+
+/* line 418, ../../sass/custom/custom.scss */
+.scrn2 {
+  width: 50%;
+  float: left;
+}
+
+@media (max-width: 350px) {
+  /* line 424, ../../sass/custom/custom.scss */
+  .navbar-brand {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=custom.css.map */

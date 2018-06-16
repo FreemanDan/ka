@@ -1,0 +1,304 @@
+.link_global {
+
+}
+
+
+.link_global a:link, .link_global a:visited, .link_global a:active {
+	color: #000066;
+	text-decoration: underline;
+}
+
+.link_global a:hover {
+	color: #FF7500;
+	text-decoration: underline;
+}
+
+.link_global td {
+	
+}
+
+.link_text_field {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #707070;
+	background-color: #FFFFFF;
+	border: 1px solid #959595;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+.cat_list_string {
+	font-family: Verdana;
+	font-size: 11px;
+	background-image: url(../img/cat.gif);
+	background-repeat: no-repeat;
+	background-position: 2px 7px;
+	text-align: left;
+	padding-top: 5px;
+	padding-right: 3px;
+	padding-bottom: 5px;
+	padding-left: 17px;
+	font-weight: normal;
+	margin: 2px;
+}
+.sel_cat_list_string {
+	font-family: Verdana;
+	font-size: 11px;
+	background-image: url(../img/sel_cat.gif);
+	background-repeat: no-repeat;
+	background-position: 2px 7px;
+	text-align: left;
+	padding-top: 5px;
+	padding-right: 3px;
+	padding-bottom: 5px;
+	padding-left: 17px;
+	font-weight: normal;
+	margin: 2px;
+}
+
+.link_form_table {
+	border-top: 1px solid  #F6F4F4;
+	border-left: 1px solid  #F6F4F4;
+}
+
+.link_form_light_row {
+	border-right: 1px solid  #F6F4F4;
+	border-bottom: 1px solid  #F6F4F4;
+}
+
+.link_form_dark_row {
+	background-color: #FAFAFA;
+	border-right: 1px solid  #F6F4F4;
+	border-bottom: 1px solid  #F6F4F4;
+}
+
+.link_form_light_text {
+	font-family: Verdana;
+	color: #AAAAAA;
+}
+
+.link_form_red_text {
+	font-family: Verdana;
+	color: #FF0000;
+}
+
+.link_form_red_text a:link, .link_form_red_text a:visited, .link_form_red_text a:active {
+	color: #FF0000;
+	text-decoration: underline;
+}
+
+.link_form_red_text a:hover {
+	color: #FF7500;
+	text-decoration: underline;
+}
+
+
+.link_grey_button {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #707070;
+	background-color: #FFFFFF;
+	border: 1px solid #959595;
+	margin: 0px;
+	padding: 0px;
+}
+
+.links_mini_cat_block {
+	border-left: 1px dotted #003562;	
+}
+
+.error_message {
+	font-family: Verdana;
+	color: #FF0000;
+	border:1px solid #ff0000; 
+	padding:5px; 
+	background-color: #fefafa;
+	margin:10px 0px 10px 0px;
+}
+
+.error_message a:link, .error_message a:visited, .error_message a:active {
+	color: #FF0000;
+	text-decoration: underline;
+}
+
+.error_message a:hover {
+	color: #FF0000;
+	text-decoration: underline;
+}
+
+.links_message {
+	font-family: Verdana;
+	color: #707070;
+	font-size: 11px;
+	border: 1px solid #003562;
+	padding:5px; 
+	background-color: #FAFAFA;
+	margin:10px 0px 10px 0px;
+	width:400px;
+}
+
+.links_message_header {
+	font-family: Verdana;
+	font-size: 12px;
+	color: #FF7500;
+}
+
+
+.links_message a:link, .links_message a:visited, .links_message a:active {
+	color: #003562;
+	text-decoration: underline;
+}
+
+.links_message a:hover {
+	color: #FF7500;
+	text-decoration: underline;
+}
+
+/* Стили для заголовка страницы */
+.links_page_name {
+	text-align: left;
+	padding:5px 0px 5px 5px;
+	margin:5px 0px 10px 0px;
+	color: #003562;
+	background-color: #FAFAFA;
+	border-top: 1px dotted #003562;
+	border-bottom: 1px dotted #003562;
+}
+
+.links_page_name h2 {
+	font-family: Verdana;
+	margin:0px;
+	padding:0px;
+	font-size: 12px;
+	font-weight: bold;
+}
+/* -------- */
+
+.links_exec_info {
+	font-family: Verdana;
+	font-size: 9px;
+	color: #707070;
+	text-align: center;
+	padding:3px 0px 10px 3px;
+}
+
+/* стили для системной менюшки */
+
+.system_menu {
+	font-family: Verdana;
+	font-size: 11px;
+	color: #707070;
+	background-color: #FAFAFA;
+	border-top: 1px dotted #666666;
+	border-bottom: 1px dotted #666666;
+	margin: 10px 0px 10px 0px;
+	padding: 5px 10px 5px 10px;
+}
+
+.system_menu_no_sel {
+	color: #707070;
+}
+
+.system_menu_no_sel a:link, .system_menu_no_sel a:visited, .system_menu_no_sel a:active {
+	color: #707070;
+	text-decoration: none;
+}
+
+.system_menu_no_sel a:hover {
+	color: #707070;
+	text-decoration: underline;
+}
+
+
+.system_menu_sel {
+	color: #FF7500;
+}
+
+.system_menu_sel a:link, .system_menu_sel a:visited, .system_menu_sel a:active {
+	color: #FF7500;
+	text-decoration: none;
+}
+
+.system_menu_sel a:hover {
+	color: #FF7500;
+	text-decoration: underline;
+}
+/* --------- */
+
+
+/*---- стили для page bar ----*/
+.page_bar_outer{
+	width: 95%;
+	text-align: center;
+	margin: 10px;
+	font-size: 10px;
+}
+
+.page_bar_inner{
+	background-color: #ffffff;
+}
+
+.page_bar_center{
+	font-family: Verdana;
+	background-color: #ffffff;
+	text-align: center;	
+	font-size: 10px;
+	color: #336699;
+}
+
+/*---*/
+.page_bar_select_page {
+	color: #FF7500;
+	text-decoration: none;
+	font-size: 10px;
+}
+
+.page_bar_select_page a:link, .page_bar_select_page a:visited, .page_bar_select_page a:active {
+	color: #FF7500;
+	text-decoration: none;
+}
+
+.page_bar_select_page a:hover {
+	color: #FF7500;
+	text-decoration: none;
+}
+/*---*/
+
+.page_bar_no_select_page {
+	color: #003562;	
+	text-decoration: none;
+	font-size: 10px;
+}
+
+.page_bar_no_select_page a:link, .page_bar_no_select_page a:visited, .page_bar_no_select_page a:active {
+	color: #003562;	
+	text-decoration: none;
+}
+
+.page_bar_no_select_page a:hover {
+	color: #FF7500;
+	text-decoration: none;
+}
+
+/* ---- конец стилей для page bar ------ */
+
+/* стили для копирайтов и номера версии */
+.versncopy {
+	font-family: Verdana;
+	font-size: 9px;
+	color: #003562;
+	margin:5px 0px 10px 0px;
+}
+
+
+.versncopy a:link, .versncopy a:visited, .versncopy a:active {
+	color: #003562;
+	text-decoration: none;
+}
+
+.versncopy a:hover {
+	color: #FF7500;
+	text-decoration: underline;
+}

@@ -1,0 +1,1483 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Positioning for responsive layout .
+ *
+ * Define CSS classes to create a table-free, 3-column, 2-column, or single
+ * column layout depending on whether blocks are enabled in the left or right
+ * columns.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+/* gradient backgrounds and reflections */
+/*
+ * Center the page.
+ */
+/* line 39, ../../sass/layouts/responsive-sidebars.scss */
+#main,
+.content-inner,
+.region-bottom,
+.menu-block-2,
+.menu-block-3 {
+  /* For screen sizes larger than 1200px, prevent excessively long lines of text
+     by setting a max-width. */
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+/* line 55, ../../sass/layouts/responsive-sidebars.scss */
+.lp #main {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+/*
+ * Apply the shared properties of grid items in a single, efficient ruleset.
+ */
+/* line 67, ../../sass/layouts/responsive-sidebars.scss */
+#logo,
+#block-views-slogan-block,
+#block-views-slogan-block-1,
+#content,
+#block-zayavka,
+.region-sidebar-first,
+.region-sidebar-second,
+#block-block-2,
+#block-block-11,
+#block-block-13,
+#block-block-14,
+#block-menu-menu-top-menu,
+#block-menu-menu-tile-menu,
+.lpbann .pane-menu-block-4,
+.lpbann #page-title,
+#banndescript,
+.menu-block-2 li,
+.menu-block-3 li,
+#block-webform-client-block-635 {
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+/* line 90, ../../sass/layouts/responsive-sidebars.scss */
+.lp #content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/*
+ * Containers for grid items and flow items.
+ */
+/* line 51, ../../sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
+.menu-block-2:before, .menu-block-2:after,
+.menu-block-3:before,
+.menu-block-3:after,
+.content-inner:before,
+.content-inner:after,
+#footer-inner:before,
+#footer-inner:after {
+  content: "";
+  display: table;
+}
+/* line 56, ../../sass-extensions/zen-grids/stylesheets/zen/_grids.scss */
+.menu-block-2:after,
+.menu-block-3:after,
+.content-inner:after,
+#footer-inner:after {
+  clear: both;
+}
+
+/* line 104, ../../sass/layouts/responsive-sidebars.scss */
+#main {
+  position: relative;
+}
+
+/* line 108, ../../sass/layouts/responsive-sidebars.scss */
+#site-navigation-wrapper {
+  clear: both;
+}
+
+/*
+ * Navigation bar
+ */
+@media all and (max-width: 479px) {
+  /* line 116, ../../sass/layouts/responsive-sidebars.scss */
+  #logo {
+    display: none;
+  }
+}
+@media all and (min-width: 480px) {
+  /* line 122, ../../sass/layouts/responsive-sidebars.scss */
+  #navigation-logo {
+    display: block;
+  }
+
+  /* line 125, ../../sass/layouts/responsive-sidebars.scss */
+  #logomobileimg {
+    display: none;
+  }
+
+  /*
+   * Список изделий - в одну колонку
+  */
+  /* line 134, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokisdelii {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 0px;
+    margin-right: 0px;
+    float: left;
+  }
+}
+@media all and (min-width: 480px) and (max-width: 959px) {
+  /*
+   * Use 6 grid columns for smaller screens.
+   */
+    /*
+* Шапка, видны только логотип и меню
+*/
+  /* line 149, ../../sass/layouts/responsive-sidebars.scss */
+  #block-block-2 {
+    float: right;
+    width: 50%;
+    margin-right: 0%;
+    margin-left: -50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 153, ../../sass/layouts/responsive-sidebars.scss */
+  #block-block-11,
+  #block-views-slogan-block,
+  #block-views-slogan-block-1 {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 159, ../../sass/layouts/responsive-sidebars.scss */
+  #logo {
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 162, ../../sass/layouts/responsive-sidebars.scss */
+  #block-menu-menu-top-menu {
+    clear: left;
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /**********    Главная страница *****/
+  /* line 168, ../../sass/layouts/responsive-sidebars.scss */
+  #main-p-right {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 10px;
+    margin-right: -10px;
+    margin-right: 0;
+    padding-right: 0;
+  }
+
+  /*---------- верхняя часть на посадочниках ----------- */
+  /* line 176, ../../sass/layouts/responsive-sidebars.scss */
+  #block-zayavka .form-item {
+    float: left;
+    margin-right: 20px;
+  }
+
+  /* line 181, ../../sass/layouts/responsive-sidebars.scss */
+  .lpbann .pane-menu-block-4 {
+    float: left;
+    width: 83.33333%;
+    margin-left: 16.66667%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 183, ../../sass/layouts/responsive-sidebars.scss */
+  .lpbann .pane-menu-block-4 li {
+    display: inline-block;
+  }
+
+  /* line 188, ../../sass/layouts/responsive-sidebars.scss */
+  .lpbann #page-title {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 192, ../../sass/layouts/responsive-sidebars.scss */
+  .atmosphereimg .lpbann #page-title {
+    clear: left;
+    float: left;
+    width: 83.33333%;
+    margin-left: 16.66667%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 196, ../../sass/layouts/responsive-sidebars.scss */
+  #banndescript {
+    clear: left;
+    float: left;
+    width: 83.33333%;
+    margin-left: 16.66667%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /*---------- LP заявка, триггеры ----------- */
+  /* line 202, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-abus-trig:nth-of-type(3n+1),
+  .lp-abus-trig:nth-of-type(3n+2) {
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 13.33333px;
+    margin-right: 6.66667px;
+    float: left;
+  }
+
+  /* line 207, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-abus-trig:nth-of-type(3n+3) {
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 13.33333px;
+    margin-right: -13.33333px;
+    float: left;
+  }
+
+  /* line 212, ../../sass/layouts/responsive-sidebars.scss */
+  #prm-video {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* line 218, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* line 222, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 .free-scatch {
+    font-size: 1.25em;
+    line-height: 1.2em;
+  }
+  /* line 225, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 .free-description {
+    font-size: 1.25em;
+    line-height: 1.2em;
+  }
+  /* line 228, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 form {
+    padding-left: auto;
+    padding-right: auto;
+    width: 14em;
+  }
+  /* line 233, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 #webform-component-stranica {
+    display: none;
+  }
+  /* line 234, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 .form-actions {
+    display: inline-block;
+  }
+
+  /**********    Картинки изделий *****/
+  /* line 239, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokisdelii:nth-of-type(3n+1),
+  .spisokisdelii:nth-of-type(3n+2) {
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 13.33333px;
+    margin-right: 6.66667px;
+    float: left;
+  }
+
+  /* line 244, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokisdelii:nth-of-type(3n+3) {
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 13.33333px;
+    margin-right: -13.33333px;
+    float: left;
+  }
+
+  /* line 248, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokisdelii:nth-of-type(3n+1) {
+    clear: left;
+  }
+
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+  /* line 256, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-first #content {
+    /* Span 4 columns, starting in 2nd column from left. */
+    float: left;
+    width: 66.66667%;
+    margin-left: 33.33333%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 260, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-first .region-sidebar-first {
+    /* Span 2 column, starting in 1st column from left. */
+    float: left;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: -33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /*
+   * The layout when there is only one sidebar, the right one.
+   */
+  /* line 270, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-second #content {
+    /* Span 2 columns, starting in 1st column from left. */
+    float: left;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: -66.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 274, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-second .region-sidebar-second {
+    /* Span 1 column, starting in 3rd column from left. */
+    float: left;
+    width: 33.33333%;
+    margin-left: 66.66667%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /*
+   * The layout when there are two sidebars.
+   */
+  /* line 284, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars #content {
+    /* Span 2 columns, starting in 2nd column from left. */
+    float: left;
+    width: 33.33333%;
+    margin-left: 16.66667%;
+    margin-right: -50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 288, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-first {
+    /* Span 1 column, starting in 1st column from left. */
+    float: left;
+    width: 16.66667%;
+    margin-left: 0%;
+    margin-right: -16.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 292, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-second {
+    /* Start a new row and span all 3 columns. */
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 0;
+    clear: left;
+  }
+  /* line 297, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-second .block {
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 300, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n+1) {
+    /* Span 1 column, starting in the 1st column from left. */
+    float: left;
+    width: 16.66667%;
+    margin-left: 0%;
+    margin-right: -16.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    clear: left;
+  }
+  /* line 304, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n+2) {
+    /* Span 1 column, starting in the 2nd column from left. */
+    float: left;
+    width: 16.66667%;
+    margin-left: 16.66667%;
+    margin-right: -33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 307, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-second .block:nth-child(3n) {
+    /* Span 1 column, starting in the 3rd column from left. */
+    float: left;
+    width: 16.66667%;
+    margin-left: 33.33333%;
+    margin-right: -50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+@media all and (min-width: 960px) {
+  /*
+  * Use 8 grid columns for larger screens.
+  */
+  /* line 320, ../../sass/layouts/responsive-sidebars.scss */
+  #navigation-logo {
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 15px;
+    margin-right: -15px;
+    float: left;
+    margin-right: -15px;
+  }
+
+  /* line 325, ../../sass/layouts/responsive-sidebars.scss */
+  #main-menu {
+    width: 62.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 7.5px;
+    margin-right: 12.5px;
+    float: left;
+  }
+
+  /**********    Шапка ****************/
+  /* line 330, ../../sass/layouts/responsive-sidebars.scss */
+  #block-block-2,
+  #block-block-13 {
+    float: right;
+    width: 37.5%;
+    margin-right: 0%;
+    margin-left: -37.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 335, ../../sass/layouts/responsive-sidebars.scss */
+  #block-block-11,
+  #block-views-slogan-block,
+  #block-views-slogan-block-1 {
+    clear: left;
+    float: left;
+    width: 75%;
+    margin-left: 0%;
+    margin-right: -75%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 342, ../../sass/layouts/responsive-sidebars.scss */
+  .page-taxonomy-term-181 #block-views-slogan-block {
+    clear: left;
+    float: left;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: -25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    margin-top: -2.25em;
+  }
+
+  /* line 347, ../../sass/layouts/responsive-sidebars.scss */
+  #logo {
+    float: left;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: -25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 350, ../../sass/layouts/responsive-sidebars.scss */
+  #block-menu-menu-tile-menu,
+  #block-menu-menu-top-menu {
+    float: left;
+    width: 37.5%;
+    margin-left: 25%;
+    margin-right: -62.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 354, ../../sass/layouts/responsive-sidebars.scss */
+  #block-block-14 {
+    float: left;
+    width: 25%;
+    margin-left: 37.5%;
+    margin-right: -62.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /**********    Главная страница *****/
+  /* line 359, ../../sass/layouts/responsive-sidebars.scss */
+  #bantopcontent {
+    float: left;
+    width: 75%;
+    margin-left: 25%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 365, ../../sass/layouts/responsive-sidebars.scss */
+  .index-info-counts .trig1 {
+    width: 25%;
+  }
+  /* line 368, ../../sass/layouts/responsive-sidebars.scss */
+  .index-info-counts .trig2 {
+    width: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  /* line 373, ../../sass/layouts/responsive-sidebars.scss */
+  .index-info-counts .trig3 {
+    width: 25%;
+  }
+
+  /*---------- верхняя часть на посадочниках ----------- */
+  /* line 379, ../../sass/layouts/responsive-sidebars.scss */
+  .lpbann .pane-menu-block-4,
+  #block-zayavka {
+    float: right;
+    width: 25%;
+    margin-right: 0%;
+    margin-left: -25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 383, ../../sass/layouts/responsive-sidebars.scss */
+  .lpbann #page-title {
+    float: left;
+    width: 75%;
+    margin-left: 0%;
+    margin-right: -75%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 386, ../../sass/layouts/responsive-sidebars.scss */
+  .atmosphereimg .lpbann #page-title {
+    float: left;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: -75%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 389, ../../sass/layouts/responsive-sidebars.scss */
+  #banndescript {
+    clear: left;
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 393, ../../sass/layouts/responsive-sidebars.scss */
+  .atmosphereimg #banndescript {
+    clear: left;
+    float: left;
+    width: 75%;
+    margin-left: 25%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 398, ../../sass/layouts/responsive-sidebars.scss */
+  .page-taxonomy-term-179 #banndescript {
+    clear: left;
+    float: left;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: -75%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 402, ../../sass/layouts/responsive-sidebars.scss */
+  .page-taxonomy-term-181 .lpbann #page-title {
+    float: left;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /*---------- LP заявка, видео, триггеры ----------- */
+  /* line 407, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-abus-blck {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* line 412, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-abus-trig {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    float: left;
+  }
+
+  /* line 417, ../../sass/layouts/responsive-sidebars.scss */
+  .trig-1 {
+    width: 25%;
+  }
+
+  /* line 420, ../../sass/layouts/responsive-sidebars.scss */
+  .trig-2 {
+    width: 50%;
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+
+  /* line 425, ../../sass/layouts/responsive-sidebars.scss */
+  .trig-3 {
+    width: 25%;
+  }
+
+  /* line 429, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #prm-video {
+    clear: left;
+    float: left;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: -50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 443, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 .free-description {
+    margin-left: 7em;
+  }
+  /* line 447, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 .plus {
+    display: block;
+    position: absolute;
+    left: 3em;
+    font-size: 1.5em;
+    line-height: 1em;
+  }
+  /* line 453, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 .form-item {
+    width: 25%;
+    float: left;
+  }
+  /* line 457, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 .form-actions {
+    width: 25%;
+    float: left;
+  }
+  /* line 461, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 form {
+    width: 100%;
+  }
+
+  /* line 466, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video .actionblock {
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 470, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 {
+    margin-top: 6em;
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 473, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 form {
+    width: 12em;
+  }
+  /* line 478, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 .free-scatch {
+    padding: 0;
+    margin: 0;
+  }
+  /* line 482, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 .client-block-inner {
+    width: 100%;
+  }
+  /* line 492, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 .form-item {
+    width: 25%;
+    float: none;
+  }
+
+  /* line 499, ../../sass/layouts/responsive-sidebars.scss */
+  .page-taxonomy-term-181 .lptopform {
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    clear: left;
+  }
+
+  /**********    Картинки изделий *****/
+  /* line 505, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokisdelii:nth-of-type(4n+1),
+  .spisokisdelii:nth-of-type(4n+2),
+  .spisokisdelii:nth-of-type(4n+3) {
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 15px;
+    margin-right: 5px;
+    float: left;
+  }
+
+  /* line 511, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokisdelii:nth-of-type(4n+4) {
+    width: 25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 15px;
+    margin-right: -15px;
+    float: left;
+  }
+
+  /* line 515, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokisdelii:nth-of-type(4n+1) {
+    clear: left;
+  }
+
+  /**********  Список категорий  *****/
+  /* line 520, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokkategorii:nth-of-type(2n+1) {
+    clear: left;
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 10px;
+    margin-right: 10px;
+    float: left;
+  }
+
+  /* line 525, ../../sass/layouts/responsive-sidebars.scss */
+  .spisokkategorii:nth-of-type(2n+2) {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 10px;
+    margin-right: -10px;
+    float: left;
+  }
+
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+  /* line 535, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-first #content {
+    /* Span 4 columns, starting in 2nd column from left. */
+    float: left;
+    width: 75%;
+    margin-left: 25%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 541, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-first .region-sidebar-first {
+    /* Span 1 column, starting in 1st column from left. */
+    float: left;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: -25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /*
+   * The layout when there is only one sidebar, the right one.
+   */
+  /* line 551, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-second #content {
+    /* Span 4 columns, starting in 1st column from left. */
+    float: left;
+    width: 75%;
+    margin-left: 0%;
+    margin-right: -75%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 556, ../../sass/layouts/responsive-sidebars.scss */
+  .sidebar-second .region-sidebar-second {
+    /* Span 1 column, starting in 5th column from left. */
+    float: left;
+    width: 25%;
+    margin-left: 75%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /*
+   * The layout when there are two sidebars.
+   */
+  /* line 566, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars #content {
+    /* Span 3 columns, starting in 2nd column from left. */
+    float: left;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: -75%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 570, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-first {
+    /* Span 1 column, starting in 1st column from left. */
+    float: left;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: -25%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 574, ../../sass/layouts/responsive-sidebars.scss */
+  .two-sidebars .region-sidebar-second {
+    /* Span 1 column, starting in 5th column from left. */
+    float: left;
+    width: 25%;
+    margin-left: 75%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+}
+/*
+****************************Navigation ************************
+*/
+@media all and (min-width: 900px) {
+  /* line 588, ../../sass/layouts/responsive-sidebars.scss */
+  #block-block-2 #header-phone-1,
+  #block-block-13 #header-phone-1 {
+    font-size: 2.125em;
+    line-height: 1.41176em;
+  }
+}
+@media all and (max-width: 960px) {
+  /* line 594, ../../sass/layouts/responsive-sidebars.scss */
+  #right-top-block {
+    display: none;
+  }
+}
+/*
+****************************Navigation, Блок со спецпредложением ************************
+*/
+@media all and (max-width: 400px) {
+  /* line 603, ../../sass/layouts/responsive-sidebars.scss */
+  #block-webform-client-block-635 {
+    display: none;
+  }
+}
+/*
+**************************** Страница изделия в каталоге ****************************
+*/
+@media all and (min-width: 1090px) {
+  /* line 613, ../../sass/layouts/responsive-sidebars.scss */
+  .item-75-left {
+    width: 66.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 6.66667px;
+    margin-right: 13.33333px;
+    float: left;
+  }
+
+  /* line 617, ../../sass/layouts/responsive-sidebars.scss */
+  .item-25-right {
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 13.33333px;
+    margin-right: -13.33333px;
+    float: left;
+  }
+}
+/*
+* добавлены классы для контейнеров содержимого 
+*/
+@media all and (min-width: 960px) {
+  /* line 628, ../../sass/layouts/responsive-sidebars.scss */
+  .content-50-left {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 10px;
+    margin-right: 10px;
+    float: left;
+  }
+
+  /* line 632, ../../sass/layouts/responsive-sidebars.scss */
+  .content-50-right {
+    width: 50%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 10px;
+    margin-right: -10px;
+    float: left;
+  }
+
+  /* line 636, ../../sass/layouts/responsive-sidebars.scss */
+  .content-75-left {
+    width: 66.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 6.66667px;
+    margin-right: 13.33333px;
+    float: left;
+  }
+
+  /* line 640, ../../sass/layouts/responsive-sidebars.scss */
+  .content-25-right {
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 13.33333px;
+    margin-right: -13.33333px;
+    float: left;
+  }
+
+  /* line 644, ../../sass/layouts/responsive-sidebars.scss */
+  .content-75-right {
+    width: 66.66667%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 6.66667px;
+    margin-right: -6.66667px;
+    float: left;
+  }
+
+  /* line 648, ../../sass/layouts/responsive-sidebars.scss */
+  .content-25-left {
+    width: 33.33333%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    padding-left: 0;
+    padding-right: 13.33333px;
+    margin-right: 6.66667px;
+    float: left;
+  }
+
+  /* line 654, ../../sass/layouts/responsive-sidebars.scss */
+  .thre-cases .thre-pl-case {
+    width: 280px;
+  }
+  /* line 657, ../../sass/layouts/responsive-sidebars.scss */
+  .thre-cases .case1 {
+    margin-right: -280px;
+    float: left;
+  }
+  /* line 661, ../../sass/layouts/responsive-sidebars.scss */
+  .thre-cases .case2 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  /* line 665, ../../sass/layouts/responsive-sidebars.scss */
+  .thre-cases .case3 {
+    margin-left: -280px;
+    float: left;
+  }
+  /* line 669, ../../sass/layouts/responsive-sidebars.scss */
+  .thre-cases .center-case {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding-left: 280px;
+    padding-right: 280px;
+  }
+}
+/*
+**************************** LP позиция баннера ****************************
+*/
+/* line 685, ../../sass/layouts/responsive-sidebars.scss */
+.lpbann {
+  background-position: 50% 0;
+}
+
+@media all and (max-width: 1090px) {
+  /* line 690, ../../sass/layouts/responsive-sidebars.scss */
+  .lpbann {
+    background-position: 38% 0;
+  }
+}
+@media all and (max-width: 1090px) {
+  /* line 696, ../../sass/layouts/responsive-sidebars.scss */
+  .lpbann {
+    background-position: 38% 0;
+  }
+}
+@media all and (min-width: 1200px) {
+  /* line 703, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video .actionblock {
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+
+  /* line 707, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 {
+    margin-top: 4.5em;
+    float: left;
+    width: 50%;
+    margin-left: 50%;
+    margin-right: -100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    word-wrap: break-word;
+  }
+  /* line 708, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 form {
+    width: 12em;
+  }
+  /* line 716, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 .free-scatch {
+    font-size: 1.25em;
+    line-height: 1.2em;
+    padding: 0;
+    margin: 0;
+  }
+  /* line 721, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 .client-block-inner {
+    width: 100%;
+  }
+  /* line 729, ../../sass/layouts/responsive-sidebars.scss */
+  .lp-video #block-webform-client-block-635 .free-description {
+    font-size: 1.25em;
+    line-height: 1.2em;
+  }
+
+  /* line 734, ../../sass/layouts/responsive-sidebars.scss */
+  #triggers-mainp {
+    width: 100%;
+  }
+  /* line 736, ../../sass/layouts/responsive-sidebars.scss */
+  #triggers-mainp .trig1 {
+    width: 25%;
+  }
+  /* line 739, ../../sass/layouts/responsive-sidebars.scss */
+  #triggers-mainp .trig2 {
+    width: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  /* line 744, ../../sass/layouts/responsive-sidebars.scss */
+  #triggers-mainp .trig3 {
+    width: 25%;
+  }
+}
+
+/*# sourceMappingURL=responsive-sidebars.css.map */

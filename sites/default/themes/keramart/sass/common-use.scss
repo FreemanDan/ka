@@ -1,0 +1,146 @@
+@import "base";
+/*
+ * Rounded4
+*/
+#read-keramart-twitter,
+form#search-block-form {
+@include border-radius(4px);
+}
+#block-search-form .form-submit {
+@include border-radius(0);
+}
+/*
+ * transitions
+*/
+#block-search-form .form-submit {
+-webkit-transition: background ease-in-out .2s;
+-moz-transition: background ease-in-out .2s;
+-o-transition: background ease-in-out .2s;
+-ms-transition: background ease-in-out .2s;
+-khtml-transition: background ease-in-out .2s;
+transition: background ease-in-out .2s;
+}
+
+#block-search-form .form-submit:hover {
+-webkit-transition: none 0s ease 0s;
+-moz-transition: none 0s ease 0s;
+-o-transition: none 0s ease 0s;
+-ms-transition: none 0s ease 0s;
+-khtml-transition: none 0s ease 0s;
+transition: none 0s ease 0s;
+}
+
+#navigation a:hover {
+@include transition(none);
+}
+
+
+#navigation a {
+@include transition(color ease-in-out .2s);
+}
+/* 
+*********** Тени *******
+*/
+
+
+ul.nice-menu li ul {
+@include box-shadow($shadowcolor 2px 2px 10px);
+}
+
+/* 
+*********** Кнопки *******
+*/
+#calltomybtm,
+.page-taxonomy-term a.contactus-form,
+#send-order-btm-top,
+#send-order-btm-block {
+@include buttombar($backgroundbuttomsubmit, $buttomtextcolor);
+}
+
+
+.view-prais-inner div.desc-left-inner-prise {
+width: 15em;
+float: left;
+clear: left;
+}
+.view-prais-inner div.views-row {
+width: 104px;
+height: 120px;
+float: left;
+margin: 3px;
+text-align: center;
+padding: 2px;
+}
+.view-prais-inner div.name-inner-prise {
+clear: left;
+}
+/* 
+*********** Цвет и поведение ссылок *******
+*/
+.item-list .pager,
+.region-sidebar-first,
+#block-views-tweets-block,
+.region-sidebar-first,
+#block-block-2 #header-email,
+#block-menu-menu-top-menu {
+	a {
+		text-decoration:none;
+		@include transition(color ease-in-out .2s);
+		color: $highlight_some; 
+		&:hover {
+			@include transition(none);
+			color: $text_link_hover;
+			
+		}
+
+	}
+}
+/* 
+*********** Ссылка в виде кнопки со знаком вопроса *******
+*/
+a.help-icon {
+display: inline-block;
+width: 24px;
+height: 24px;
+background-image: url(images/spritesheet.png);
+background-position: -26px -62px;
+text-decoration: none;
+vertical-align: middle;
+}
+
+/* 
+*********** Табличка прайс-лист *******
+*/
+.prise-from-digit {
+color: $text-color-hilewel;
+}
+.prise-table-all 
+			.element-invisible {
+				position: relative!important;
+				clip: auto;
+				overflow: auto;
+				height: auto;
+			}
+			.tablefield {
+			margin-top: 0;
+			@include adjust-font-size-to(14px, 1);
+			thead th { text-align: center; }
+			tr { background-color: transparent; }
+			.col_1 { font-weight: bold; color: red; }
+			}
+.prise-body-cost,
+.prise-body-dim {
+color: gray;
+font-weight: normal;
+}
+.prise-body-descrhead,
+.prise-body-description {
+text-align: left;
+@include adjust-font-size-to(13px, 1);
+}
+.prise-body-description p {
+margin-top: 0;
+}
+.prise-body-descrhead {
+font-weight: bold;
+}

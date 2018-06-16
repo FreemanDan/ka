@@ -1,0 +1,300 @@
+<?php
+  
+/*
+* Implements of hook_requirements();
+*/
+function lazyloadxt_requirements($phase){
+  $requirements = array();
+
+  if($phase == 'runtime'){
+    if(file_exists(libraries_get_path('lazy-load-xt'))){
+      $requirements['lazy-load-xt'] = array(
+        'title' => t('Lazy load XT'),
+        'value' => t('Lazy load XT found.'),
+        'severity' => REQUIREMENT_OK,
+      );
+    }else{
+      $requirements['lazy-load-xt'] = array(
+        'title' => t('Lazy load XT'),
+        'value' => t('Lazy load XT not found.'),
+        'description' => t('Check the readme files for more instructions.'),
+        'severity' => REQUIREMENT_ERROR,
+      );
+    }
+  }
+
+  return $requirements;
+}
+
+/*
+* Implements of template_preprocess_page();
+*/
+function lazyloadxt_preprocess_page(&$vars){
+  $js = libraries_get_path('lazy-load-xt');
+  drupal_add_js($js . '/dist/jquery.lazyloadxt.min.js');
+    drupal_add_js($js . '/dist/jquery.lazyloadxt.bg.min.js');
+}
+  
+/**
+* Implements hook_field_formatter_info().
+*/
+function lazyloadxt_field_formatter_info(){
+  $styles = _lazyload_image_styles();
+  
+  $info = array(
+    'lazyloadxt' => array(
+      'label' => t('Lazy Load XT'),
+      'field types' => array('image'),
+      'description' => t('Display image as Lazy Load XT'),
+      'settings' => array(
+        'style' => $styles['none'],
+        'image_to_display' => '',
+        'colorbox' => FALSE,
+        'colorbox_style' => $styles['none']
+      )
+    )
+  );
+  
+  return $info;
+}
+
+/**
+* Implements hook_field_formatter_settings_form().
+*/
+function lazyloadxt_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state){
+  $styles = _lazyload_image_styles();
+  
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  
+  $element = array();
+  
+  $element['style'] = array(
+    '#type' => 'select',
+    '#title' => t('Image Style'),
+    '#description' => t('Select an image style'),
+    '#default_value' => $settings['styles'],
+    '#options' => $styles
+  );
+  
+  $element['image_to_display'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Images to display'),
+    '#description' => t('Insert a number of images to display. Empty for all images.'),
+    '#default_value' => $settings['image_to_display']
+  );
+  
+  if(module_exists('colorbox')){
+    $element['colorbox'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Use colorbox'),
+      '#description' => t('Add colorbox overlay on click'),
+      '#default_value' => $settings['colorbox']
+    );
+    
+    $element['colorbox_style'] = array(
+      '#type' => 'select',
+      '#title' => t('Colorbox: Image Style'),
+      '#description' => t('Colorbox: Select an image style'),
+      '#default_value' => $settings['colorbox_style'],
+      '#options' => $styles
+    );
+  }
+  
+  return $element;
+}
+
+/**
+* Implements hook_field_formatter_settings_summary().
+*/
+function lazyloadxt_field_formatter_settings_summary($field, $instance, $view_mode){
+  $styles = _lazyload_image_styles();
+  
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $summary = $styles[$settings['style']] . '<br />';
+  $summary .= t('Images to display: ') . $settings['image_to_display'];
+  
+  if(module_exists('colorbox') && $settings['colorbox'] == TRUE){
+    $summary .= '<br />' . t('Colorbox') . '<br />';
+    $summary .= $styles[$settings['colorbox_style']];
+  }
+  
+  return $summary;
+}
+
+/**
+* Implements hook_field_formatter_view().
+*/
+function lazyloadxt_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display){
+  $element = array();
+  
+  switch($display['type']){
+    case 'lazyloadxt':
+      $image_to_display = $display['settings']['image_to_display'];
+      $colorbox = $display['settings']['colorbox'];
+
+      if($image_to_display > 0){
+        for($i = 0; $i < $image_to_display; $i++){
+          if(array_key_exists($i, $items)){
+            $style = $display['settings']['style'];
+            $url = $style == 'none' ? file_create_url($items[$i]['uri']) : image_style_url($style, $items[$i]['uri']);
+            $dimensions = array(
+              'width' => $items[$i]['width'],
+              'height' => $items[$i]['height']
+            );
+            
+            if($style != 'none'){
+              $style_info = image_style_load($style);
+              foreach($style_info['effects'] as $effect){
+                image_style_transform_dimensions($style, $dimensions);
+              }
+            }
+            
+            $element[$i] = array(
+              '#theme' => 'lazyloadxt',
+              '#url' => $url,
+              '#width' => $dimensions['width'],
+              '#height' => $dimensions['height'],
+              '#title' => $items[$i]['title'],
+              '#alt' => $items[$i]['alt']
+            );
+            
+            if($colorbox){
+              $colorbox_style = $display['settings']['colorbox_style'];
+              $colorbox_url = $colorbox_style == 'none' ? file_create_url($items[$i]['uri']) : image_style_url($colorbox_style, $items[$i]['uri']);
+              
+              $element[$i]['#rel'] = $instance['id'];
+              $element[$i]['#colorbox'] = $colorbox_url;
+            }
+          }
+        }
+      }else{
+        foreach($items as $delta => $item) {
+          $style = $display['settings']['style'];
+          $url = $style == 'none' ? file_create_url($item['uri']) : image_style_url($style, $item['uri']);
+          $dimensions = array(
+            'width' => $item['width'],
+            'height' => $item['height']
+          );
+          
+          if($style != 'none'){
+            $style_info = image_style_load($style);
+            foreach($style_info['effects'] as $effect){
+              image_style_transform_dimensions($style, $dimensions);
+            }
+          }
+          
+          $element[$delta] = array(
+            '#theme' => 'lazyloadxt',
+            '#url' => $url,
+            '#width' => $dimensions['width'],
+            '#height' => $dimensions['height'],
+            '#title' => $item['title'],
+            '#alt' => $item['alt']
+          );
+          
+          if($colorbox){
+             $colorbox_style = $display['settings']['colorbox_style'];
+             $colorbox_url = $colorbox_style == 'none' ? file_create_url($items[$delta]['uri']) : image_style_url($colorbox_style, $items[$delta]['uri']);
+             
+             $element[$delta]['#rel'] = $instance['id'];
+             $element[$delta]['#colorbox'] = $colorbox_url;
+           }
+        }
+      }
+    break;
+  }
+  
+  return $element;
+}
+
+/**
+* Implements hook_theme().
+*/
+function lazyloadxt_theme(){
+  return array(
+    'lazyloadxt' => array(
+      'template' => 'lazyloadxt',
+      'render element' => 'element'
+    ),
+    'image_data' => array(
+      'variables' => array(
+        'path' => NULL,
+        'width' => NULL,
+        'height' => NULL,
+        'title' => NULL,
+        'alt' => NULL,
+        'attributs' => array()
+      )
+    )
+  );
+}
+
+/**
+ * Theme preprocess function for theme_lazyloadxt() and lazyloadxt.tpl.php.
+ *
+ * @see lazyloadxt.tpl.php
+ */
+function template_preprocess_lazyloadxt(&$variables, $hook){
+  $element = $variables['element'];
+  
+  $image = theme('image', array('path' => $element['#url'], 'width' => $element['#width'], 'height' => $element['#height'], 'alt' => $element['#alt'], 'title' => $element['#title']));
+  $lazy_image = theme('image_data', array(
+    'path' => 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+    'width' => $element['#width'],
+    'height' => $element['#height'],
+    'title' => $element['#title'],
+    'alt' => $element['#alt'],
+    'attributes' => array(
+      'class' => array('lazy'),
+      'data-src' => $element['#url']
+    )
+  ));
+  
+  $output = array(
+    '#type' => 'markup',
+    '#markup' => $lazy_image,
+    '#suffix' => '<noscript>' . $image . '</noscript>'
+  );
+  
+  if(isset($element['#colorbox']) && !empty($element['#colorbox'])){
+    $title = !empty($element['#title']) ? $element['#title'] : '';
+    $output['#prefix'] = '<a href="' . $element['#colorbox'] . '" class="lazyload-colorbox lazyload-colorbox-load" rel="lazyload-gallery-'.$element['#rel'].'" title="' . $title . '">';
+    $output['#suffix'] .= '</a>';
+  }
+  
+  $variables['element'] = $output;
+}
+
+/**
+ * Return HTML for a data:image
+ */
+function theme_image_data($variables) {
+  $attributes = $variables ['attributes'];
+  $attributes['src'] = $variables ['path'];
+
+  foreach (array('width', 'height', 'alt', 'title') as $key) {
+
+    if (isset($variables [$key])) {
+      $attributes[$key] = $variables[$key];
+    }
+  }
+
+  return '<img' . drupal_attributes($attributes) . ' />';
+}
+
+/**
+* Get all the active styles.
+*/
+function _lazyload_image_styles(){
+  $styles = image_styles();
+  
+  $options = array('none' => t('None (original image)'));
+  
+  foreach($styles as $key => $style){
+    $options[$key] = $style['label'];
+  }
+  
+  return $options;
+}

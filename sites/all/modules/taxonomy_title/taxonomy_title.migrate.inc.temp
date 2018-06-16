@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * taxonomy_title support for migrate.
+ */
+
+/**
+ * Implements hook_migrate_api().
+ */
+function taxonomy_title_api() {
+ $api = array(
+    'api' => 2,
+    'destination handlers' => array(
+      'MigrateTaxonomyTitleHandler',
+    ),
+  );
+
+  return $api;
+ }
+
+/**
+ * taxonomy_title destination handler.
+ */
+class MigrateTaxonomyTitleHandler extends MigrateDestinationHandler {
+  public function __construct(){
+  $this->registerTypes(array('node', ' taxonomy_term'));
+   } 
+  /**
+   * Implements MigrateTaxonomyTitleHandler::fields().
+   */
+  public function fields() {
+      return array(
+      'taxonomy_title' =>
+        t('taxonomy_title asdfasdfadfas'),
+    );
+    
+  }
+
+  
+}

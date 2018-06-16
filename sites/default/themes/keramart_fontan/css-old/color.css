@@ -1,0 +1,143 @@
+/**
+ * @file
+ * Color Styling
+ *
+ */
+ body {
+ }
+.region-sidebar-first {
+border-right:1px solid #999;
+} 
+#block-search-form div.container-inline {
+border:1px solid #999;
+}
+ /*  #header,
+ .navigation,
+ .sidebar,
+ #content */
+#page, article.node-642 {
+ background-color: white;
+ }
+  /*
+ * Цвет ссылок меню навигации, серый текст
+ */
+
+  /*
+ * Цвет ссылок меню навигации при наведении, серый текст
+ */
+ 
+
+form#search-block-form {
+color:#666;
+}
+
+.region-sidebar-first a:hover{
+color:#999999;
+} 
+/* .region-sidebar-first a:visited{
+color:#694;
+} */
+/*
+ * Форма поиска, лупа
+*/
+#block-search-form .form-submit {
+background-color: #aaa;
+}
+
+form#search-block-form:hover {
+    border-color: #222222;
+}
+#block-search-form .form-submit:hover {
+background-color: #222222;
+}
+/*
+ * Breadcrumb
+*/
+.breadcrumb,
+.breadcrumb a {
+color:#999;
+}
+.region-sidebar-first a,
+h1,
+h2.block-title, 
+#block-search-form .form-text,
+.breadcrumb a:hover {
+color:#222;
+}
+ /*
+ * форма заказа, акция.
+ */
+ 
+ .first-block-form , #block-webform-client-block-635 {
+ border:1px solid #B2D328;
+ }
+  /*
+ * сноска:
+*/
+.snoska  {
+background-color: #CFDDC0; 
+}
+.field-name-field-keramic-help .field-item,
+.snoska-ahtung  {
+background-color: #F1E6BE; 
+}
+
+h2 {
+color: #464646;
+}
+#site-slogan, #block-block-2 .header_phone  {
+color: #93837A;
+}
+
+#footer,
+#navigation {
+background-color: #6E6350;
+}
+.node-portfolioitem div.view-item-prise-group-view  ,
+.view-main-category-block div.views-row {
+background-color: #F9F7F5;
+}
+
+.spisokisdelii, .sub-title, .goods-heading2 {
+color: #777;
+}
+.spisokisdelii a ,
+.spisokisdelii a:hover,
+#block-block-2 .header_email a,
+#block-block-2 .header_email a:hover
+ {
+color: black;
+}
+
+.spisokisdelii div.views-field-field-artikul {
+}
+
+#index_aboutfr {
+background-color: #F1EEE8;
+}
+/* .region-sidebar-first div.block {
+background-color: #F5F5F5;
+} */
+
+#footer,
+#footer a,
+#footer a.active,
+ul.nice-menu a,
+ul.nice-menu a.active {
+color: white;
+}
+#footer p {
+margin: 0;
+}
+#footer div {
+margin-bottom: 0.5em;
+}
+
+ul.nice-menu li:hover{
+background: #6E6C50;
+} 
+
+ul.nice-menu li {
+  background-color: #6E6350;
+}
+

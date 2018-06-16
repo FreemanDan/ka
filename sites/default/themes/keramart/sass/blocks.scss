@@ -1,0 +1,586 @@
+/**
+ * @file
+ * Block Styling
+ */
+
+@import "base";
+.region-sidebar-first {
+border-right:1px $clr_line;
+color: $highlight_some;
+	a {
+		color: $highlight_some; 
+		&:hover {
+			color: $text_link_hover;
+			}
+		}
+	div.block {
+	@include padding-leader(1, $base-font-size);
+	padding-right:5px;
+	}
+}
+
+.block { /* Block wrapper */
+ 
+
+  &.first { /* The first block in the region */
+  }
+
+  &.last { /* The last block in the region */
+  }
+
+  &.odd { /* Zebra striping for each block in the region */
+  }
+
+  &.even { /* Zebra striping for each block in the region */
+  }
+
+  h2.block-title { /* Block title */
+  font-family: $font-extra;
+  }
+}
+/* Блок поиска */
+#block-search-form {
+padding-top: 0.5em;
+height: rhythm(2, $base-font-size) - 0.5em;
+	.form-text {
+	background-clip: padding-box;
+    border: 0 none;
+    margin: 0;
+    margin: 4px 2px 4px 4px;
+    width: 140px;
+	
+	&:focus {
+		outline: 0 none;
+		}
+	}
+
+	.form-submit {
+	
+	display: inline-block;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-image: url('images/spritesheet.png');
+	width: 16px;
+	height: 14px;
+	background-position: 0 0;
+	border: 0;
+	text-indent: -999em;
+	}
+}
+form#search-block-form {
+width: 180px;
+@include adjust-font-size-to( $base-font-size );
+padding: 0;
+border: 1px #ccc solid;
+}
+
+
+
+
+#block-simpleads-ad-groups-59 {
+margin: 0;
+float: right;
+}
+/*
+ * *********** баннер малый ***** - отключен
+*/
+#block-block-7
+ {
+margin-left: 20px;
+background-image: url(images/banner_top_2.jpg);
+width: 280px;
+height: rhythm(3, $base-font-size);
+background-color: gray;
+float: right;
+@include trailer(1, $base-font-size);
+}
+/*
+ * *********** Контакты
+*/
+
+#block-block-2,
+#block-block-13 {
+   text-align: right;
+	#header-phone-1 {
+	}
+	#call-to-me {
+	@include adjust-font-size-to( 12px, 1 );
+        text-transform: uppercase;
+        @include trailer(0.5, 12px);
+        @include leader(0.5, 12px);
+        float: right;
+	}
+	
+
+
+}
+
+
+#block-aggregator-category-1 { /* Block for the latest news items in the first category */
+}
+
+#block-aggregator-feed-1 { /* Block for the latest news items in the first feed */
+}
+
+#block-block-1 { /* First block created with "Add block" link */
+}
+
+#block-blog-recent { /* "Recent blog posts" block */
+}
+
+#block-book-navigation { /* "Book navigation" block for the current book's table of contents */
+}
+
+#block-comment-recent { /* "Recent comments" block */
+}
+
+#block-forum-active { /* "Active forum topics" block */
+}
+
+#block-forum-new { /* "New forum topics" block */
+}
+
+#block-locale-language { /* Language switcher block */
+}
+
+#block-menu-menu-NAME { /* Custom menu block */
+}
+
+#block-node-recent { /* "Recent content" block */
+}
+
+#block-node-syndicate { /* "Syndicate" block for primary RSS feed; see also page.css's .feed-icon */
+}
+
+#block-poll-recent { /* "Most recent poll" block */
+}
+
+#block-profile-author-information { /* "Author information" block for the profile of the page's author */
+}
+
+#block-search-form { /* "Search form" block */
+}
+
+#block-shortcut-shortcuts { /* "Shortcuts" block */
+}
+
+#block-statistics-popular { /* "Popular content" block */
+}
+
+#block-system-main-menu { /* "Main menu" block */
+}
+
+#block-system-management { /* "Management" block for Drupal management menu */
+}
+
+#block-system-navigation { /* "Navigation" block for Drupal navigation menu */
+}
+
+#block-system-user-menu { /* "User menu" block for Drupal user menu */
+}
+
+#block-system-help { /* "System help" block */
+}
+
+#block-system-main { /* "Main page content" block */
+}
+
+#block-system-powered-by { /* "Powered by Drupal" block */
+}
+
+#block-user-login { /* "User login form" block */
+}
+
+#block-user-new { /* "Who's new" block for a list of the newest users */
+}
+
+#block-user-online { /* "Who's online" block for a list of the online users */
+}
+#block-views-main-category-block-block {
+float: left;
+@include box-sizing(border-box);
+}
+#block-block-6 {
+float: left;
+}
+/*
+ * форма заказа, акция.
+ */
+// -------------- Акция --------
+.actionnow {
+   @include adjust-font-size-to( 20px, 1 ); 
+}
+.node-portfolioitem {
+    .actionnow {
+   text-align: center;
+}
+.knew_button {
+    text-align: center;
+    width: 14em;
+}
+}
+.actionnow strong,
+.actionnow b,
+.prise-discount-cost {
+    color: #B92926;
+}
+.actionblock {
+    @include leader (1, $base-font-size);
+    @include trailer (1, $base-font-size);
+    position:relative;
+    text-align: center; 
+}
+#block-webform-client-block-635 {   
+    @include leader (1, $base-font-size);
+    color: $text-color;
+    @include trailer (1, $base-font-size);
+    position:relative;
+    //min-height: rhythm(6, $base-font-size);;
+    background-color: $blockbgr;
+    .client-block-inner {
+      margin-left: auto;
+      margin-right: auto;
+              text-align: center;  
+    }
+    #secur {
+        @include leader (1, $base-font-size);
+        width: 100%;
+        }
+    .first-client {
+        color: red;
+        }
+    .free-description {      
+	}
+    .middle-block {
+        position: relative;
+   
+        
+	}
+    .free-scatch {
+	color: $highlight_some;
+        @include trailer (1, 20px);
+        @include leader (0, 20px);
+        baseline-shift: 1px;
+	}
+    .right-block {
+           padding-top: 1em;
+	}
+    .webform-client-form {
+        @include trailer (1, $base-font-size);
+        margin-left: auto;
+        margin-right: auto;
+	}
+        input {
+            @include adjust-font-size-to( 22px, 1 );
+        }
+    .send-title {
+	}
+    .form-item {
+            //@include trailer (0.5em, $base-font-size);
+            padding-bottom: 0.5em;
+	}
+
+     #webform-component-stranica { display: none; }
+        
+    .form-actions  {
+            margin-top:0;
+	}
+        
+     input {
+            width: 11em;
+            margin-right: 10px; 
+        }
+     .colorbox-node {
+            @include adjust-font-size-to( 14px, 1 );  
+        }
+}
+/*
+ * Поиска форма
+*/
+#block-search-form {
+	div.container-inline {
+	border:1px $clr_line;
+		input.form-text {
+		border:0;
+		}
+	}
+	.form-submit {
+	background-color: $gr_element;
+	}
+	.form-submit:hover {
+	background-color: $highlight_some;
+	}
+	.form-text {
+	color: $highlight_some;
+	}
+}
+form#search-block-form:hover {
+    border-color: $highlight_some;
+}
+/*
+ ********** Блок меню "Информация" *******************
+*/
+#send-order-btm-block {
+float: left;
+clear: right;
+@include adjust-font-size-to( $base-font-size);
+//@include trailer(1, $base-font-size);
+}
+#block-menu-menu-information .content {
+clear: left;
+}
+.work-allrussia {
+    clear: left;
+    a.colorbox-node {
+    @include adjust-font-size-to( 14px, 1);
+    color: $text-color-hilewel;
+    }
+}
+/*
+ ********** Видеообзоры *******************
+*/
+
+#block-views-latest-video-block .views-field-field-video-embed {
+height: rhythm(6, $base-font-size);
+}
+.region-sidebar-second #block-views-latest-video-block {
+text-align: center;
+}
+/*
+ ********** Твиттер - блок *******************
+*/
+#read-keramart-twitter {
+@include adjust-font-size-to ( 14px );
+@include trailer(1, 14px);	
+@include background-image(linear-gradient(top, lighten($blockbgr,30%), $blockbgr));
+float: left;
+border: 1px solid gray;
+padding: 0 10px 0 4px;
+}
+#tw-logo {
+margin: 4px 5px 0 0;
+background-image: url(images/spritesheet.png);
+background-repeat: none;
+background-position: -19px 0px;
+width: 15px;
+height: 15px;
+float: left;
+
+}
+#block-views-tweets-block {
+	a {
+		text-decoration: none;
+		color: $highlight_some; 
+		&:hover {
+			color: $text_link_hover;
+			}
+		}
+	ul {
+	padding: 0;
+	margin-top: 0;
+	list-style-type: none;
+	@for $i from 1 through 7 {
+	li.views-row-#{$i+7}:before,
+	li.views-row-#{$i}:before { background-color: hsl( (sin( $i / 10 ))*360 , 30%, 40%)   }
+			}
+	li {
+		@include adjust-font-size-to ( 14px );
+		@include trailer(1, 14px);		
+			&:before {
+			content: '';
+			width: 20px;
+			height: 19px;
+			display: inline-block;
+			position: relative;
+			top: 4px;
+			float: left;
+			background-color: grey;
+			background-image: url(images/spritesheet.png);
+			background-repeat: none;
+			background-position: -45px 0px;
+			}
+		.twitter-block-text {
+		margin-left: 30px;
+		}
+		.twitter-block-time {
+		color: $top-menu-dark;
+		@include adjust-font-size-to(12px, 0.6, 14px);
+		@include leader(0.4, 12px);
+		}
+		}
+	}
+}
+/*
+ ********** Блок категорий на главную *******************
+*/
+.view-main-category-block {
+background-color: #FBFBFB;
+background-image: url(images/fonshum.png);
+background-repeat: repeat;
+}
+#block-views-main-category-block-block {
+	@include adjust-font-size-to(14px);
+}
+.main-category-list-row {
+overflow: auto;
+@include trailer(1, $base-font-size);
+}
+.main-category-list-line {
+margin-top: rhythm(1, $base-font-size, 3px);
+display: inline-block;
+overflow: hidden;
+background-image: url('images/keramart-spritesheet-horizontals.png');
+width: 100px;
+height: 3px;
+background-position: 0 -9px;
+cursor: default;
+width: 100%;
+background-repeat: repeat-x;
+display: block;
+}
+.main-category-list-img {
+clear: left;
+margin-right: $my-gutter-width;
+float: left;
+}
+.main-category-list-name {
+font-family: $font-extra;
+@include adjust-font-size-to(16px, 1, 14px);
+clear: right;
+	a {
+	text-decoration: underline;
+	}
+}
+.main-category-list-desc {
+	a {
+	text-decoration: underline;
+	}
+	ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+		li:before {
+		content: '> ';
+		color: red;
+		}
+	}
+	p {
+	margin: 0;
+	}
+}
+
+/*
+ * Триггеры LP
+ */
+.node-type-landingpage #block-block-8 {
+text-align: center;
+}
+
+//если на страницах сайта:
+.region-sidebar-first {
+    p {
+        display: block;
+        float: left;
+        margin: 0;
+        
+    }
+    .lp-trig-img-descr {
+        text-align: left;
+        display: block;
+        @include adjust-font-size-to( 14px, 1);
+        clear: left;
+        }
+}
+/*
+ * форма заказа обратного звонка.
+ */
+ 
+.ui-dialog #block-webform-client-block-658 h2 {
+display: none;
+}
+
+/*
+ * А какой нужен вам?
+ */
+#block-block-10 {
+    .view-footer p {
+        margin: 0;
+    }
+    a.contactus-form {
+    @include leader(1, $base-font-size);    
+    }
+text-align: center;
+}
+
+#block-block-11,
+#block-views-slogan-block {
+    //position: absolute;
+    //top: 48px;
+}
+
+#block-menu-menu-tile-menu,
+#block-menu-menu-top-menu { 
+        @include padding-leader(1, 14px);
+        @include adjust-font-size-to( 14px, 1);   
+    }
+
+#block-menu-menu-tile-menu,
+#block-menu-menu-top-menu,
+#block-menu-block-2,
+#block-menu-block-3 {
+    text-transform: uppercase;
+    
+    li {
+        margin-right: 20px;
+        display: inline-block;
+        
+    }
+    
+    
+}
+
+#block-menu-block-2 {
+    a {
+        display: block;
+        @include adjust-font-size-to( 14px, 1.5);
+
+    }  
+}
+#block-menu-block-3 {
+    a {
+        display: block;
+        @include adjust-font-size-to( 12px, 1.5);
+
+    }  
+}
+
+#block-menu-block-3 {
+    background-color: #d7d4d4;
+	a { 
+            color: $highlight_some; 
+		&:hover {
+			color: $text_link_hover;
+			}
+		}
+}
+
+.pane-menu-block-4 {
+	a { 
+            color: $highlight_some; 
+		&:hover {
+			color: $text_link_hover;
+			}
+		}
+}
+
+#block-block-14 {
+    @include leader(0.5, $base-font-size);
+    .hundproc {
+        @include adjust-font-size-to( 16px, 2);
+        text-transform: uppercase;
+    }
+        .allrus {
+            color: #b92926;
+        @include adjust-font-size-to( 16px, 1);
+    }
+}

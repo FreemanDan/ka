@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;;;;;AAWE;;;;;;;+BAOe;EACb,OAAO,EAAE,cAAc",
+"sources": ["../sass/wireframes.scss"],
+"names": [],
+"file": "wireframes.css"
+}

@@ -1,0 +1,79 @@
+/* gradient backgrounds and reflections */
+/*
+  This is the default layout template for nice menus, and will provide
+  a starting point for the look of your menus. To customize, it's
+  recommended to create a custom CSS file using this file as a template,
+  then configure the module to use your custom CSS file
+  (this is done in the global settings tab of the theme administration.)
+
+  See README.txt and the handbook page (http://drupal.org/node/185543)
+  for more information on using the CSS.
+*/
+/******************************
+ Global CSS for ALL menu types
+******************************/
+/* line 17, ../sass/nice_menus_default.scss */
+ul.nice-menu,
+ul.nice-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 24, ../sass/nice_menus_default.scss */
+ul.nice-menu li {
+  float: left;
+  /* LTR */
+}
+
+/* line 28, ../sass/nice_menus_default.scss */
+ul.nice-menu a {
+  padding: 0.3em 1em 0 0;
+  text-decoration: none;
+}
+
+/* line 33, ../sass/nice_menus_default.scss */
+ul.nice-menu ul {
+  top: 1.8em;
+  left: -1px;
+  /* LTR */
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin-right: 0;
+  /* LTR */
+}
+
+/* line 41, ../sass/nice_menus_default.scss */
+ul.nice-menu ul li {
+  width: 15em;
+}
+
+/******************************
+ HORIZONTAL (down) menus
+******************************/
+/* line 50, ../sass/nice_menus_default.scss */
+ul.nice-menu-down {
+  float: left;
+  /* LTR */
+}
+
+/* line 60, ../sass/nice_menus_default.scss */
+ul.nice-menu-down ul {
+  left: 0;
+  /* LTR */
+  top: 2em;
+}
+
+/* line 65, ../sass/nice_menus_default.scss */
+ul.nice-menu-down ul li {
+  clear: both;
+}
+
+/* line 69, ../sass/nice_menus_default.scss */
+ul.nice-menu-down li ul li ul {
+  left: 15em;
+  /* LTR */
+  top: -1px;
+}
+
+/*# sourceMappingURL=nice_menus_default.css.map */

@@ -1,0 +1,12 @@
+name = "Context Mobile Detect"
+description = "Context condition detecting if user uses mobile device."
+core = 7.x
+version = 7.x-1.2
+package = "Context"
+dependencies[] = context
+; Information added by Drupal.org packaging script on 2016-03-25
+version = "7.x-2.0-alpha1"
+core = "7.x"
+project = "context_mobile_detect"
+datestamp = "1458888541"
+

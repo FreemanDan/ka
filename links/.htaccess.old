@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?mod_rewrite_path=$1&%{QUERY_STRING} [L]
+AddDefaultCharset utf-8

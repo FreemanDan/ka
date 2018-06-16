@@ -1,0 +1,745 @@
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+
+@import "base";
+/* 
+*Смещаем администраторское меню вниз на ширину верхнего меню сайта и убираем тени
+*/
+/*
+ * Body
+ */
+
+body {
+  font-family: $base-font-family;
+
+}
+
+#page {
+}
+#page, article.node-642 {
+//@include debug-vertical-alignment();
+ background-color: $page_bcgr_clr;
+ }
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ * See the element-focusable rule in system.base.css.
+ */
+article.view-mode-colorbox {
+background-color: white;
+padding: 10px;
+}
+#skip-link {
+  margin: 0;
+
+  a,
+  a:visited {
+    display: block;
+    width: 100%;
+    padding: 2px 0 3px 0;
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+  }
+}
+
+/*
+ * Header
+ */
+#bandslogan {
+float: left;
+}
+#header {
+    position: relative;
+}
+
+#logo { /* Wrapping link for logo */
+ /* LTR */
+}
+
+#name-and-slogan { /* Wrapper for website name and slogan */
+  float: left;
+}
+
+#site-name { /* The name of the website */
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.5em;
+
+  a:link,
+  a:visited {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+}
+
+#site-slogan,
+#block-views-slogan-block,
+#block-block-11 { /* The slogan (or tagline) of a website */
+	margin-top: 0;
+  @include adjust-font-size-to( 14px, 2 );
+  text-transform: uppercase;
+  //@include leader(1, 14px);
+  //@include trailer(1, 14px);
+  p {
+      margin: 0;
+  }
+}
+
+.region-header { /* Wrapper for any blocks placed in the header region */
+}
+
+/*
+ * Main (container for everything else)
+ */
+
+.taxonomy-term-description {
+  margin: 0;
+}
+
+
+#main {
+}
+
+/*
+ * Content
+ */
+.field-name-field-promo-description,
+div.sub-title,
+div.goods-heading1,
+.view-header h3 {
+@include adjust-font-size-to( 19px );
+@include trailer(1, 19px);
+font-weight: normal;
+}
+.page-taxonomy-term-72,
+//.page-taxonomy-term-179,
+.page-taxonomy-term-82 {
+    #page-title,
+     .sub-title {
+    color: white;
+    font-weight: normal;
+    //background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+#content {
+
+}
+
+.region-highlighted {
+}
+/*
+ * Breadcrumb
+*/
+nav.breadcrumb {
+clear: left;
+color: $text_link_hover;
+  @include adjust-font-size-to( 18px, 1);
+  //@include leader(1, 18px);
+  font-family: $font-extra;
+  ol {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+      a {
+		color: $text_link_hover;
+		text-transform:uppercase;
+		text-decoration:none;
+		&:hover {
+		color: $highlight_some;
+		}
+	  }
+  }
+}
+
+h3.title,
+#block-webform-client-block-635 .free-scatch,
+#block-webform-client-block-635 .form-submit,
+form.webform-client-form .form-actions .form-submit,
+.contactus-form 
+div.goods-heading1,
+
+
+h1.title, /* The title of the page */
+h2.node-title, /* Title of a piece of content when it is given in a list of content */
+h2.block-title, /* Block title */
+h2.title, /* Comment section heading */
+h2.comment-form, /* Comment form heading */
+h3.title { /* Comment title */
+  margin: 0;
+}
+
+.lp h2 {
+    @include leader(1, $h2-font-size);
+}
+/*
+ * Splitter -- добавлен между блоками
+*/
+
+.splitter,
+.header-splitter {
+margin-top: rhythm(1, $base-font-size, 3px);
+overflow: hidden;
+background-image: url('images/keramart-spritesheet-horizontals.png');
+height: 3px;
+background-position: 0 -17px;
+width: 100%;
+background-repeat: repeat-x;
+display: block;
+}
+.region-sidebar-first .splitter {
+background-position: 0 -9px;
+}
+.content-splitter {
+margin-top: rhythm(0.5, $base-font-size, 1px);
+margin-bottom: rhythm(0.5, $base-font-size, 1px);
+overflow: hidden;
+background-image: url('images/keramart-spritesheet-horizontals.png');
+height: 1px;
+background-position: 0 -9px;
+width: 100%;
+background-repeat: repeat-x;
+display: block;
+}
+
+/*
+ * Splitter-promo -- с фейдом и стрелочкой
+*/
+.splitter-promo {
+padding-top: rhythm(2, $base-font-size);
+overflow: hidden;
+background-image: url('images/keramart-spritesheet-horizontals.png');
+height: rhythm(1, $base-font-size);
+background-position: 0 -20px;
+width: 100%;
+background-repeat: repeat-x;
+display: block;
+//@include trailer (1, $base-font-size);
+position: relative;
+}
+.splitter-arrow-dwn {
+width: 138px;
+height: 24px;
+background-image: url('images/spritesheet.png');
+background-repeat: no-repeat;
+background-position: 0 -162px;
+position: absolute;
+left: 50%;
+margin-left: -57px;
+}
+/*
+ ******************************* Каталог ************************
+ */
+.view-id-kategorii {
+	.views-row {
+	@include trailer(1, $base-font-size);
+	}
+        .kategorii-img {
+            display: block;
+            height: 288px;
+            background: {
+                repeat: no-repeat;
+                color: #FFF;
+                position: 50% 50%;
+                 };
+
+                 @include transition(background-size ease-in-out 1s);
+             
+             //@include background-size(cover);
+             @include background-size(100%, auto);
+             //@include border-radius(8px);
+        }
+	a.views-field-name {
+            display: block;
+            //@include border-radius(0 0 8px 8px);
+            width: 95%;
+            //position: absolute;
+            //bottom: 0;
+            font-weight: normal;
+            //background-color: rgba(0, 0, 0, 0.7);
+            color: black;
+            text-decoration: none;
+            padding-left: 2.5%;
+            padding-right: 2.5%;
+                &:visited { color: black; }    
+            @include adjust-font-size-to(18px, 1);
+            @include padding-leader(0.5, 18px);
+            @include padding-trailer(0.5, 18px);
+	}
+
+	.views-field-field-tiser-description {
+	@include adjust-font-size-to(14px);
+	margin: 0;
+	}
+        .categorii-inner {
+            border: 1px #d5d5d5 solid;
+        }
+}
+
+
+
+.kategorii-descr { 
+                     
+                 }
+
+.page-taxonomy-term {
+    #navigation,
+    .region-sidebar-first {
+        a.contactus-form {
+            float: left;
+        }
+    }
+    #content a.contactus-form {
+        width: 25em;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        @include adjust-font-size-to(18px, 2);
+
+    }
+}
+/* 
+***************** Список изделий, список подкатегорий
+*/
+
+.spisokisdelii {
+text-align: center;
+color: $highlight_some;
+}
+
+.spisokizdelii-inner {
+	@include transition(background ease-in-out .2s);
+	&:hover {
+	@include transition(none);
+	background-color: #EEEEEE;
+	}
+}
+
+.spisokisdelii-desc-field {
+display: block;
+@include adjust-font-size-to(14px, 0.75);
+height: rhythm(4, 14px);
+margin: 0;
+}
+
+.spisokisdelii-articul-field {
+@include adjust-font-size-to(14px);	
+margin: 0;
+}
+//цена от:
+.spisokizd-prise-heading {
+margin-top: 0;
+margin-bottom: 0;
+@include adjust-font-size-to(14px, 0.75);
+}
+//Картинки списка изделий в каталоге и категорий
+img.catalog_img_kategory,
+img.catalog_img_wiev {
+max-width: 100%;
+height: auto;
+vertical-align: top; 
+}
+@media \0screen {
+	img.catalog_img_wiev {
+    width: auto; /* для ie 8 */
+		}
+}
+/* 
+***************** Страницы изделий
+*/
+.node-portfolioitem div.galleryformatter {
+width: 500px;
+margin-left: auto;
+margin-right: auto;
+@include trailer(1, $base-font-size);
+}
+//---стоимость
+.view-id-item_prise_group_view {
+	background-color: $blockbgr2;
+	background-image: url("images/fonshum.png");
+    background-repeat: repeat;
+	float: left;
+	@include trailer(1, $base-font-size);
+	.view-header {
+		p {
+		margin-top: 0;
+		}
+	@include background-image(linear-gradient(top, lighten($blockbgr,30%), $blockbgr));
+	//@include adjust-font-size-to(14px);
+	color: $top-menu-dark;
+	font-family: $font-extra;
+	}
+	.view-content {
+	float: left;
+	clear: right;
+	}
+	.view-footer {
+	@include adjust-font-size-to(13px);
+	color: #3E1B00;
+	}
+}
+
+.item-page-prise {
+float: left;
+	table { 
+	margin: 0 $my-gutter-width 0 0; 
+	@include adjust-font-size-to(14px);
+	}
+}
+.item-page-prise-descr {
+@include adjust-font-size-to(14px);
+margin: 0;
+}
+
+
+/*
+ ************* Прайс-лист *************************************
+ */
+.desc-left-inner-prise {
+	table {
+	margin: 0 $my-gutter-width 0 0; 
+	}
+float: left;
+}
+.prise-page-img {
+	a {
+	padding: 0;
+	margi: 0;
+	display: table-cell;
+	vertical-align: middle;
+	height: 110px;
+	width: 100px;
+	}
+	img {
+	}
+background-color: $blockbgr;
+}
+.prise-page-row {
+margin-right: $my-gutter-width; 
+@include trailer(1, 13px);
+@include adjust-font-size-to(13px);
+text-align: center;
+float: left;
+}
+/*
+ * фотогалерея
+ */
+.node-photogallery div.field-item {
+float: left;
+margin-right: 10px;
+}
+div.view-prgoj-to-items {
+clear: left;
+}
+
+.node-portfolioitem div.field-name-field-video-embed ,
+.node-portfolioitem div.field-name-body {
+clear: left;
+}
+/*
+ * сноски:
+*/
+.field-name-field-keramic-help p,
+.snoska-ahtung  p
+.snoska  p {
+font-size: 0.9em;
+ padding: 0; 
+ margin: 0; 
+}
+.snoska {
+@include padding-leader(0.5, 14px);
+@include padding-trailer(0.5, 14px);
+padding-left: 10px;
+padding-right: 10px;
+@include border-radius(13em 0.5em/1em 0.5em);
+background: $clr_snoska;
+@include adjust-font-size-to( 14px );
+}
+.field-name-field-keramic-help div.field-item,
+.snoska-ahtung  {
+background: $clr_snoska_ahtung;
+@include padding-leader(0.5, 14px);
+@include padding-trailer(0.5, 14px);
+@include adjust-font-size-to( 14px );
+@include border-radius(0.5em);
+clear: left;
+@include trailer(1, 14px);
+padding-left: 10px;
+padding-right: 10px;
+}
+
+
+
+h2 {
+.block-title {
+color: $highlight_some;
+}
+}
+/*
+ * отступ первой строки абзаца
+*/
+
+.imgleft {
+float: left;
+margin-right: 1em;
+}
+.imgright {
+float: right;
+margin-left: 1em;
+}
+
+
+
+
+div.view-kategorii {
+margin-bottom: 1em;
+}
+#index_aboutfr {
+overflow: auto;
+}
+/*
+ * Content
+ */
+
+.view-material-kategogy div.views-row {
+overflow: auto;
+}
+.view-material-kategogy div.views-row-last {
+margin-bottom: 2em;
+}
+
+
+h1#page-title {
+@include leader(1, $h1-font-size);
+@include adjust-font-size-to( $h1-font-size );
+@include trailer(1, $h1-font-size);
+}
+
+.pane-menu-block-4 h2,
+h1.title, /* The title of the page */
+h2.node-title, /* Title of a piece of content when it is given in a list of content */
+h2.block-title, /* Block title */
+h2.title, /* Comment section heading */
+h2.comment-form, /* Comment form heading */
+h3.title { /* Comment title */
+  margin: 0;
+}
+#block-user-login ul ,
+ul.menu  {
+padding: 0;
+margin: 0;
+}
+ul ul.menu  {
+padding: 0 0 0 1em;
+}
+#content {
+	table { 
+	}
+	thead th {
+	font-weight: normal;
+	color: white;
+	background-color: $top-menu-dark;
+	padding: 0 4px 0 4px;
+	}
+	tbody td {
+	padding: 0 4px 0 4px;
+	}
+}
+tr.even { /* Some tables have rows marked even or odd. */
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+tr.odd {
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
+  margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
+
+  ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+div.status { /* Normal priority messages */
+}
+
+div.warning,
+tr.warning { /* Medium priority messages */
+  /* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+}
+
+div.error,
+tr.error { /* High priority messages. See also the .error declaration below. */
+}
+
+.error { /* Errors that are separate from div.messages status messages. */
+  /* color: #e55; */ /* Drupal core uses a #e55 background */
+}
+
+.warning { /* Warnings that are separate from div.messages status messages. */
+  /* color: #e09010; */ /* Drupal core uses a #e09010 background */
+}
+
+.tabs { /* See also the tabs.css file. */
+}
+
+.region-help { /* Help text on a page */
+}
+
+.more-help-link { /* Link to more help */
+}
+
+.region-content { /* Wrapper for the actual page content */
+}
+
+ul.inline { /* List of links generated by theme_links() */
+  display: inline;
+  padding: 0;
+
+  li {
+    display: inline;
+    list-style-type: none;
+    padding: 0 1em 0 0; /* LTR */
+  }
+}
+span.field-label { /* The inline field label used by the Fences module */
+  padding: 0 1em 0 0; /* LTR */
+}
+
+.item-list .pager { /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+	li.pager-next,
+	li.pager-first,
+	li.pager-previous,
+	li.pager-last {
+		a {
+			@include adjust-font-size-to( 14px, 1.25 );
+			}
+	}
+
+	li.pager-item {
+		a {
+			@include adjust-font-size-to( $base-font-size, 1.25 );
+			}
+	}
+	li.pager-current {
+	display: inline-block;
+	background-color: #D3C6B3;
+	@include adjust-font-size-to( $base-font-size, 1.25 );
+	height: rhythm(1.25, $base-font-size);
+	}
+  li { /* Each page number in the pager list */
+    padding: 0 0.5em;
+	a {
+		&:hover {
+		background-color: $highlight_some;
+		}
+	background-color: #d5d5d5;
+	display: inline-block;
+	padding: 0 0.5em;
+	}
+  }
+}
+
+.feed-icon { /* The link to the RSS or Atom feed for the current list of content */
+}
+
+.more-link { /* Aggregator, blog, and forum more link */
+}
+
+/*
+ * First sidebar (on left in LTR languages, on right in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-first
+ * (see the layout.css file.)
+ */
+#shad-wr {
+background-image: url('images/keramart-spritesheet-verticals.png');
+background-repeat: repeat-y;
+}
+#side-end {
+background-image: url('images/spritesheet.png');
+width: 12px;
+height: 100px;
+}
+
+.sidebar #user-login-form {
+font-size: 0.8em
+}
+.region-sidebar-first {
+	#shad-wr {
+	background-position: right top;
+	}
+	#side-end {
+	float: right;
+	background-position: 0 -64px;
+	}
+}
+/*
+ * Second sidebar (on right in LTR languages, on left in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-second
+ * (see the layout.css file.)
+ */
+
+.region-sidebar-second {
+	.block {
+	margin-left: 10px;
+	}
+	#shad-wr {
+	background-position: left top;
+	}
+	#side-end {
+	float: left;
+	background-position: -12px -62px;
+	}
+}
+
+/*
+ * Footer
+ */
+#footer {
+        clear: left;
+        #block-menu-menu-dopolnitelno li {
+            display: inline;
+        }
+	#block-block-3 {
+	@include adjust-font-size-to(12px);
+	}
+text-align: center;
+}
+#footer li {
+margin: 0 1em 0 1em;
+}
+a.user-login {
+float:left;
+}
+#block-menu-menu-podval li {
+display: inline;
+}
+/*
+ * Page bottom
+ */
+
+.region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+}
+
+
+

@@ -1,0 +1,932 @@
+@import "base";
+
+#toppart1 {
+    background-image: url('images/font1.jpg');
+    height: 733px;
+}
+#toppart {
+    background-image: url('images/font2.png');
+    height: 733px;
+}
+#triggers {
+    position: relative;
+    background-image: url('images/font3.png');
+    height: 983px;
+}
+.pane-menu-menu-fontani-dom {
+    position: absolute;
+    top: 96px;
+    left: 347px;
+    text-align: center;
+}
+.lptopform {
+    position: relative;
+}
+#triggers .contactus-form {
+    opacity: 0;
+    position: relative;
+    top: 900px;
+    left: 450px;
+    display: block;
+    height: 3em;
+    width: 26em;
+}
+#howorder {
+    position: relative;
+    background-image: url('images/font4.png');
+    height: 682px;
+}
+#lpabus {
+    position: relative;
+    background-image: url('images/font5.png');
+    height: 494px;
+}
+#howmake {
+    position: relative;
+    background-image: url('images/font6.png');
+    height: 757px;
+}
+#bustsheme {
+    position: relative;
+    background-image: url('images/font7.png');
+    height: 633px;
+}
+#howorder .contactus-form {
+    opacity: 0;
+    position: relative;
+    top: 446px;
+    left: 450px;
+    display: block;
+    height: 3em;
+    width: 26em;
+}
+/* 
+*********    Главная страница ****
+*/
+#bantopcontent {
+    @include trailer(2, $base-font-size);
+    
+}
+#bantopcontent,
+#indexheading {
+color: white;
+
+font-weight: normal;
+}
+#indexheading {
+background-color: rgba(0, 0, 0, 0.4);
+@include leader(3, $h1-font-size);
+@include trailer(2, $h1-font-size);
+}
+.front .sub-title {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.index-info-counts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        float: left;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        //@include padding-leader(1, $base-font-size);
+        @include padding-trailer(1, $base-font-size);
+    }
+    .big {
+        @include adjust-font-size-to ( 48px, 2 );
+        float: left;
+        padding-right: 10px;
+    }
+        .txt,
+        .txt1,
+        .txt2 {
+        float: left;
+        
+    }
+        .txt1 { padding-right: 10px }
+
+    
+}
+#trigmainp .content-inner {
+    text-align: center;
+    
+}
+#triggers-mainp {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+        float: left;
+        box-sizing: border-box;
+        word-wrap: break-word;
+    }
+    p {
+        float: left;
+        text-align: left;
+        margin-right: 20px;
+    }
+    a {
+        color: black;
+    }
+}
+#lp-trig-img-country {
+float: left;
+text-decoration: none;
+display: block;
+width: 92px;
+height: 55px;
+margin: 21px 10px 20px 0;
+background-image: url('images/spritesheet.png');
+background-repeat: no-repeat;
+background-position: -70px 0;
+}
+#lp-trig-img-eco {
+display: block;
+float: left;
+width: 95px;
+height: 34px;
+margin: 31px 10px 31px 0;
+background-image: url('images/spritesheet.png');
+background-repeat: no-repeat;
+background-position: -68px -57px;
+}
+#lp-trig-img-pig {
+float: left;
+text-decoration: none;
+display: block;
+width: 62px;
+height: 60px;
+margin: 18px 10px 18px 0;
+background-image: url('images/spritesheet.png');
+background-repeat: no-repeat;
+background-position: -68px -96px;
+}
+#trigmainp {
+    background-color: #dcdcdc;
+}
+// --------------- список художников -------------
+#ourartists {
+    .view-header {
+        display: none;
+    }
+    .artist-proff {
+        @include adjust-font-size-to ( 12px, 1 );
+        text-align: left;
+        margin-top: 0;
+    }
+    .artist-name {
+        text-align: left;
+        @include adjust-font-size-to ( 14px, 1 );
+    }
+    .jcarousel-item {
+        border: 0;
+        width: 300px;
+        height: 400px;
+        margin: 0 10px;
+    }
+    .jcarousel-container-horizontal {
+        height: 300px;
+        padding: 24px 40px;
+            }
+    .jcarousel-prev {
+        background-image: none;
+        border: 120px solid transparent;
+        border-right: 34px solid rgb(219, 219, 219);
+        width: 0px;
+        height: 0px;
+    }
+        .jcarousel-next {
+        background-image: none;
+        border: 120px solid transparent;
+        border-left: 34px solid rgb(219, 219, 219);
+        width: 0px;
+        height: 0px;
+    }
+    .jcarousel-next-horizontal {
+        top: 55px;
+        right: -120px;
+    }
+    .jcarousel-prev-horizontal {
+        top: 55px;
+        left: -120px;
+    }
+}
+
+// ----------------выноска--------------------
+
+
+#talkbubble {
+   @include adjust-font-size-to ( 14px, 1, 12px );
+   z-index: 5;
+   width: 200px;
+   background: rgba(255, 255, 255, 0.7);
+   position: absolute;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border-radius:         10px;
+   top: 200px;
+   right: 50%;
+   padding: 10px;
+   margin-right: 30px;
+}
+#talkbubble:after {
+   content:"";
+   position: absolute;
+   left: 100%;
+   top: 40px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-left: 26px solid rgba(255, 255, 255, 0.7);
+   border-bottom: 13px solid transparent;
+}
+// ----------------------- LP - плитка -------
+.pane-webform-client-block-658 {
+        h2 {
+    @include adjust-font-size-to ( 18px, 1 );
+    font-weight: normal;
+    color: black;
+    @include leader(1, 18px);
+    @include padding-leader(1, 18px);
+    @include padding-trailer(1, 18px);
+    @include border-radius(8px 8px 0 0);
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0;
+    padding-left: 10px;
+}
+    #webform-client-form-658 {
+    @include border-radius(0 0 8px 8px);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-left: 10px;
+    @include padding-trailer(1, $base-font-size);
+    }
+}
+
+#triggers-stone {
+    .big {
+        @include adjust-font-size-to ( 24px, 1 );
+    }
+    .txt1,
+    .txt {
+        @include adjust-font-size-to ( 14px, 1 );
+    }
+    .trig1, .trig2, .trig3 {
+        text-align: center;
+    }
+    .txt1,
+    .big,
+    .txt {
+        float: none;
+    }
+}
+
+
+// ------------------ LP ---------------------
+.lpbann {
+
+    h1 {
+        color: black;
+        display: block;
+    }
+}
+
+.lpbann .pane-menu-block-4 {
+    //background: rgba(255, 255, 255, 0.9);
+   // @include border-radius(8px);
+   border-left: 1px solid gray;
+}
+
+h2 {
+      @include adjust-font-size-to ( 26px, 2 );
+      font-weight: 300;
+      text-align: center;
+}
+
+.stpbystp-block,
+.whywe-pane {
+    @include leader(1, $base-font-size);
+}
+
+/*
+ * *******  pr-abus о нас - яйца
+ */
+.lp-abus-blck {
+    @include leader(1, 14px);
+    @include adjust-font-size-to ( 14px );
+    @include trailer(2, 14px);
+}
+.lp-abus-trig {
+    @include padding-leader(0.5, 14px);
+    @include padding-trailer(0.5, 14px);
+    position: relative;
+    //background: rgba(255, 255, 255, 0.9);
+    @include border-radius(8px);
+    min-height: rhythm(2, 14px);
+    //border: 1px solid gray;
+}
+.lp-abus-blck-img {
+    display: block;
+    margin: 0 auto;
+    width: 58px;
+    height: 58px;
+    background-repeat: no-repeat;
+    background-image: url('images/goods-spritesheet.png');
+    position: absolute;
+    top: 0;
+}
+#lp-trig-img-year {
+background-position: -9px 0;
+}
+#lp-trig-img-ideas {
+background-position: -66px 0;
+}
+#lp-trig-img-cer {
+background-position: -132px 0;
+}
+
+p.lp-abus-blck-txt {
+    text-align: left;
+    text-indent: 0;
+    margin: 0 0 0 60px;
+}
+
+/*
+ * *******  Step by step, - карточки с тенью и зелеными круглешками- номерами
+ */
+div.stp-by-stp {
+width: 170px;
+padding-right: 50px;
+float: left;
+	.goods-card {
+height: rhythm(14, $base-font-size);
+}
+}
+div.step-by-arrow {
+background-image: url("images/goods-spritesheet.png");
+    background-position: -826px -10px;
+    background-repeat: no-repeat;
+    height: 240px;
+    left: 170px;
+    position: absolute;
+    top: 65px;
+    width: 40px;
+}
+div.step-by-img {
+background-image: url('images/goods-spritesheet.png');
+background-repeat: no-repeat;
+width: 170px;
+height: 168px
+}
+.step-by-text {
+@include leader(1, $base-font-size);
+padding: 0 10px 0 10px;
+}
+div.step-by-img-1 {
+background-position: -629px 0;
+}
+div.step-by-img-2 {
+background-position: -439px 0;
+}
+div.step-by-img-3 {
+background-position: -270px 0;
+}
+div.goods-card {
+@include trailer(1, $base-font-size);
+position:relative;
+//@include background-image(linear-gradient(top, lighten($blockbgr,30%), $blockbgr));
+//@include border-radius(8px);
+//@include box-shadow($shadowcolor 2px 2px 10px);
+//background-color: $blockbgr; /* Old browsers */
+}
+
+$goods_dig_clr: #89b556; //цвет круглешков
+div.goods-dig {
+text-align: center;
+float: left;
+color: $buttomtextcolor;
+@include background-clip(padding-box);
+@include background-image(linear-gradient(left top, lighten($goods_dig_clr,30%), $goods_dig_clr));
+background-color: $goods_dig_clr;
+@include border-radius(15px);
+@include box-shadow(inset 0 2px 2px rgba(0,0,0,.3));
+@include inline-block;
+font-size: 20px;
+height: 30px;
+line-height: 30px;
+margin-right: -45px;
+margin-top: 5px;
+margin-left: 5px;
+@include text-shadow(rgba(0,0,0,.3) 0 2px 2px);
+width: 30px;
+}
+
+.goods-heading2 {
+@include leader (0.3, $base-font-size);
+@include trailer (0.7, $base-font-size);
+@include adjust-font-size-to( 18px, 1 );
+clear: right;
+float: left;
+margin-left: 45px;
+}
+.goods-txt {
+padding: 10px;
+clear: both;
+}
+/*
+ * ******* почему клиенты остаются довольными -- промо 
+ */
+.promo-heading {
+}
+.promo-goods-card {
+position: relative;
+@include trailer (1);
+padding-left: 68px;
+}
+.promo-goods-heading {
+@include adjust-font-size-to( 18px, 1 );
+}
+.promo-goods-txt {
+    @include adjust-font-size-to( 14px, 1 );
+}
+
+.promo-goods-img {
+background-image: url('images/goods-spritesheet.png');
+background-repeat: no-repeat;
+width: 56px;
+height: 56px;
+position: absolute;
+left: 0;
+top: 0;
+}
+.promo-goods-img-indiv {
+background-position: -185px -58px;
+}
+.promo-goods-img-prof {
+background-position: -99px -62px;
+}
+.promo-goods-img-qual {
+background-position: -198px -5px;
+}
+.promo-goods-img-ship {
+background-position: -15px -59px;
+}
+.promo-goods-img-autor {
+background-position: -16px -116px;
+}
+.promo-goods-img-montage {
+background-position: -190px -115px;
+}
+.promo-goods-img-exc {
+background-position: -104px -123px;
+}
+.promo-goods-img-moneyback {
+background-position: -13px -172px;
+}
+.promo-goods-img-pig {
+background-position: -86px -165px;
+}
+
+.promo-goods-line {
+background-image: url('images/promo-line.png');
+background-repeat: repeat-x;
+height: 3px;
+margin-top: $base-line-height / 2 - 3px;
+margin-bottom: $base-line-height / 2;
+overflow: hidden;
+width: 95%;
+}
+
+/*
+ * ******* Списки с красной галочкой
+ */
+.red-tick-list,
+#taxonomy-term-63 .taxonomy-term-description ul {
+list-style-image: url("images/check.png");
+}
+/*
+ * ******* Выделяем рамочкой блоки спецпредложений
+ */
+.cpecial-block {
+padding: 0 $my-gutter-width;
+color: $text-color;
+@include trailer (1, $base-font-size);
+position:relative;
+@include background-image(linear-gradient(top, lighten($blockbgr,30%), $blockbgr));
+@include border-radius(8px);
+background-color: $blockbgr; /* Old browsers */
+border:1px solid #7C8B6A;
+  }
+
+/*
+* ******* Ораньжевое настроение
+*/
+
+$orangemoodbutt: #F7A800;
+//Кнопка зарегистрироваться на мастер - класс
+.register-now-btm {
+float: left;
+@include buttombar($orangemoodbutt, #B90000);
+@include trailer (1, $base-font-size);
+color: black;
+	&:visited {
+	color: black;
+	}
+}
+
+.orange-style {
+
+padding-left: 200px;
+border:1px solid #FFB800;
+}
+.orange-spec {
+
+position: absolute;
+top: 0;
+left: -10px;
+}
+
+.page-node-645 #content {
+background-image: url(images/orange-bcgr.jpg);
+background-repeat: no-repeat;
+background-position: right top;
+}
+/*
+* ******* Наши художники
+*/
+.view-id-artists .views-row {
+min-height: 100px;
+@include trailer (1, $base-font-size);
+}
+
+
+/*
+* ******* Landing Page, Catalog
+*/
+
+.field-name-field-promo-description {
+@include trailer(2, 19px);
+}
+
+.lp-promo-heading {
+color: $highlight_some;
+@include adjust-font-size-to( $h3-font-size, 2 );
+}
+#lp-arrow-img {
+position: absolute;
+left: -150px;
+top: 50px;
+margin: 0 auto;
+width: 130px;
+height: 220px;
+background-image: url('images/lp-spritesheet.png');
+background-repeat: no-repeat;
+background-position: 0 0;
+padding: 30px 10px 10px 10px;
+}
+.lp-triggers-statistics {
+width: 100%;
+@include trailer(1, $base-font-size);
+@include leader(1, $base-font-size);
+float: left;
+background-color: #E0DBD2;
+padding-top: rhythm(0.5, $base-font-size);
+padding-bottom: rhythm(0.5, $base-font-size);
+	.lp-trigg {  text-align: left; }
+}
+
+.lp-trigg-number {
+@include adjust-font-size-to(48px, 2);
+font-family: $font-extra;
+font-weight: bold;
+float: left;
+margin-right: 14px;
+letter-spacing: -3px;
+}
+.itemtitleurl,
+.itemdetailsurl {
+text-decoration: none;
+@include adjust-font-size-to(14px);
+}
+.itemdetailsurl {
+	&:link,
+	&:visited {
+	color: black;
+	}
+}
+.view-lp-ou-works {
+	//background-image: url(images/fonshum.png);
+	//background-repeat: repeat;
+	//background-color: #FBFBFB;
+	h2 { margin-top: 0; }
+        .view-header {
+	//padding-top: rhythm(1, $base-font-size);
+	text-align: center; 
+	}
+	.view-content {
+	float: left;
+	clear: right;
+		.views-row { 
+			text-align: center; 
+			min-height: rhythm(18, $base-font-size);
+			}
+		
+	
+	}
+	fieldset.collapsed { position: relative;
+					background-color: transparent;
+					width: auto;
+	}
+	@for $i from 1 through 6 {
+		.views-row-#{$i} fieldset { z-index: (999 - $i); }
+	}
+	fieldset {
+		position: absolute;
+		background-color: white;
+		width: 16em;
+	}
+}
+
+//кнопка - смотреть все наши работы
+.door-pic {
+display: block;
+width: 45px;
+height: 45px;
+background-image: url('images/lp-spritesheet.png');
+background-repeat: no-repeat;
+background-position: 0 -553px;
+float: right;
+margin-left: 10px;
+}
+
+.visit-catalogue-btm {
+	a, a:hover, a:visited	{
+	color: white;
+	text-decoration: none;
+	margin-top: 2px;
+	}
+clear: left;
+font-family: $font-extra;
+width: 20em;
+float: right;
+color: white;
+padding: 0 5px 0 10px;
+background-color: #685d4b;
+text-align: center;
+@include border-radius(5px);
+border:1px solid #685d4b;
+	.portfolio-name {
+	color: #d4c6b1;
+	}
+}
+
+#content {
+
+	.stpbystp-block { 
+	h2 {
+            //margin-top: 0;
+            //text-align: center;  
+        }
+        p {
+            text-align: center;
+            @include adjust-font-size-to( 14px, 1);
+            margin-top: 0;
+        }
+        }
+	.stpbystp-center {
+	max-width: 660px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	.goods-heading1 {
+	text-align: center;
+	@include leader(1, $base-font-size);
+	}
+        .step-by-text {
+            text-align: center;
+            @include adjust-font-size-to( 14px, 1);
+            @include trailer(1, 14px);
+        }
+}
+// Большие кнопки ---------------------------------
+.node-landingpage a.contactus-form {
+    @include buttombar(#6F2B2B, white);
+    @include adjust-font-size-to(16px, 2);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 20em;
+}
+/*
+* ******* Сноска или примечание мелким шрифтом
+*/
+.primechanie-font {
+@include adjust-font-size-to(13px);
+color: $highlight_some;;
+}
+
+// -------------посадочник портрет ------------
+.page-taxonomy-term-181 {
+       .lpbann {
+            min-height: 648px;
+        }
+       .lptopform h2.pane-title {
+            color: black;
+            font-weight: normal;
+        }
+        article.node-635 {
+           
+        }
+        .webform-client-form-635 {
+            width: 250px;
+            margin-left: auto;
+            margin-right: auto;
+            .form-item,
+            .form-actions {
+                @include leader(0.5, $base-font-size);
+            }
+            .webform-submit {
+                width: 215px;
+            }
+        }
+        
+        .field-name-field-text-255 {
+            @include leader(0.5, $base-font-size);
+            @include padding-leader(0.5, $base-font-size);
+            @include padding-trailer(0.5, $base-font-size);
+            padding-left: 10px;
+            padding-right: 10px;
+            @include background-image(linear-gradient(to right, rgba(255,255,255,0.55), transparent));
+        } 
+}
+
+#triggers-scportrait{
+    .trig1, .trig2 { 
+        position: relative;
+        list-style: none;
+        }
+    .lp-trig-img-heading,
+    .lp-trig-img-descr {
+        padding-left: 100px;
+        }
+    .lp-trig-img-heading {
+        margin-top: 0;
+        margin-bottom: 0;
+        @include adjust-font-size-to(20px, 1);
+        }
+    .lp-img-trig1,
+    .lp-img-trig2 {
+        background-image: url('images/spritesheet-portrait.png');
+        background-repeat: no-repeat;
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .lp-img-trig1 {
+        background-position: 0 0;
+        }
+     .lp-img-trig2 {
+    background-position: -92px 2px;
+    }
+}
+
+#portrait-cases {
+    .thre-pl-case {
+        width: 280px;
+        padding-top: 288px;
+        background-repeat: no-repeat;
+        background-color: #E6E6E6;
+        border: solid #5C5240 1px;
+        box-sizing: border-box;
+        position: relative;
+        @include padding-trailer(1, $base-font-size);
+            a.contactus-form {
+            width: 10em;
+            
+            }
+    }
+    p {
+                padding-left: 10px;
+        padding-right: 10px;
+    }
+    .port-case-heading {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        @include adjust-font-size-to(20px, 2);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        padding: 0 10px 0 10px;
+        box-sizing: border-box;
+    }
+
+    .case1 {
+        background-image: url('images/portrait/1.jpg');
+    }
+    .case2 {
+        background-image: url('images/portrait/2.jpg');
+    }
+    .case3 {
+        background-image: url('images/portrait/3.jpg');
+    }
+}
+
+#portfol-prt {
+    .jcarousel-item {
+        border: 0;
+        width: 280px;
+        height: 280px;
+        margin: 0 10px;
+    }
+    .jcarousel-container-horizontal {
+        height: 280px;
+        padding: 24px 40px;
+            }
+    .jcarousel-prev {
+        background-image: none;
+        border: 120px solid transparent;
+        border-right: 34px solid rgb(219, 219, 219);
+        width: 0px;
+        height: 0px;
+    }
+        .jcarousel-next {
+        background-image: none;
+        border: 120px solid transparent;
+        border-left: 34px solid rgb(219, 219, 219);
+        width: 0px;
+        height: 0px;
+    }
+    .jcarousel-next-horizontal {
+        top: 45px;
+        right: -120px;
+    }
+    .jcarousel-prev-horizontal {
+        top: 45px;
+        left: -120px;
+    }
+}
+
+#how-we-work-new {
+    div.step-by-arrow {
+    background-image: url("images/spritesheet-portrait.png");
+        background-position: -454px -1px;
+        background-repeat: no-repeat;
+        height: 75px;
+        left: 0;
+        top: 0;
+        width: 45px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+    div.step-by-img {
+    background-image: url('images/spritesheet-portrait.png');
+    background-repeat: no-repeat;
+    width: 92px;
+    height: 74px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    div.step-by-img-1 {
+    background-position: -184px 0;
+    }
+    div.step-by-img-2 {
+    background-position: -276px 0;
+    }
+    div.step-by-img-3 {
+    background-position: -275px -91px;
+    }
+    div.step-by-img-4 {
+    background-position: -90px -93px;
+    }
+    div.step-by-img-5 {
+    background-position: 10px -92px;
+    }
+    div.step-by-img-6 {
+    background-position: -358px 0;
+    }
+    div.step-by-img-7 {
+    background-position: -184px -92px;
+    }
+    div.step-by-img-8 {
+    background-position: -362px -93px;
+    }
+    p {
+        margin-top: 0;
+    }
+    .sbs-left {
+        width: 140px;
+        margin-right: -140px;
+        float: left;
+    }
+    .sbs-right {
+        width:100%;
+        box-sizing: border-box;
+        float: left;
+        width: 100%;
+        padding-left: 140px;
+    }
+}
+

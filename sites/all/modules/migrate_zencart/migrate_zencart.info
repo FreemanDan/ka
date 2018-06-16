@@ -1,0 +1,6 @@
+name = Migrate ZenCart
+description = My module for migrating from zen-cart
+version = 7.x-2.5
+core = 7.x
+package = "Development"
+files[] = migrate_zencart.module

@@ -1,0 +1,9 @@
+name = keramartmodule
+description = Вся остальная фигня здесь
+package = Danil
+core=7.x
+version = "7.x-1.x-dev"
+project = "keramartmodule"
+datestamp = "1332419400"
+
+files[] = keramartmodule.module 
