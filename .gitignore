@@ -6,3 +6,5 @@ sites/*/files
 sites/*/private
 _private/
 drush/
+dev/
+testing/
