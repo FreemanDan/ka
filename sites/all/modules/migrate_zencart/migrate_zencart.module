@@ -1,0 +1,369 @@
+<?php
+/**
+ * Реализуем hook_migrate_api()
+ */
+function migrate_zencart_migrate_api() {
+  return array('api' => 2);
+}
+/**
+ * Реализация класса миграции категорий изделий в каталог
+ */
+class ZCcategoriesMigration extends Migration {
+  public function __construct() {
+    parent::__construct();
+	
+//Описание источника данных
+//дополнительное поле:
+$source_fields = array(
+	//'categories' => t('Kategoria'),
+	'imgalt' => t('alt of image'),
+	//'categoryname' => t('human readable category name'),
+	);
+//база данных
+	$query = Database::getConnection('default', 'for_migration')
+		->select ('categories', 'c')
+		->fields('c', array('categories_id', 'categories_image', 'parent_id', 'sort_order'))
+		->condition('categories_image', '', '!=');
+	$query->leftJoin('categories_description', 'cd', 'cd.categories_id = c.categories_id');
+	$query->fields('cd', array('categories_name', 'categories_description', 'categories_title', 'categories_description_sub'))
+			->condition('cd.language_id', '2');
+	$query->leftJoin('ceon_uri_mappings' , 'cum' , 'cum.associated_db_id = c.categories_id AND cum.main_page = :pagevar AND cum.current_uri = :curvar' , array(':pagevar' => 'index', ':curvar' => '1'));
+	$query->fields('cum', array('uri'));
+	$query->leftJoin('meta_tags_categories_description' , 'mtcd' , 'mtcd.categories_id = c.categories_id');
+	$query->fields('mtcd', array('metatags_title', 'metatags_keywords', 'metatags_description'));
+	$this->source = new MigrateSourceSQL($query, $source_fields);
+	$this->description = t('categorii');
+	//Описание цели миграции
+	$this->destination = new MigrateDestinationTerm('keramika');
+	//Описание ключевых полей источника и цели
+	$source_key_schema = array(
+	'categories_id' => array(
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+	'alias' => 'c',
+	)
+	);
+	$this->map = new MigrateSQLMap($this->machineName, $source_key_schema, MigrateDestinationTerm::getKeySchema());
+	//Маппинг полей
+	$this->addFieldMapping('name', 'categories_name');
+	$this->addFieldMapping('description', 'categories_description');
+	$this->addFieldMapping('field_tax_main_list_desc', 'categories_description_sub');
+	$this->addFieldMapping('field_tax_main_list_desc:format')
+         ->defaultValue('full_html');
+	$this->addFieldMapping('format')
+         ->defaultValue('full_html');
+	$this->addFieldMapping('parent', 'parent_id')
+	->sourceMigration($this->machineName);
+	$this->addFieldMapping('weight', 'sort_order');
+	$this->addFieldMapping('field_tax_mc_extendet_title', 'categories_title');
+	$this->addFieldMapping('metatag_title', 'metatags_title');
+	$this->addFieldMapping('metatag_description', 'metatags_description');
+	$this->addFieldMapping('metatag_keywords', 'metatags_keywords');
+	$this->addFieldMapping('path', 'uri')
+	->callbacks(array($this, 'RemoveSlash'))//отправляем к слешебору
+	->defaultValue(Null);
+	
+	//Картинки
+	$this->addFieldMapping('field_tax_image_category', 'categories_image')
+		->callbacks(array($this, 'ClearPath'));
+	//$this->addFieldMapping('field_tax_image_category:alt', 'imgalt');
+	//$this->addFieldMapping('field_tax_image_category:title', 'imgalt');
+	$this->addFieldMapping('field_tax_image_category:destination_dir')
+		->defaultValue('public://category_images');
+	$this->addFieldMapping('field_tax_image_category:source_dir')
+		->defaultValue('public://category_images');
+	$this->addFieldMapping('field_tax_image_category:preserve_files')
+		->defaultValue(True);	
+	$this->addFieldMapping('field_tax_image_category:file_replace')
+		->defaultValue(MigrateFile::FILE_EXISTS_REUSE);
+	
+	}
+	protected function ClearPath($source_image) {
+    return basename($source_image);
+	
+  }
+       protected function RemoveSlash($source_url) {
+    return ltrim($source_url, '/');
+  } 
+	}
+/**
+ * Реализация класса миграции изделий в каталог
+ */
+
+class ZCProductsMigration extends Migration {
+  public function __construct() {
+    parent::__construct();
+
+	//Описание источника данных
+	//дополнительное поле:
+	$source_fields = array(
+	'categories_id' => t('Kategoria'),
+	'categories' => t('Kategoria'),
+	'imgalt' => t('alt of image'),
+	'categoryname' => t('human readable category name'),
+	);
+	
+	//база данных
+	$query = Database::getConnection('default', 'for_migration')
+		->select ('products', 'p')->fields('p', array('products_id', 'products_model', 'products_image'));
+	$query->leftJoin('products_description', 'pd', 'pd.products_id = p.products_id');
+	$query->fields('pd', array('products_name', 'products_description', 'products_title'))
+			->condition('pd.language_id', '2');
+	$query->leftJoin('ceon_uri_mappings' , 'cum' , 'cum.associated_db_id = p.products_id AND cum.main_page = :pagevar AND cum.current_uri = :curvar' , array(':pagevar' => 'product_info', ':curvar' => '1'));
+	$query->fields('cum', array('uri'));
+	$query->leftJoin('meta_tags_products_description' , 'mtpd' , 'mtpd.products_id = p.products_id');
+	$query->fields('mtpd', array('metatags_title', 'metatags_keywords', 'metatags_description', 'metatags_noindex_status'));
+/* 	$query->leftJoin('products_to_categories', 'ptc', 'ptc.products_id = p.products_id');
+    $query->fields('ptc', array('categories_id'));
+	$query->groupBy('p.products_id');
+    $query->addExpression('GROUP_CONCAT(ptc.categories_id)', 'categories_id'); */
+	$this->source = new MigrateSourceSQL($query, $source_fields);
+	$this->description = t('produkcia so vsemi potrohami');
+	$this->dependencies = array('ZCcategories');
+	//Описание цели миграции
+	$this->destination = new MigrateDestinationNode('portfolioitem');
+
+
+	//Описание ключевых полей источника и цели
+	$source_key_schema = array(
+	'products_id' => array(
+    'type' => 'int',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+	'alias' => 'p',
+	)
+	);
+	$this->map = new MigrateSQLMap($this->machineName, $source_key_schema, MigrateDestinationNode::getKeySchema());
+
+
+	//Маппинг полей
+	$this->addFieldMapping('field_artikul', 'products_model');
+	$this->addFieldMapping('title', 'products_title');
+	$this->addFieldMapping('body', 'products_description');
+	$this->addFieldMapping('field_short_title', 'products_name');
+	$this->addFieldMapping('field_kategory_reference')
+	->defaultValue(Null);
+	$this->addFieldMapping('field_taxonomy_item:source_type')
+		->defaultValue('tid');
+	$this->addFieldMapping('field_taxonomy_item', 'categories_id')
+		/* ->separator(',') */
+         ->sourceMigration('ZCcategories');
+	$this->addFieldMapping('path', 'uri')
+	->callbacks(array($this, 'RemoveSlash'))//отправляем к слешебору
+	->defaultValue(Null);
+	
+		//дефолтные значения
+	$this->addFieldMapping('language')
+         ->defaultValue('ru');
+	$this->addFieldMapping('field_short_title:language')
+         ->defaultValue('ru');
+	$this->addFieldMapping('comment')
+         ->defaultValue('2');
+	$this->addFieldMapping('uid')
+         ->defaultValue('1');
+	$this->addFieldMapping('status')
+         ->defaultValue('1');
+	$this->addFieldMapping('body:format')
+         ->defaultValue('full_html');
+	$this->addFieldMapping('body:summary')
+         ->defaultValue('');
+	//Картинки
+	
+	$this->addFieldMapping('field_imagemain', 'products_image')
+		->callbacks(array($this, 'ClearPath'));
+	$this->addFieldMapping('field_imagemain:alt', 'imgalt');
+	$this->addFieldMapping('field_imagemain:title', 'imgalt');
+	$this->addFieldMapping('field_imagemain:destination_dir')
+		->defaultValue('public://catalogimages');
+	$this->addFieldMapping('field_imagemain:source_dir')
+		->defaultValue('public://catalogimages');
+	$this->addFieldMapping('field_imagemain:preserve_files')
+		->defaultValue(True);	
+	$this->addFieldMapping('field_imagemain:file_replace')
+		->defaultValue(MigrateFile::FILE_EXISTS_REUSE);
+	//метатеги
+	$this->addFieldMapping('metatag_title', 'metatags_title');
+	$this->addFieldMapping('metatag_description', 'metatags_description');
+	$this->addFieldMapping('metatag_keywords', 'metatags_keywords');
+	//$this->addFieldMapping('metatag_robots', 'metatags_noindex_status')
+	//->callbacks(array($this, 'Robotam'));
+	//Множественные значения
+	//$this->addFieldMapping('field_kategory_reference', 'category')
+    // ->separator(',');
+	//Маппинг с вычислениями
+
+  }
+  //
+    //return t($value);
+	public function prepareRow($current_row) {
+   $source_id = $current_row->products_id;
+    // Добавляем список категорий
+   $result = Database::getConnection('default', 'for_migration')
+				->select('products_to_categories', 'ptc')
+              ->fields('ptc', array('categories_id'))
+              ->condition('products_id', $source_id)
+              ->execute();
+
+			  //Теперь подменим соответствующие категории
+	foreach ($result as $row) {
+		$current_row->categories_id = $row->categories_id;
+		switch ($row->categories_id) {
+		//case '65': $current_row->categories[] = '13'; break; // Декоративные фонтаны
+		case '66': // Фонтаны со скульптурой
+		$current_row->categories[] = '10'; 
+		$spisok = array('декоративный фонтан', 'фонтан', 'фонтан со скульптурой', 'скулпьптурный фонтан', 'декоративный водопад', 'водопад со скульптурой');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '70': // Предметы интерьера
+		$current_row->categories[] = '19'; 
+		$spisok = array('для оформления интерьера', 'предмет интерьера');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '79': // Напольные фонтаны
+		$current_row->categories[] = '15'; 
+		$spisok = array('напольный фонтан', 'напольный водопад', 'декоративный водопад', 'домашний фонтан-водопад', 'водопад');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '80': // Декоративные водопады
+		$current_row->categories[] = '16'; 
+		$spisok = array('напольный фонтан', 'напольный водопад', 'декоративный водопад', 'домашний фонтан-водопад', 'водопад', 'искусственный водопад', 'домашний водопад');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '81': // Настольные фонтаны
+		$current_row->categories[] = '17'; 
+		$spisok = array('настольный фонтан', 'настольный водопад', 'декоративный водопад', 'настольный фонтан-водопад', 'водопад', 'настольный искусственный водопад', 'настольный домашний водопад');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '82': // Гончарные фонтанчики
+		$current_row->categories[] = '18'; 
+		$current_row->categoryname = 'комнатный фонтан';
+		$spisok = array('комнатный фонтан', 'гончарный фонтан', 'фонтанчик', 'настольный фонтанчик');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '83': // Cадовые фонтаны
+		$current_row->categories[] = '5';
+		$spisok = array('садовый фонтан', 'фонтан для сада', 'фонтан для дачи');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		//case '84': $current_row->categories[] = '21'; break; // Декоративные вазы
+		case '85': // Вазы разное
+		$current_row->categories[] = '21'; 
+		$spisok = array('декоративная ваза', 'ваза', 'керамическая ваза');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '86':  // Амфоры
+		$current_row->categories[] = '22'; 
+		$spisok = array('декоративная амфора', 'амфора', 'керамическая амфора');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break;
+		case '87': // Этно, архаика
+		$current_row->categories[] = '23'; 
+		$spisok = array('декоративная ваза в этническом стиле', 'амфора', 'керамическая амфора');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break;
+		//case '89': $current_row->categories[] = '19'; break; // Садовая скульптура
+		case '90': // Эльфийская сказка
+		$current_row->categories[] = '29'; 
+		$spisok = array('садовая скульптура', 'скулптура для сада', 'скульптура', 'скульптура из керамики');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '128': // Эльфы продолжение
+		$current_row->categories[] = '25'; 
+		$spisok = array('садовая скульптура', 'скулптура для сада', 'скульптура', 'скульптура из керамики');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '129': // Садовые гномы
+		$current_row->categories[] = '30'; 
+		$spisok = array('садовые гномы', 'гном для сада', 'гном для дачи', 'садовый гном', 'садовый декор');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break;
+		case '91':// Русалка
+		$current_row->categories[] = '26'; 
+		$spisok = array('садовая скульптура', 'скулптура для сада', 'скульптура', 'скульптура из керамики');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		case '92':  // Ракушки
+		$current_row->categories[] = '27'; 
+		$spisok = array('садовые фигуры', 'скулптура для сада', 'скульптура', 'скульптура из керамики');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break;
+		case '93':  // Садовые фигуры
+		$current_row->categories[] = '28'; 
+		$spisok = array('садовые фигуры', 'скулптура для сада', 'скульптура', 'скульптура из керамики', 'декоративная скульптура');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break;
+		case '94':// Композиции
+		$current_row->categories[] = '31'; 
+		$current_row->categoryname = 'композиция';
+		break; 
+		case '95': // Сувениры
+		$current_row->categories[] = '32'; 
+		$spisok = array('сувенир', 'сувенир из керамики', 'керамический сувенир');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		//case '96': $current_row->categories[] = '19'; break; // Цветочные горшки
+		case '97': // Гончарные горшки
+		$current_row->categories[] = '34'; 
+		$spisok = array('гончарный цветочный горшок', 'цветочный горшок', 'горшок для цветов', 'гончарный горшок для цветов', 'керамический цветочный горшок', 'цветочный горшок из керамики', 'гончарный керамический горшок');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break;
+		case '98': $current_row->categories[] = '35'; 
+		$spisok = array('цветочное кашпо', 'кашпо для цветов', 'керамическое кашпо для цветов', 'цветочное кашпо из керамики');
+		$current_row->categoryname = SluchainoVibrat($spisok);
+		break; 
+		// Кашпо
+      default:
+		return FALSE;
+        //$account->field_migrate_example_gender = NULL;
+        break;
+		}
+   	  } 
+	  
+   // Если отсутствует длинный заголовок, то подставляем короткий  + имя категории
+   $productsname = ucfirst(strtolower($current_row->products_name));
+   
+
+   if ($current_row->products_title == '') {
+   $current_row->products_title = mb_ucfirst(mb_strtolower($current_row->categoryname)) . " - " . $current_row->products_name;
+   /* " \"" . mb_strtolower(mb_ereg_replace("[^a-zA-ZА-Яа-я0-9\s]","", $current_row->products_name)). " \""; */
+  
+   }
+  // Alt для картинок (если етсь метатег title - ставим его, если нет, то длинное название изделия.
+  $current_row->imgalt = $current_row->metatags_title;
+  if (empty($current_row->imgalt)) {
+   $current_row->imgalt = $current_row->products_title;
+  $current_row->metatags_title = $current_row->products_title;
+  }
+   return TRUE;
+   }
+	//noindex
+	protected function Robotam($robotam) {
+    if ($robotam == '1'){
+	return array('noindex');
+	}
+	else{
+	return FALSE;
+	}
+  }
+//Побороли слеши
+    protected function ClearPath($source_image) {
+    return basename($source_image);
+  }
+     protected function RemoveSlash($source_url) {
+    return ltrim($source_url, '/');
+  } 
+   
+   
+}
+ //функция преобразования первого символа строки в верхний регистр
+ function mb_ucfirst($str, $enc = 'utf-8') { 
+    return mb_strtoupper(mb_substr($str, 0, 1, $enc), $enc).mb_substr($str, 1, mb_strlen($str, $enc), $enc); 
+	} 
+// функция случайного выбора значения из массива
+function SluchainoVibrat($navibor) {
+$kolvo = Count($navibor)-1;    #определили сколько элементов в массиве
+$index = rand(0,$kolvo);     #выбрали случайный
+$stih = $navibor[$index];    #присвоили его переменной
+return $stih;
+}

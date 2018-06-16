@@ -1,0 +1,766 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Block Styling
+ */
+/* gradient backgrounds and reflections */
+/* line 7, ../sass/blocks.scss */
+.region-sidebar-first {
+  border-right: 1px #999;
+  color: #222222;
+}
+/* line 10, ../sass/blocks.scss */
+.region-sidebar-first a {
+  color: #222222;
+}
+/* line 12, ../sass/blocks.scss */
+.region-sidebar-first a:hover {
+  color: #999999;
+}
+/* line 16, ../sass/blocks.scss */
+.region-sidebar-first div.block {
+  padding-top: 1.5em;
+  padding-right: 5px;
+}
+
+/* line 22, ../sass/blocks.scss */
+.block {
+  /* Block wrapper */
+}
+/* line 25, ../sass/blocks.scss */
+.block.first {
+  /* The first block in the region */
+}
+/* line 28, ../sass/blocks.scss */
+.block.last {
+  /* The last block in the region */
+}
+/* line 31, ../sass/blocks.scss */
+.block.odd {
+  /* Zebra striping for each block in the region */
+}
+/* line 34, ../sass/blocks.scss */
+.block.even {
+  /* Zebra striping for each block in the region */
+}
+/* line 37, ../sass/blocks.scss */
+.block h2.block-title {
+  /* Block title */
+  font-family: "Roboto", sans-serif;
+}
+
+/* Блок поиска */
+/* line 42, ../sass/blocks.scss */
+#block-search-form {
+  padding-top: 0.5em;
+  height: 2.5em;
+}
+/* line 45, ../sass/blocks.scss */
+#block-search-form .form-text {
+  background-clip: padding-box;
+  border: 0 none;
+  margin: 0;
+  margin: 4px 2px 4px 4px;
+  width: 140px;
+}
+/* line 52, ../sass/blocks.scss */
+#block-search-form .form-text:focus {
+  outline: 0 none;
+}
+/* line 57, ../sass/blocks.scss */
+#block-search-form .form-submit {
+  display: inline-block;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-image: url("images/spritesheet.png");
+  width: 16px;
+  height: 14px;
+  background-position: 0 0;
+  border: 0;
+  text-indent: -999em;
+}
+
+/* line 70, ../sass/blocks.scss */
+form#search-block-form {
+  width: 180px;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: 0;
+  border: 1px #ccc solid;
+}
+
+/* line 80, ../sass/blocks.scss */
+#block-simpleads-ad-groups-59 {
+  margin: 0;
+  float: right;
+}
+
+/*
+ * *********** баннер малый ***** - отключен
+*/
+/* line 87, ../sass/blocks.scss */
+#block-block-7 {
+  margin-left: 20px;
+  background-image: url(images/banner_top_2.jpg);
+  width: 280px;
+  height: 4.5em;
+  background-color: gray;
+  float: right;
+  margin-bottom: 1.5em;
+}
+
+/*
+ * *********** Контакты
+*/
+/* line 101, ../sass/blocks.scss */
+#block-block-2,
+#block-block-13 {
+  text-align: right;
+}
+/* line 106, ../sass/blocks.scss */
+#block-block-2 #call-to-me,
+#block-block-13 #call-to-me {
+  font-size: 0.75em;
+  line-height: 2em;
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  float: right;
+}
+
+/* line 119, ../sass/blocks.scss */
+#block-aggregator-category-1 {
+  /* Block for the latest news items in the first category */
+}
+
+/* line 122, ../sass/blocks.scss */
+#block-aggregator-feed-1 {
+  /* Block for the latest news items in the first feed */
+}
+
+/* line 125, ../sass/blocks.scss */
+#block-block-1 {
+  /* First block created with "Add block" link */
+}
+
+/* line 128, ../sass/blocks.scss */
+#block-blog-recent {
+  /* "Recent blog posts" block */
+}
+
+/* line 131, ../sass/blocks.scss */
+#block-book-navigation {
+  /* "Book navigation" block for the current book's table of contents */
+}
+
+/* line 134, ../sass/blocks.scss */
+#block-comment-recent {
+  /* "Recent comments" block */
+}
+
+/* line 137, ../sass/blocks.scss */
+#block-forum-active {
+  /* "Active forum topics" block */
+}
+
+/* line 140, ../sass/blocks.scss */
+#block-forum-new {
+  /* "New forum topics" block */
+}
+
+/* line 143, ../sass/blocks.scss */
+#block-locale-language {
+  /* Language switcher block */
+}
+
+/* line 146, ../sass/blocks.scss */
+#block-menu-menu-NAME {
+  /* Custom menu block */
+}
+
+/* line 149, ../sass/blocks.scss */
+#block-node-recent {
+  /* "Recent content" block */
+}
+
+/* line 152, ../sass/blocks.scss */
+#block-node-syndicate {
+  /* "Syndicate" block for primary RSS feed; see also page.css's .feed-icon */
+}
+
+/* line 155, ../sass/blocks.scss */
+#block-poll-recent {
+  /* "Most recent poll" block */
+}
+
+/* line 158, ../sass/blocks.scss */
+#block-profile-author-information {
+  /* "Author information" block for the profile of the page's author */
+}
+
+/* line 161, ../sass/blocks.scss */
+#block-search-form {
+  /* "Search form" block */
+}
+
+/* line 164, ../sass/blocks.scss */
+#block-shortcut-shortcuts {
+  /* "Shortcuts" block */
+}
+
+/* line 167, ../sass/blocks.scss */
+#block-statistics-popular {
+  /* "Popular content" block */
+}
+
+/* line 170, ../sass/blocks.scss */
+#block-system-main-menu {
+  /* "Main menu" block */
+}
+
+/* line 173, ../sass/blocks.scss */
+#block-system-management {
+  /* "Management" block for Drupal management menu */
+}
+
+/* line 176, ../sass/blocks.scss */
+#block-system-navigation {
+  /* "Navigation" block for Drupal navigation menu */
+}
+
+/* line 179, ../sass/blocks.scss */
+#block-system-user-menu {
+  /* "User menu" block for Drupal user menu */
+}
+
+/* line 182, ../sass/blocks.scss */
+#block-system-help {
+  /* "System help" block */
+}
+
+/* line 185, ../sass/blocks.scss */
+#block-system-main {
+  /* "Main page content" block */
+}
+
+/* line 188, ../sass/blocks.scss */
+#block-system-powered-by {
+  /* "Powered by Drupal" block */
+}
+
+/* line 191, ../sass/blocks.scss */
+#block-user-login {
+  /* "User login form" block */
+}
+
+/* line 194, ../sass/blocks.scss */
+#block-user-new {
+  /* "Who's new" block for a list of the newest users */
+}
+
+/* line 197, ../sass/blocks.scss */
+#block-user-online {
+  /* "Who's online" block for a list of the online users */
+}
+
+/* line 199, ../sass/blocks.scss */
+#block-views-main-category-block-block {
+  float: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 203, ../sass/blocks.scss */
+#block-block-6 {
+  float: left;
+}
+
+/*
+ * форма заказа, акция.
+ */
+/* line 210, ../sass/blocks.scss */
+.actionnow {
+  font-size: 1.25em;
+  line-height: 1.2em;
+}
+
+/* line 214, ../sass/blocks.scss */
+.node-portfolioitem .actionnow {
+  text-align: center;
+}
+/* line 217, ../sass/blocks.scss */
+.node-portfolioitem .knew_button {
+  text-align: center;
+  width: 14em;
+}
+
+/* line 222, ../sass/blocks.scss */
+.actionnow strong,
+.actionnow b,
+.prise-discount-cost {
+  color: #B92926;
+}
+
+/* line 227, ../sass/blocks.scss */
+.actionblock {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  position: relative;
+  text-align: center;
+}
+
+/* line 233, ../sass/blocks.scss */
+#block-webform-client-block-635 {
+  margin-top: 1.5em;
+  color: black;
+  margin-bottom: 1.5em;
+  position: relative;
+  background-color: #EEEEEE;
+}
+/* line 240, ../sass/blocks.scss */
+#block-webform-client-block-635 .client-block-inner {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+/* line 245, ../sass/blocks.scss */
+#block-webform-client-block-635 #secur {
+  margin-top: 1.5em;
+  width: 100%;
+}
+/* line 249, ../sass/blocks.scss */
+#block-webform-client-block-635 .first-client {
+  color: red;
+}
+/* line 254, ../sass/blocks.scss */
+#block-webform-client-block-635 .middle-block {
+  position: relative;
+}
+/* line 259, ../sass/blocks.scss */
+#block-webform-client-block-635 .free-scatch {
+  color: #222222;
+  margin-bottom: 1.2em;
+  margin-top: 0em;
+  baseline-shift: 1px;
+}
+/* line 265, ../sass/blocks.scss */
+#block-webform-client-block-635 .right-block {
+  padding-top: 1em;
+}
+/* line 268, ../sass/blocks.scss */
+#block-webform-client-block-635 .webform-client-form {
+  margin-bottom: 1.5em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 273, ../sass/blocks.scss */
+#block-webform-client-block-635 input {
+  font-size: 1.375em;
+  line-height: 1.09091em;
+}
+/* line 278, ../sass/blocks.scss */
+#block-webform-client-block-635 .form-item {
+  padding-bottom: 0.5em;
+}
+/* line 283, ../sass/blocks.scss */
+#block-webform-client-block-635 #webform-component-stranica {
+  display: none;
+}
+/* line 285, ../sass/blocks.scss */
+#block-webform-client-block-635 .form-actions {
+  margin-top: 0;
+}
+/* line 289, ../sass/blocks.scss */
+#block-webform-client-block-635 input {
+  width: 11em;
+  margin-right: 10px;
+}
+/* line 293, ../sass/blocks.scss */
+#block-webform-client-block-635 .colorbox-node {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/*
+ * Поиска форма
+*/
+/* line 301, ../sass/blocks.scss */
+#block-search-form div.container-inline {
+  border: 1px #999;
+}
+/* line 303, ../sass/blocks.scss */
+#block-search-form div.container-inline input.form-text {
+  border: 0;
+}
+/* line 307, ../sass/blocks.scss */
+#block-search-form .form-submit {
+  background-color: #aaa;
+}
+/* line 310, ../sass/blocks.scss */
+#block-search-form .form-submit:hover {
+  background-color: #222222;
+}
+/* line 313, ../sass/blocks.scss */
+#block-search-form .form-text {
+  color: #222222;
+}
+
+/* line 317, ../sass/blocks.scss */
+form#search-block-form:hover {
+  border-color: #222222;
+}
+
+/*
+ ********** Блок меню "Информация" *******************
+*/
+/* line 323, ../sass/blocks.scss */
+#send-order-btm-block {
+  float: left;
+  clear: right;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/* line 329, ../sass/blocks.scss */
+#block-menu-menu-information .content {
+  clear: left;
+}
+
+/* line 332, ../sass/blocks.scss */
+.work-allrussia {
+  clear: left;
+}
+/* line 334, ../sass/blocks.scss */
+.work-allrussia a.colorbox-node {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  color: red;
+}
+
+/*
+ ********** Видеообзоры *******************
+*/
+/* line 343, ../sass/blocks.scss */
+#block-views-latest-video-block .views-field-field-video-embed {
+  height: 9em;
+}
+
+/* line 346, ../sass/blocks.scss */
+.region-sidebar-second #block-views-latest-video-block {
+  text-align: center;
+}
+
+/*
+ ********** Твиттер - блок *******************
+*/
+/* line 352, ../sass/blocks.scss */
+#read-keramart-twitter {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin-bottom: 1.71429em;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -moz-linear-gradient(top, #ffffff, #eeeeee);
+  background-image: -webkit-linear-gradient(top, #ffffff, #eeeeee);
+  background-image: linear-gradient(to bottom, #ffffff, #eeeeee);
+  float: left;
+  border: 1px solid gray;
+  padding: 0 10px 0 4px;
+}
+
+/* line 360, ../sass/blocks.scss */
+#tw-logo {
+  margin: 4px 5px 0 0;
+  background-image: url(images/spritesheet.png);
+  background-repeat: none;
+  background-position: -19px 0px;
+  width: 15px;
+  height: 15px;
+  float: left;
+}
+
+/* line 371, ../sass/blocks.scss */
+#block-views-tweets-block a {
+  text-decoration: none;
+  color: #222222;
+}
+/* line 374, ../sass/blocks.scss */
+#block-views-tweets-block a:hover {
+  color: #999999;
+}
+/* line 378, ../sass/blocks.scss */
+#block-views-tweets-block ul {
+  padding: 0;
+  margin-top: 0;
+  list-style-type: none;
+}
+/* line 383, ../sass/blocks.scss */
+#block-views-tweets-block ul li.views-row-8:before,
+#block-views-tweets-block ul li.views-row-1:before {
+  background-color: #856c47;
+}
+/* line 383, ../sass/blocks.scss */
+#block-views-tweets-block ul li.views-row-9:before,
+#block-views-tweets-block ul li.views-row-2:before {
+  background-color: #798547;
+}
+/* line 383, ../sass/blocks.scss */
+#block-views-tweets-block ul li.views-row-10:before,
+#block-views-tweets-block ul li.views-row-3:before {
+  background-color: #558547;
+}
+/* line 383, ../sass/blocks.scss */
+#block-views-tweets-block ul li.views-row-11:before,
+#block-views-tweets-block ul li.views-row-4:before {
+  background-color: #47855c;
+}
+/* line 383, ../sass/blocks.scss */
+#block-views-tweets-block ul li.views-row-12:before,
+#block-views-tweets-block ul li.views-row-5:before {
+  background-color: #47857d;
+}
+/* line 383, ../sass/blocks.scss */
+#block-views-tweets-block ul li.views-row-13:before,
+#block-views-tweets-block ul li.views-row-6:before {
+  background-color: #476d85;
+}
+/* line 383, ../sass/blocks.scss */
+#block-views-tweets-block ul li.views-row-14:before,
+#block-views-tweets-block ul li.views-row-7:before {
+  background-color: #475085;
+}
+/* line 386, ../sass/blocks.scss */
+#block-views-tweets-block ul li {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin-bottom: 1.71429em;
+}
+/* line 389, ../sass/blocks.scss */
+#block-views-tweets-block ul li:before {
+  content: '';
+  width: 20px;
+  height: 19px;
+  display: inline-block;
+  position: relative;
+  top: 4px;
+  float: left;
+  background-color: grey;
+  background-image: url(images/spritesheet.png);
+  background-repeat: none;
+  background-position: -45px 0px;
+}
+/* line 402, ../sass/blocks.scss */
+#block-views-tweets-block ul li .twitter-block-text {
+  margin-left: 30px;
+}
+/* line 405, ../sass/blocks.scss */
+#block-views-tweets-block ul li .twitter-block-time {
+  color: #6E6350;
+  font-size: 0.85714em;
+  line-height: 1.2em;
+  margin-top: 0.8em;
+}
+
+/*
+ ********** Блок категорий на главную *******************
+*/
+/* line 416, ../sass/blocks.scss */
+.view-main-category-block {
+  background-color: #FBFBFB;
+  background-image: url(images/fonshum.png);
+  background-repeat: repeat;
+}
+
+/* line 421, ../sass/blocks.scss */
+#block-views-main-category-block-block {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/* line 424, ../sass/blocks.scss */
+.main-category-list-row {
+  overflow: auto;
+  margin-bottom: 1.5em;
+}
+
+/* line 428, ../sass/blocks.scss */
+.main-category-list-line {
+  margin-top: 1.3125em;
+  display: inline-block;
+  overflow: hidden;
+  background-image: url("images/keramart-spritesheet-horizontals.png");
+  width: 100px;
+  height: 3px;
+  background-position: 0 -9px;
+  cursor: default;
+  width: 100%;
+  background-repeat: repeat-x;
+  display: block;
+}
+
+/* line 441, ../sass/blocks.scss */
+.main-category-list-img {
+  clear: left;
+  margin-right: 20px;
+  float: left;
+}
+
+/* line 446, ../sass/blocks.scss */
+.main-category-list-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.14286em;
+  line-height: 1.5em;
+  clear: right;
+}
+/* line 450, ../sass/blocks.scss */
+.main-category-list-name a {
+  text-decoration: underline;
+}
+
+/* line 455, ../sass/blocks.scss */
+.main-category-list-desc a {
+  text-decoration: underline;
+}
+/* line 458, ../sass/blocks.scss */
+.main-category-list-desc ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 462, ../sass/blocks.scss */
+.main-category-list-desc ul li:before {
+  content: '> ';
+  color: red;
+}
+/* line 467, ../sass/blocks.scss */
+.main-category-list-desc p {
+  margin: 0;
+}
+
+/*
+ * Триггеры LP
+ */
+/* line 475, ../sass/blocks.scss */
+.node-type-landingpage #block-block-8 {
+  text-align: center;
+}
+
+/* line 481, ../sass/blocks.scss */
+.region-sidebar-first p {
+  display: block;
+  float: left;
+  margin: 0;
+}
+/* line 487, ../sass/blocks.scss */
+.region-sidebar-first .lp-trig-img-descr {
+  text-align: left;
+  display: block;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  clear: left;
+}
+
+/*
+ * форма заказа обратного звонка.
+ */
+/* line 498, ../sass/blocks.scss */
+.ui-dialog #block-webform-client-block-658 h2 {
+  display: none;
+}
+
+/*
+ * А какой нужен вам?
+ */
+/* line 505, ../sass/blocks.scss */
+#block-block-10 {
+  text-align: center;
+}
+/* line 506, ../sass/blocks.scss */
+#block-block-10 .view-footer p {
+  margin: 0;
+}
+/* line 509, ../sass/blocks.scss */
+#block-block-10 a.contactus-form {
+  margin-top: 1.5em;
+}
+
+/* line 521, ../sass/blocks.scss */
+#block-menu-menu-tile-menu,
+#block-menu-menu-top-menu {
+  padding-top: 1.71429em;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/* line 527, ../sass/blocks.scss */
+#block-menu-menu-tile-menu,
+#block-menu-menu-top-menu,
+#block-menu-block-2,
+#block-menu-block-3 {
+  text-transform: uppercase;
+}
+/* line 533, ../sass/blocks.scss */
+#block-menu-menu-tile-menu li,
+#block-menu-menu-top-menu li,
+#block-menu-block-2 li,
+#block-menu-block-3 li {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+/* line 543, ../sass/blocks.scss */
+#block-menu-block-2 a {
+  display: block;
+  font-size: 0.875em;
+  line-height: 2.57143em;
+}
+
+/* line 550, ../sass/blocks.scss */
+#block-menu-block-3 a {
+  display: block;
+  font-size: 0.75em;
+  line-height: 3em;
+}
+
+/* line 557, ../sass/blocks.scss */
+#block-menu-block-3 {
+  background-color: #d7d4d4;
+}
+/* line 559, ../sass/blocks.scss */
+#block-menu-block-3 a {
+  color: #222222;
+}
+/* line 561, ../sass/blocks.scss */
+#block-menu-block-3 a:hover {
+  color: #999999;
+}
+
+/* line 568, ../sass/blocks.scss */
+.pane-menu-block-4 a {
+  color: #222222;
+}
+/* line 570, ../sass/blocks.scss */
+.pane-menu-block-4 a:hover {
+  color: #999999;
+}
+
+/* line 576, ../sass/blocks.scss */
+#block-block-14 {
+  margin-top: 0.75em;
+}
+/* line 578, ../sass/blocks.scss */
+#block-block-14 .hundproc {
+  font-size: 1em;
+  line-height: 3em;
+  text-transform: uppercase;
+}
+/* line 582, ../sass/blocks.scss */
+#block-block-14 .allrus {
+  color: #b92926;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+/*# sourceMappingURL=blocks.css.map */

@@ -1,0 +1,115 @@
+ @import "base";
+
+ /*
+ * форма заказа, акция.
+ */
+ 
+  /*
+ * сноска:
+*/
+.snoska  {
+background-color: #CFDDC0; 
+}
+.field-name-field-keramic-help .field-item,
+.snoska-ahtung  {
+background-color: #F1E6BE; 
+}
+
+h2 {
+color: #464646;
+}
+#site-slogan,
+#block-block-2,
+#block-views-slogan-block,
+#block-block-11 {
+color: black;
+}
+
+#footer {
+background-color: $top-menu-dark;
+}
+
+#block-menu-block-2 {
+background-image: url(images/fonshum.png);
+background-color: $top-menu-dark;
+li:hover { background-color: #5C5240; }
+li.is-active,
+li.is-active-trail{
+    background-color: #d7d4d4;
+    a {
+        color: black;
+    }
+}
+a {
+    color: white;
+    &:hover {
+        color: #d7d4d4;
+    }
+} 
+}
+.front #block-menu-block-2 {
+    background-color: #696969;
+    li:hover { background-color: #282828; }
+}
+
+.field-name-field-promo-description,
+.goods-heading2,
+.promo-goods-heading {
+color: #555;
+}
+
+
+
+/* .region-sidebar-first div.block {
+background-color: #F5F5F5;
+} */
+
+#footer,
+#footer a,
+#footer a.active,
+ul.nice-menu a {
+color: white;
+}
+#footer p {
+margin: 0;
+}
+#footer div {
+margin-bottom: 0.5em;
+}
+
+#block-menu-block-2
+ul.nice-menu li {
+	background-color: none;	
+	a:hover{
+		color: $text_link_hover;
+		}
+	ul li {
+			background-color: $blockbgr;
+			a {
+			color: $text-color;
+			&:visited { color: $text-color; }
+                        &:hover {
+                            background-color: #705656;}
+			}
+                        
+				}
+			
+	
+}
+
+
+// -----------------  Атмосферные изображения ------------------------------
+
+/*.dekorativnye-fontany .lpbann {
+     background: {
+      repeat: no-repeat;
+      color: #FFF;
+    };
+    @include background-size(cover);
+}
+.dekorativnye-fontany .lpbann {
+     background-image: url('images/backgr-fount.jpg');
+}
+.page-taxonomy-term-67 .lpbann {
+    background-image: url('images/fountain-bamb-atm.jpg');
+} */

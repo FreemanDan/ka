@@ -1,0 +1,425 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "base";
+@import "bootstrap/variables";
+@import "bootstrap-variables";
+
+.quotebox {
+    padding-top: rhythm(3);
+    padding-bottom: rhythm(1);
+    margin: 0;
+    position: relative;
+
+    .quote {
+        margin: 0 20px;
+        font-style: italic;
+        @include adjust-font-size-to (28px);
+
+        &:before {
+            color: #c7e6df;
+            content: "\201C";
+            display: block;
+            font-size: 290px;
+            left: -176px;
+            position: absolute;
+            top: 218px;
+        }
+        &:after {
+            color: #c7e6df;
+            content: "\201C";
+            display: block;
+            font-size: 290px;
+            left: -176px;
+            position: absolute;
+            top: 218px;
+        }
+    }
+    .byline {
+        float: right;
+        @include adjust-font-size-to (20px);
+    }
+
+}
+
+
+
+blockquote:before {
+    color: #bbb;
+    content: "\201C"; /* Непечатаемый символ слева */
+    font-size: 3em;
+    line-height: 0.1em;
+    margin-right: 0.2em;
+    vertical-align: -.4em;
+}
+
+blockquote:after {
+    color: #bbb;
+    content: "\201D"; /* Непечатаемый символ справа */
+    font-size: 3em;
+    line-height: 0.1em;
+    vertical-align: -.45em;
+}
+
+blockquote > p:first-child {
+    display: inline;
+}
+
+.blackbkg {
+    background-color: rgba(0, 0, 0, 0.71) !important;
+    color: white;
+    padding: 12px;
+}
+.whitebg {
+    background-color: rgba(255, 255, 255, 0.71); 
+    padding: 12px;
+}
+
+
+.whitecolor {
+    color: white;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+h2 {
+    @include adjust-font-size-to (30px);
+    @include rhythm(3, 0, 0, 1);
+}
+body {
+    //@include debug-vertical-alignment;
+    //@include grid-background;
+}
+.container {
+    //@include grid-background;
+}
+// исправляю глюк модального окна панелей
+.modal-body {
+    overflow: auto;
+}
+.navbar-default {
+    .navbar-header {
+        position: relative;
+    }
+    //height: rhythm(3);
+    //@include rhythm(0, 0.5, 0.5, 0);
+    border-bottom: 3px solid #068D98;
+    .logo {
+        position: absolute;
+        left: 0;
+        top: rhythm(0.5);
+
+    }
+    .name {
+        @include rhythm(0.5, 0, 0, 0.5);
+        @include adjust-font-size-to (18px , 1);
+        padding-left: 60px;
+        color: #068D98;
+        height: inherit;
+        max-width: 280px;
+    }
+    .navbar-collapse.in {
+        //overflow-y: visible;
+    }
+    .navbar-nav {
+        @include rhythm(0.5, 0, 0, 0.5);
+        li {
+            .fa {
+                margin-right: 5px;
+            }
+            list-style-type: none;
+            a {
+                //color: #068D98;
+                //@include adjust-font-size-to (18px , 2);
+                &:hover {
+                    color: #0a4a50;
+                }
+                &:visited {
+                    color: #068D98;
+                }
+            }
+        }
+    }
+    #topphone {
+        @include rhythm(0.5, 0, 0, 0.5);
+        @include adjust-font-size-to (32px , 2);        
+        float: right;
+        color: #d9534f;;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .nav-phone {
+        @include rhythm(0.5, 0, 0, 0.5);
+        @include adjust-font-size-to (32px , 2);
+        float: left;
+        padding-left: 30px;
+        color: #d9534f;;
+        i {
+            margin-right: 10px;
+        }
+    }
+    .navbar-toggle {
+
+    }
+}
+.bkg-blurred1 {
+    background: url("../img/backgrounds/blurred.jpg") 50% 20% no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#registration {
+    //text-shadow: 3px 0 22px #fff, 0 0 5px #fff, 0 0 3px #fff; /* Параметры тени */
+    p {
+        @include adjust-font-size-to (18px);
+    }
+}
+#perubckgr {
+    background: url("peru.jpg") no-repeat fixed center 100px  rgba(0, 0, 0, 0);
+    @include rhythm(0, 0, 1, 0);
+    .peruheading {
+        @include adjust-font-size-to (60px); 
+        text-transform: uppercase;
+        color: black;
+        letter-spacing: 60px;
+    }
+    .perucountry {
+        @include adjust-font-size-to (22px, 1); 
+        text-transform: uppercase;
+        color: black;
+        letter-spacing: 40px;
+    }
+    .leftblk {
+        @include rhythm(3, 0, 0, 0);
+        a.btn {
+            @include adjust-font-size-to (25px);
+        }
+    }
+    .rightblk {
+        @include rhythm(3, 0, 0, 0);
+        color: #068b97;
+        .d1 {
+            @include adjust-font-size-to (48px, 2); 
+        }
+        .d2 {
+            @include adjust-font-size-to (48px, 2); 
+        }
+        .d3 {
+            @include adjust-font-size-to (70px, 3); 
+        }
+    }
+    .peru-edinst{
+        @include adjust-font-size-to (25px); 
+        color: #068b97;
+    }
+    .peru-onural{
+        @include adjust-font-size-to (36px); 
+        color: #068b97;
+    }
+    .peru-time1{
+        @include adjust-font-size-to (22px);
+    }
+    .peru-time{
+        @include adjust-font-size-to (27px); 
+        color: #068b97;
+    }
+    .peru-chel{
+        @include adjust-font-size-to (63px); 
+        color: #068b97;
+    }
+    .dover-prirod {
+        @include rhythm(3, 0, 0, 0);
+        background-color: rgba(9, 160, 173, 0.52);
+        color: white;
+        text-transform: uppercase;
+        .d1 {
+            @include adjust-font-size-to (48px, 3); 
+        }
+        .d2 {
+            @include adjust-font-size-to (20px, 2); 
+        }
+    }
+    @media (max-width: 768px) { 
+        background-size: cover;
+        background-position: 50% 116px !important; 
+        .peruheading {
+            letter-spacing: 9px;
+            @include adjust-font-size-to (50px); 
+
+        }
+        .perucountry {
+            letter-spacing: 17px;
+        }
+        .leftblk {
+            @include rhythm(18, 0, 0, 0);
+            background-color: rgba(255, 255, 255, 0.7);
+            br {
+                display: none;
+            }
+            span {
+                &:after {
+                    content: " ";
+                }
+            }
+            .peru-edinst, .peru-time, .peru-time1, .peru-chel1, .peru-onural {
+                @include adjust-font-size-to (20px, 2);
+            }
+
+        }
+        .rightblk {
+            @include rhythm(0, 1, 1, 0);
+            background-color: rgba(255, 255, 255, 0.7);
+            br {
+                display: none;
+            }
+            span {
+                &:after {
+                    content: " ";
+                }
+            }
+        }
+
+    }
+    @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+        @include rhythm(0, 0, 1, 0);
+        .peru-edinst{
+            @include adjust-font-size-to (16px); 
+            color: #068b97;
+        }
+        .leftblk {
+            .peru-onural{
+                @include adjust-font-size-to (24px); 
+                color: #068b97;
+            }
+            .peru-time1{
+                @include adjust-font-size-to (14px);
+            }
+            .peru-time{
+                @include adjust-font-size-to (17px); 
+                color: #068b97;
+                font-weight: bold;
+            }
+            .peru-chel{
+                @include adjust-font-size-to (40px); 
+                color: #068b97;
+            } 
+            a.btn {
+                @include adjust-font-size-to (17px);
+                font-weight: bold;
+            }
+        } 
+        .rightblk {
+            .d1 {
+                @include adjust-font-size-to (37px, 2); 
+            }
+            .d2 {
+                @include adjust-font-size-to (39px, 2); 
+            }
+            .d3 {
+                @include adjust-font-size-to (55px, 3); 
+            }
+        }
+    }
+    @media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        @include rhythm(0, 0, 1, 0);
+        .leftblk {
+            .peru-edinst{
+                @include adjust-font-size-to (20px); 
+                color: #068b97;
+            }
+            .peru-onural{
+                @include adjust-font-size-to (29px); 
+                color: #068b97;
+            }
+            .peru-time1{
+                @include adjust-font-size-to (18px);
+            }
+            .peru-time{
+                @include adjust-font-size-to (21px); 
+                color: #068b97;
+                font-weight: bold;
+            }
+            .peru-chel{
+                @include adjust-font-size-to (50px); 
+                color: #068b97;
+            } 
+            a.btn {
+                @include adjust-font-size-to (20px);
+                font-weight: bold;
+            }
+        } 
+    }
+}
+#allpartners {
+    @include rhythm(1, 0, 0, 2);
+    .partnerlogo {
+        @include rhythm(0.5, 0, 0, 0.5);
+        height: rhythm(3);
+        img {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: auto;
+            height: auto;
+            margin: auto;
+
+        }
+    }
+}
+.main-container {
+    margin-top: rhythm(3);
+}
+.logged-in {
+    .main-container {
+        margin-top: rhythm(5);
+
+    }
+    .navbar-default {
+        margin-top: rhythm(2);
+    }
+}
+
+
+
+
+.block-title {
+    text-align: center;
+}
+
+
+#sub button {
+
+}
+#block-webform-client-block-11 {
+    h2 {
+        display: none;
+    }
+    .input-lg, .btn-lg {
+        margin: rhythm(0.5, $font-size-large) 0;
+    }
+}
+#sub button:hover {
+    color: #ffffff;
+    background-color: #ec7063;
+    border-color: #ec7063;
+}
+.scrn1 {
+    padding-left: 40px;
+    float: left;
+    width: 50%;
+}
+
+.scrn2 {
+    width: 50%;
+    float: left;
+}
+
+@media (max-width: 350px) { 
+    .navbar-brand {
+        display: none;
+    }
+}

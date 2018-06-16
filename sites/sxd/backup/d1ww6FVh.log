@@ -1,0 +1,5 @@
+2013.10.13 19:36:48	1	Начало импорта БД `keramar8_newkart`
+2013.10.13 19:36:48	1	Файл: newkart(2).sql.gz
+2013.10.13 19:36:48	1	Установлена кодировка соединения: `utf8`
+2013.10.13 19:36:48	1	Импорт таблицы `accesslog`
+2013.10.13 19:36:48	4	MySQL Error: Duplicate entry \'262025\' for key 1 (/home/keramar8/public_html/sites/sxd/index.php:1594)

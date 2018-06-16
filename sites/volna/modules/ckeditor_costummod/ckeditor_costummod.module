@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * Implements hook_ckeditor_plugin()
+ * 
+ * @return type
+ */
+function ckeditor_costummod_ckeditor_plugin() {
+  $plugins = array();
+  $plugins['fontawesome'] = array(
+    'name' => 'fontawesome',
+    'desc' => t('fontawesome Plugin'),
+    'path' => drupal_get_path('module', 'ckeditor_costummod') . '/plugins/fontawesome/',
+    'buttons' => array(
+      'FontAwesome' => array('label' => 'fontawesome', 'icon' => 'icons/fontawesome.png'),
+    )
+  );
+    $plugins['btgrid'] = array(
+    'name' => 'btgrid',
+    'desc' => t('Bootstrap Grid Plugin'),
+    'path' => drupal_get_path('module', 'ckeditor_costummod') . '/plugins/btgrid/',
+    'buttons' => array(
+      'btgrid' => array('label' => 'btgrid', 'icon' => 'icons/btgrid.png'),
+    )
+  );
+        $plugins['lineheight'] = array(
+    'name' => 'lineheight',
+    'desc' => t('Line Height Plugin'),
+    'path' => drupal_get_path('module', 'ckeditor_costummod') . '/plugins/lineheight/',
+    'buttons' => array(
+      'lineheight' => array('label' => 'lineheight', 'icon' => 'icons/lineheight.png'),
+    )
+  );
+                $plugins['btbutton'] = array(
+    'name' => 'btbutton',
+    'desc' => t('Bootstrap Button 3 Plugin'),
+    'path' => drupal_get_path('module', 'ckeditor_costummod') . '/plugins/btbutton/',
+    'buttons' => array(
+      'btbutton' => array('label' => 'btbutton', 'icon' => 'icons/btbutton.png'),
+    )
+  );
+                $plugins['youtubebootstrap'] = array(
+    'name' => 'youtubebootstrap',
+    'desc' => t('youtubebootstrap Plugin'),
+    'path' => drupal_get_path('module', 'ckeditor_costummod') . '/plugins/youtubebootstrap/',
+    'buttons' => array(
+      'youtubebootstrap' => array('label' => 'youtubebootstrap', 'icon' => 'icons/youtubebootstrap.png'),
+    )
+  );
+  return $plugins;
+}

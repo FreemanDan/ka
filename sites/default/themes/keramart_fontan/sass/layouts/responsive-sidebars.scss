@@ -1,0 +1,562 @@
+/**
+ * @file
+ * Positioning for responsive layout .
+ *
+ * Define CSS classes to create a table-free, 3-column, 2-column, or single
+ * column layout depending on whether blocks are enabled in the left or right
+ * columns.
+ *
+ * This layout uses the Zen Grids plugin for Compass: http://zengrids.com
+ */
+ 
+@import "base";
+//@import "zen/background";
+// We are going to create a 980px wide, 5 column grid with 20px gutters between
+// columns (applied as 10px of left/right padding on each column).
+$zen-column-count:  1;
+$zen-gutter-width:  $my-gutter-width;
+
+// IE6-7 don't support box-sizing: border-box. We can fix this in 1 of 3 ways:
+// - Drop support for IE 6/7. :-) In the _base.scss, set $legacy-support-for-ie6
+//   and $legacy-support-for-ie7 to false.
+// - (Preferred) Install the box-sizing polyfill and set the variable below to
+//   the absolute path URL to the boxsizing.htc file.
+//   @see https://github.com/Schepp/box-sizing-polyfill
+//   $box-sizing-polyfill-path: "/path/to/boxsizing.htc";
+// - Use the same CSS unit for grid width and gutter width (use px for both or
+//   use % for both, etc.) and set the box-sizing variable to content-box.
+//   $zen-box-sizing: content-box;
+
+
+// You can generate more efficient CSS if you manually apply the
+// zen-grid-item-base mixin to all grid items from within a single ruleset.
+//$zen-auto-include-item-base: false;
+// $zen-auto-include-flow-item-base: false;
+
+
+/*
+ * Center the page.
+ */
+
+.content-inner,
+.region-bottom,
+.menu-block-2,
+.menu-block-3 {
+  /* For screen sizes larger than 1200px, prevent excessively long lines of text
+     by setting a max-width. */
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+  
+  //@include zen-grid-background();
+}
+
+// для некоторых страниц контент на всю ширину!
+
+.lp #main {
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+
+/*
+ * Apply the shared properties of grid items in a single, efficient ruleset.
+ */
+// See the note about $zen-auto-include-item-base above.
+//
+#logo,
+#block-views-slogan-block,
+#block-views-slogan-block-1,
+#content,
+#block-zayavka,
+.region-sidebar-first,
+.region-sidebar-second,
+#block-block-2,
+#block-block-11,
+#block-block-13,
+#block-block-14,
+#block-menu-menu-top-menu,
+#block-menu-menu-tile-menu,
+.lpbann .pane-menu-block-4,
+.lpbann #page-title,
+#banndescript,
+.menu-block-2 li,
+.menu-block-3 li,
+#block-webform-client-block-635 {
+  @include zen-grid-item-base();
+}
+
+// для некоторых страниц убираем базовые настройки
+.lp #content {
+    padding-left: 0;
+    padding-right: 0;
+}
+/*
+ * Containers for grid items and flow items.
+ */
+.menu-block-2,
+.menu-block-3,
+.content-inner,
+#footer-inner {
+  @include zen-grid-container();
+}
+
+#main {
+    //padding-top: $top_menu_height; /* Move all the children of #main down to make room. */
+    position: relative;
+  }
+#site-navigation-wrapper {
+    clear: both;
+    //width: $zen-grid-width;
+	} 
+/*
+ * Navigation bar
+ */
+
+@media all and (min-width: 480px) {
+	#navigation-logo { // Начиная с 480 показываем полноценный логотип
+	display: block;
+	}
+	#logomobileimg { //Логотип мобильный отключаем
+	display: none;
+	}
+ 
+
+
+/*
+ * Список изделий - в одну колонку
+*/	
+.spisokisdelii {
+@include zen-grid-flow-item(1, 1, false, false);
+@include zen-float();
+}
+}
+
+
+
+@media all  {
+ /*
+ * Use 8 grid columns for larger screens.
+ */
+  $zen-column-count: 8 !global;
+  
+ 	#navigation-logo {
+	@include zen-grid-flow-item(2, 8, false, false);
+	@include zen-float();
+	margin-right: -15px;
+	}  
+	#main-menu {	
+	@include zen-grid-flow-item(5, 8);
+	@include zen-float();
+  } 
+/**********    Шапка ****************/
+#block-block-2,
+#block-block-13 {
+    @include zen-grid-item(3, 1, right);
+    
+}
+#block-block-11,
+#block-views-slogan-block,
+#block-views-slogan-block-1 {
+    @include zen-clear(left);
+     @include zen-grid-item(6, 1);
+}
+
+.page-taxonomy-term-181 #block-views-slogan-block {
+    @include zen-clear(left);
+     @include zen-grid-item(2, 1);
+     @include leader(-1.5, $base-font-size);
+}
+#logo {
+    @include zen-grid-item(2, 1);
+}
+#block-menu-menu-tile-menu,
+#block-menu-menu-top-menu {
+    @include zen-grid-item(3, 3)
+}
+#block-block-14 {
+    @include zen-grid-item(2, 4);
+}
+
+/**********    Главная страница *****/
+#bantopcontent  {
+    @include zen-grid-item(6, 3);
+}
+
+
+.index-info-counts {
+    .trig1 {
+        width: 25%;
+    }
+    .trig2 {
+        width: 50%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    .trig3 {
+        width: 25%;
+    }
+}
+
+/*---------- верхняя часть на посадочниках ----------- */
+.lpbann .pane-menu-block-4,
+#block-zayavka {
+    @include zen-grid-item(2, 1, right);
+}
+.lpbann #page-title {
+    @include zen-grid-item(6, 1);
+}
+.atmosphereimg .lpbann #page-title {
+    @include zen-grid-item(4, 3);
+}
+#banndescript {
+    @include zen-clear(left);
+     @include zen-grid-item(8, 1);
+}
+.atmosphereimg #banndescript {
+    @include zen-clear(left);
+     @include zen-grid-item(6, 3);
+}
+
+.page-taxonomy-term-179 #banndescript {
+    @include zen-clear(left);
+     @include zen-grid-item(4, 3);
+}
+.page-taxonomy-term-181 .lpbann #page-title {
+    @include zen-grid-item(8, 1);
+    
+}    
+/*---------- LP заявка, видео, триггеры ----------- */
+.lp-abus-blck {
+     @include zen-grid-item(2, 1);
+}
+.lp-video {
+    .lp-abus-blck {
+     width: 100%;
+     margin: 0;  
+    }
+    .lp-abus-trig {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    float: left;
+    }
+    .trig-1 {
+        width: 25%;
+    }
+    .trig-2 {
+        width: 50%;
+        padding-left: 12%;
+        padding-right: 12%;
+    }
+    .trig-3 {
+        width: 25%;
+    }
+}
+.lp-video #prm-video {
+    @include zen-clear(left);
+    @include zen-grid-item(4, 1);
+}
+#block-webform-client-block-635 {
+     @include zen-grid-item(5, 4);
+     .client-block-inner {
+      width: 15em;
+      margin-left: auto;
+      margin-right: auto;
+     }
+     .middle-block { 
+     }
+     .free-scatch {
+     }
+     .right-block {
+        .form-item {
+            
+        }
+	}
+     .free-description {
+            //@include trailer (1, $base-font-size);
+            margin-left: 7em;
+	}
+       .plus {
+          display: block;
+          position: absolute;
+          left: 3em;
+          @include adjust-font-size-to( 24px, 1 );
+        }
+        .form-item {
+         width: 33%;
+	}
+        .form-actions {
+         width: 33%;
+         clear: left;
+        }
+     
+}
+
+   .lp-video #block-webform-client-block-635 {
+       @include zen-grid-item(4, 5);
+       min-height: 336px;
+            .middle-block { 
+            }
+            .free-scatch {
+               @include trailer (0.5, 20px);
+               @include leader (1.5, 20px);
+                   	}
+            .client-block-inner {
+             width: 100%;
+               }
+           .right-block {
+           .form-item {             
+           }
+        	}
+        .free-description {
+               @include trailer (1, $base-font-size);
+        	}
+     
+        }
+
+.page-taxonomy-term-181 .lptopform {
+            @include zen-grid-item(4, 5);
+            @include zen-clear(left);
+        }
+        
+/**********    Картинки изделий *****/
+.spisokisdelii:nth-of-type(4n+1),
+.spisokisdelii:nth-of-type(4n+2),
+.spisokisdelii:nth-of-type(4n+3) {
+@include zen-grid-flow-item(2, 8);
+@include zen-float();
+}
+.spisokisdelii:nth-of-type(4n+4) {
+@include zen-grid-flow-item(2, 8, false, false);
+@include zen-float();
+}
+.spisokisdelii:nth-of-type(4n+1) {
+    @include zen-clear(left);
+}
+
+/**********  Список категорий  *****/
+.spisokkategorii:nth-of-type(2n+1) {
+@include zen-clear(left);
+@include zen-grid-flow-item(4, 8);
+@include zen-float();
+}
+.spisokkategorii:nth-of-type(2n+2) {
+@include zen-grid-flow-item(4, 8, false, false);
+@include zen-float();
+}
+
+  /*
+   * The layout when there is only one sidebar, the left one.
+   */
+
+  .sidebar-first {
+    #content { /* Span 4 columns, starting in 2nd column from left. */
+	
+      @include zen-grid-item(6, 3);
+
+    }
+
+    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
+      @include zen-grid-item(2, 1);
+    }
+  }
+
+  /*
+   * The layout when there is only one sidebar, the right one.
+   */
+
+  .sidebar-second {
+    #content { /* Span 4 columns, starting in 1st column from left. */
+     
+	  @include zen-grid-item(6, 1);
+    }
+
+    .region-sidebar-second { /* Span 1 column, starting in 5th column from left. */
+      @include zen-grid-item(2, 7);
+    }
+  }
+
+  /*
+   * The layout when there are two sidebars.
+   */
+
+  .two-sidebars {
+    #content { /* Span 3 columns, starting in 2nd column from left. */
+      @include zen-grid-item(4, 3);
+    }
+
+    .region-sidebar-first { /* Span 1 column, starting in 1st column from left. */
+      @include zen-grid-item(2, 1);
+    }
+
+    .region-sidebar-second { /* Span 1 column, starting in 5th column from left. */
+      @include zen-grid-item(2, 7);
+    }
+  }
+}
+ 
+ 
+/*
+****************************Navigation ************************
+*/
+
+
+
+@media all and (min-width: 900px) {
+#block-block-2	#header-phone-1,
+#block-block-13	#header-phone-1{
+        @include adjust-font-size-to( 34px, 2 );
+}
+}
+@media all and (max-width: 960px) {
+#right-top-block {
+display: none;
+}
+}
+
+/*
+****************************Navigation, Блок со спецпредложением ************************
+*/
+@media all and (max-width: 400px) {
+#block-webform-client-block-635 {
+display: none;
+}
+}
+
+/*
+**************************** Страница изделия в каталоге ****************************
+*/
+
+@media all and (min-width: 1090px) {
+.item-75-left { //контейнер расположен слева, занимает 75% ширины
+@include zen-grid-flow-item(4, 6);
+@include zen-float();
+}
+.item-25-right { //контейнер расположен справа, занимает 25% ширины
+@include zen-grid-flow-item(2, 6, false, false);
+@include zen-float();
+}
+}
+
+
+/*
+* добавлены классы для контейнеров содержимого 
+*/
+@media all and (min-width: 960px) {
+.content-50-left { //контейнер расположен слева, занимает 50% ширины
+@include zen-grid-flow-item(3, 6);
+@include zen-float();
+}
+.content-50-right { //контейнер расположен справа, занимает 50% ширины
+@include zen-grid-flow-item(3, 6, false, false);
+@include zen-float();
+}
+.content-75-left { //контейнер расположен слева, занимает 75% ширины
+@include zen-grid-flow-item(4, 6);
+@include zen-float();
+}
+.content-25-right { //контейнер расположен справа, занимает 25% ширины
+@include zen-grid-flow-item(2, 6, false, false);
+@include zen-float();
+}
+.content-75-right { //контейнер расположен справа, занимает 75% ширины
+@include zen-grid-flow-item(4, 6, false, false);
+@include zen-float();
+}
+.content-25-left { //контейнер расположен слева, занимает 25% ширины
+@include zen-grid-flow-item(2, 6);
+@include zen-float();
+}
+//---когда нужно красиво расположить три блока
+.thre-cases {
+.thre-pl-case {
+    width: 280px;
+}
+.case1 {
+    margin-right: -280px;
+        float: left;
+}
+.case2 {
+    margin-right: auto;
+    margin-left: auto;
+}
+.case3 {
+    margin-left: -280px;
+    float: left;
+}
+.center-case {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    padding-left: 280px;
+    padding-right: 280px;
+}
+}
+
+}
+
+
+/*
+**************************** LP позиция баннера ****************************
+*/
+
+    .lpbann {
+        background-position: 50% 0;
+    }
+    
+@media all and (max-width: 1090px) {
+    .lpbann {
+        background-position: 38% 0;
+    }
+}
+
+@media all and (max-width: 1090px) {
+    .lpbann {
+        background-position: 38% 0;
+    }
+}
+
+// ------------------- lp offer block ---------------
+@media all and (min-width: 1200px) {
+    .lp-video #block-webform-client-block-635 {
+       @include zen-grid-item(4, 5);
+         min-height: 336px;
+         .middle-block { 
+        }
+        .free-scatch {
+           @include adjust-font-size-to( 20px, 1 );
+           @include trailer (0.5, 20px);
+           @include leader (1.5, 20px);
+        	}
+        .client-block-inner {
+         width: 100%;
+           }
+        .right-block {
+           .form-item {
+               
+           }
+        	}
+        .free-description {
+            @include adjust-font-size-to( 20px, 1 );
+            @include trailer (1, $base-font-size);
+        	}
+     
+    }
+    #triggers-mainp {
+        width: 100%;
+        .trig1 {
+            width: 25%;
+        }
+        .trig2 {
+            width: 50%;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        .trig3 {
+            width: 25%;
+        }
+    }
+
+
+}

@@ -1,0 +1,198 @@
+<?php
+
+function keramartmodule_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'block_admin_configure' && $form['delta']['#value'] == '5') {
+  $form['settings']['body_field']['body']['#wysiwyg'] = FALSE;
+  }
+  if ($form_id == 'taxonomy_form_term'   &&  $form['vocabulary_machine_name']['#value'] == 'prise_groups' ) {
+  $form['description']['#wysiwyg'] = FALSE;
+  $form['description']['#format'] = 'plain_text';
+  }
+  // отключаем визуальный редактор для поля description для категорий
+  if ($form_id == 'taxonomy_form_term'   &&  $form['vocabulary_machine_name']['#value'] == 'keramika' ) {
+       $form['field_tax_main_list_desc']['#wysiwyg'] = FALSE;
+      $form['description']['#wysiwyg'] = FALSE;
+  //$form['description']['#format'] = 'plain_text';
+  }
+  
+  if ($form_id == 'token_custom_edit_form') {
+  $form['content']['#wysiwyg'] = FALSE;
+  //$form['description']['#format'] = 'plain_text';
+  
+  }
+  
+  if ($form_id == 'contact_site_form') {
+  $form['#attributes']['onsubmit'][] = 'yaCounter823781.reachGoal(\'CONTACT\'); return true;';
+  
+  
+  }
+
+}
+function keramartmodule_priseformatter(&$output) { //форматируем табличку с ценами
+$patterns = array(); 
+$patterns[0] = '/\<td class="row_(\d+) col_0"\>(.*?)\<\/td\>/'; //тело таблицы - размер
+$patterns[1] = '/\<td class="row_(\d+) col_1"\>(.*?)\<\/td\>/'; //тело таблицы - цена
+$patterns[2] = '/\<th class="row_(\d+) col_0"\>(.*?)\<\/th\>/'; //заг таблицы - размер
+$patterns[3] = '/\<th class="row_(\d+) col_1"\>(.*?)\<\/th\>/'; //заг таблицы - цена
+
+$replacements = array();
+$replacements[0] = '<td class="row_${1} col_0">${2} <span class="prise-body-dim">см.</span> -</td>'; //т табл- размер
+$replacements[1] = '<td class="row_${1} col_1"><span class="prise-body-cost">от</span> ${2} <span class="prise-body-cost">руб.</span></td>'; //тело таблицы - цена
+$replacements[2] = '<th class="row_${1} col_0">при высоте:</th>'; //з табл- размер
+$replacements[3] = '<th class="row_${1} col_1">цена:</th>'; //з таблицы - цена
+return preg_replace($patterns, $replacements, $output);
+}
+
+function keramartmodule_discountpriseformatter2($match) {
+    $actiondiscount = variable_get_value('keramartmodule_actiondiscount');
+    //return '<td class="row_' . $match[1] . ' col_1"\>' . $match[2] - (($match[2] * $actiondiscount)/100) . '</td>';
+    if ($match[2] != null) {
+    $output = "<td class=\"row_" . $match[1] . " col_1\"><small><del>от " . $match[2] . " р.</del></small> <span class=\"prise-discount-cost\">от <b>" . ($match[2] - (($match[2] * $actiondiscount)/100)) . "</b> р.*</span></td>";
+    } else {
+        $output = "<td class=\"row_" . $match[1] . " col_1\"></td>";
+    }
+    return  $output;
+    }
+
+function keramartmodule_discountpriseformatter(&$output) { //форматируем табличку с ценами
+$patterns = array(); 
+$patterns[0] = '/\<td class="row_(\d+) col_0"\>(.*?)\<\/td\>/'; //тело таблицы - размер
+//$patterns[1] = '/\<td class="row_(\d+) col_1"\>(.*?)\<\/td\>/'; //тело таблицы - цена
+$patterns[2] = '/\<th class="row_(\d+) col_0"\>(.*?)\<\/th\>/'; //заг таблицы - размер
+$patterns[3] = '/\<th class="row_(\d+) col_1"\>(.*?)\<\/th\>/'; //заг таблицы - цена
+
+$replacements = array();
+$replacements[0] = '<td class="row_${1} col_0">${2} <span class="prise-body-dim">см.</span></td>'; //т табл- размер
+//$replacements[1] = '<td class="row_${1} col_1"><del>${2} руб.</del><span class="prise-discount-cost">от ${2} руб.</span></td>'; //тело таблицы - цена
+$replacements[2] = '<th class="row_${1} col_0">при высоте:</th>'; //з табл- размер
+$replacements[3] = '<th class="row_${1} col_1">цена:</th>'; //з таблицы - цена
+$table = preg_replace($patterns, $replacements, $output);
+return preg_replace_callback('/\<td class="row_(\d+) col_1"\>(.*?)\<\/td\>/', "keramartmodule_discountpriseformatter2", $table);
+}
+
+function keramartmodule_prisefromformatter(&$output, $variant = NULL) { //извлекаем из таблички цен первую строку и снабжаем текстом "цена: от..."
+
+$pattern = '/\<td class="row_1 col_1"\>(.*?)\<\/td\>/'; //тело таблицы - размер
+preg_match($pattern, $output, $result);
+if (!empty($result[1])) {
+	return 'от <span class="prise-from-digit">' . number_format($result[1], 0, '', ' ' ) . '</span> руб.';
+		} else {
+                    if ($variant == NULL) { 
+                        return 'договорная';
+                        } else {
+                             return NULL;
+                            }
+		}
+}
+
+function keramartmodule_prisestoneformatter(&$output, $variant = NULL) { //извлекаем из таблички цен первую строку и снабжаем текстом "цена со скидкой:"
+
+$pattern = '/\<td class="row_1 col_1"\>(.*?)\<\/td\>/'; //тело таблицы - размер
+preg_match($pattern, $output, $result);
+$cost = number_format($result[1], 0, '', ' ' );
+if (!empty($result[1])) {
+	return 'Цена: ' . $cost . ' руб.<br>Цена со скидкой: <span class="prise-from-digit">' . $cost * 0.8 . '</span> руб.';
+		} else {
+                    if ($variant == NULL) { 
+                        return 'договорная';
+                        } else {
+                             return NULL;
+                            }
+		}
+}
+
+function keramartmodule_prisefromformatter2(&$output, $variant = NULL) { //извлекаем из таблички цен первую строку и снабжаем текстом "цена: от..."
+$actionnow = variable_get_value('keramartmodule_actionnow');
+$actiondiscount = variable_get_value('keramartmodule_actiondiscount');
+$pattern = '/\<td class="row_1 col_1"\>(.*?)\<\/td\>/'; //тело таблицы - размер
+preg_match($pattern, $output, $result);
+if (!empty($result[1])) {
+    if ($actionnow == '1' or $actionnow == '2'){
+        return 'от <del><small>' . number_format($result[1], 0, '', ' ' ) . '</small></del> ' . number_format(($result[1]- $result[1]*$actiondiscount/100), 0, '', ' ' ) .' руб.';
+        } else {
+    return 'от ' . number_format($result[1], 0, '', ' ' ) . ' руб.';
+    
+    }
+		} else {
+                        return 'договорная';
+
+		}
+}
+
+/**
+ * Implements hook_variable_info().
+ */
+function keramartmodule_variable_info($options) {
+
+  // This is the very minimum we need, some descriptive name.
+
+  $variable['keramartmodule_priceoff'] = array(
+    'title' => t('Отключить прайс'),
+    'type' => 'boolean',
+    'access' => 'administer menus',
+    'default' => FALSE,
+  );
+    $variable['keramartmodule_actionnow'] = array(
+    'title' => t('Номер текущей акции'),
+    'description' => t('1 - скидка 25, 2- скидка 30', array(), $options),
+    'type' => 'number',
+    'access' => 'administer menus',
+    'default' => '1',
+    
+  );
+      $variable['keramartmodule_actiondatetill'] = array(
+    'title' => t('Действие акции до'),
+    'description' => t('', array(), $options),
+    'type' => 'date',
+    'access' => 'administer menus',
+    'default' => '',
+    
+  );
+      $variable['keramartmodule_actionnowtitle'] = array(
+    'title' => t('Название текущей акции'),
+    'description' => t('', array(), $options),
+    'type' => 'string',
+    'access' => 'administer menus',
+    'default' => '',
+    
+  );
+          $variable['keramartmodule_actiondiscount'] = array(
+    'title' => t('Размер скидки'),
+    'description' => t('В процентах', array(), $options),
+    'type' => 'number',
+    'access' => 'administer menus',
+    'default' => '0',
+    
+  );
+
+  return $variable;
+}  
+
+function keramartmodule_variable_type_info() {
+  $type['date'] = array(
+    'title' => t('Date'),
+    'element' => array('#type' => 'date_select'),
+    'token' => TRUE,
+  );
+  
+  return $type;
+}
+
+function keramartmodule_taxonomymatch($termfield) {
+$i= 0;
+foreach ($termfield['und'] as &$value){
+    $termids[$i]= $value['tid'];
+    $parent[$i]=taxonomy_get_parents($termids[$i]);
+    $i= $i+1;
+}
+//dpm  ($termids);
+
+$tids = array('62', '65', '64', '66', '67', '68');
+foreach ($tids as &$value){
+if (in_array($value, $termids)){
+return 'fontani';
+} else { 
+    return 'none';
+}
+}
+}

@@ -1,0 +1,62 @@
+<?php
+// $Id
+require_once(dirname(__FILE__) . '/TestBase.inc');
+
+
+/**
+ * Tests for Open Graph meta tags.
+ */
+class OGMTBasicTest extends OGMTTestBase {
+
+  public static function getInfo() {
+    return array(
+      'name' => t('Basic unit tests'),
+      'description' => t('Test basic functionality.'),
+      'group' => t('Open Graph meta tags'),
+    );
+  }
+
+  function testExtractImagesFromNode() {
+
+    /*
+     * Check that logic to extract image URLs from the node body works as expected.
+     */
+
+    $node = new stdClass();
+
+    $this->_set_node_body($node,
+        'bla bla bla <a href="this is">...<img src="body.jpg">...<img> <img src=""></p>'  // test broken HTML
+    );
+
+    $node->type = 'page';
+    $node->field_image = $this->_create_img_field('image','field1.jpg');
+    $node->field_no_image = $this->_create_img_field('pdf','field2.jpg');
+    $node->sub_field_image = array('child' => $this->_create_img_field('image','subfield.jpg'));
+    $ret = $this->ogm->harvestImagesFromNode($node);
+    $expected = array();
+    foreach (array('field1.jpg','subfield.jpg','body.jpg') as $imgpath) {
+      $url = image_style_url('thumbnail', $imgpath);
+      $expected[$imgpath] = array('title' => $imgpath, 'alt' => $imgpath, 'url' => $url);
+    }
+    $this->assertEqual(serialize($expected), serialize($ret), t('Extract images from node fields and body content'));
+  }
+  
+  function testMetaTagsEnabledForContentType() {
+
+    /*
+     * Check the logic when enable tags to be enabled/disabled for a given content type.
+     */
+
+    // turn on all content types (no variable set)
+    $this->ogm_settings->vars = array();
+    $this->assertTrue($this->ogm->tags_are_enabled_for_content_type('type1'));
+    // turn on all content types (variable set)
+    $this->ogm_settings->set(OPENGRAPH_META_VAR_CONTENT_TYPES_ENABLED, array());
+    $this->assertTrue($this->ogm->tags_are_enabled_for_content_type('type1'));
+    // turn on specific content type
+    $this->ogm_settings->set(OPENGRAPH_META_VAR_CONTENT_TYPES_ENABLED, array('type1' => 1,'type2' => 0));
+    $this->assertTrue($this->ogm->tags_are_enabled_for_content_type('type1'));
+    $this->assertFalse($this->ogm->tags_are_enabled_for_content_type('type2'));
+  }
+
+}

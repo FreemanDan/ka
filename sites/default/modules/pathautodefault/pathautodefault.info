@@ -1,0 +1,10 @@
+name = Pathauto_CheckBoxDefault
+description = Значение по умолчанию чекбокса автоматического создания url по типу нод
+dependencies[] = pathauto
+package = Danil
+core=7.x
+version = "7.x-1.x-dev"
+project = "pathautodefault"
+datestamp = "1332419400"
+
+files[] = pathautodefault.module 

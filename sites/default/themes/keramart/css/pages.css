@@ -1,0 +1,895 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+/* gradient backgrounds and reflections */
+/* 
+*Смещаем администраторское меню вниз на ширину верхнего меню сайта и убираем тени
+*/
+/*
+ * Body
+ */
+/* line 18, ../sass/pages.scss */
+body {
+  font-family: Calibri, sans-serif;
+}
+
+/* line 25, ../sass/pages.scss */
+#page, article.node-642 {
+  background-color: white;
+}
+
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ * See the element-focusable rule in system.base.css.
+ */
+/* line 33, ../sass/pages.scss */
+article.view-mode-colorbox {
+  background-color: white;
+  padding: 10px;
+}
+
+/* line 37, ../sass/pages.scss */
+#skip-link {
+  margin: 0;
+}
+/* line 40, ../sass/pages.scss */
+#skip-link a,
+#skip-link a:visited {
+  display: block;
+  width: 100%;
+  padding: 2px 0 3px 0;
+  text-align: center;
+  background-color: #666;
+  color: #fff;
+}
+
+/*
+ * Header
+ */
+/* line 54, ../sass/pages.scss */
+#bandslogan {
+  float: left;
+}
+
+/* line 57, ../sass/pages.scss */
+#header {
+  position: relative;
+  margin-top: 1.5em;
+}
+
+/* line 62, ../sass/pages.scss */
+#logo {
+  /* Wrapping link for logo */
+  /* LTR */
+}
+
+/* line 66, ../sass/pages.scss */
+#name-and-slogan {
+  /* Wrapper for website name and slogan */
+  float: left;
+}
+
+/* line 70, ../sass/pages.scss */
+#site-name {
+  /* The name of the website */
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+/* line 75, ../sass/pages.scss */
+#site-name a:link,
+#site-name a:visited {
+  color: #000;
+  text-decoration: none;
+}
+/* line 81, ../sass/pages.scss */
+#site-name a:hover,
+#site-name a:focus {
+  text-decoration: underline;
+}
+
+/* line 87, ../sass/pages.scss */
+#site-slogan,
+#block-views-slogan-block,
+#block-block-11 {
+  /* The slogan (or tagline) of a website */
+  margin-top: 0;
+  font-size: 0.875em;
+  line-height: 3.42857em;
+  text-transform: uppercase;
+}
+/* line 95, ../sass/pages.scss */
+#site-slogan p,
+#block-views-slogan-block p,
+#block-block-11 p {
+  margin: 0;
+}
+
+/* line 100, ../sass/pages.scss */
+.region-header {
+  /* Wrapper for any blocks placed in the header region */
+}
+
+/*
+ * Main (container for everything else)
+ */
+/* line 107, ../sass/pages.scss */
+.taxonomy-term-description {
+  margin: 0;
+}
+
+/*
+ * Content
+ */
+/* line 118, ../sass/pages.scss */
+.field-name-field-promo-description,
+div.sub-title,
+div.goods-heading1,
+.view-header h3 {
+  font-size: 1.1875em;
+  line-height: 1.26316em;
+  margin-bottom: 1.26316em;
+  font-weight: normal;
+}
+
+/* line 129, ../sass/pages.scss */
+.page-taxonomy-term-72 #page-title,
+.page-taxonomy-term-72 .sub-title,
+.page-taxonomy-term-82 #page-title,
+.page-taxonomy-term-82 .sub-title {
+  color: white;
+  font-weight: normal;
+}
+
+/*
+ * Breadcrumb
+*/
+/* line 145, ../sass/pages.scss */
+nav.breadcrumb {
+  clear: left;
+  color: #999999;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  font-family: "Roboto", sans-serif;
+}
+/* line 151, ../sass/pages.scss */
+nav.breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+/* line 155, ../sass/pages.scss */
+nav.breadcrumb li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 160, ../sass/pages.scss */
+nav.breadcrumb li a {
+  color: #999999;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* line 164, ../sass/pages.scss */
+nav.breadcrumb li a:hover {
+  color: #222222;
+}
+
+/* line 171, ../sass/pages.scss */
+h3.title,
+#block-webform-client-block-635 .free-scatch,
+#block-webform-client-block-635 .form-submit,
+form.webform-client-form .form-actions .form-submit,
+.contactus-form
+div.goods-heading1,
+h1.title,
+h2.node-title,
+h2.block-title,
+h2.title,
+h2.comment-form,
+h3.title {
+  /* Comment title */
+  margin: 0;
+}
+
+/* line 188, ../sass/pages.scss */
+.lp h2 {
+  margin-top: 1.07143em;
+}
+
+/*
+ * Splitter -- добавлен между блоками
+*/
+/* line 195, ../sass/pages.scss */
+.splitter,
+.header-splitter {
+  margin-top: 1.3125em;
+  overflow: hidden;
+  background-image: url("images/keramart-spritesheet-horizontals.png");
+  height: 3px;
+  background-position: 0 -17px;
+  width: 100%;
+  background-repeat: repeat-x;
+  display: block;
+}
+
+/* line 206, ../sass/pages.scss */
+.region-sidebar-first .splitter {
+  background-position: 0 -9px;
+}
+
+/* line 209, ../sass/pages.scss */
+.content-splitter {
+  margin-top: 0.6875em;
+  margin-bottom: 0.6875em;
+  overflow: hidden;
+  background-image: url("images/keramart-spritesheet-horizontals.png");
+  height: 1px;
+  background-position: 0 -9px;
+  width: 100%;
+  background-repeat: repeat-x;
+  display: block;
+}
+
+/*
+ * Splitter-promo -- с фейдом и стрелочкой
+*/
+/* line 224, ../sass/pages.scss */
+.splitter-promo {
+  padding-top: 3em;
+  overflow: hidden;
+  background-image: url("images/keramart-spritesheet-horizontals.png");
+  height: 1.5em;
+  background-position: 0 -20px;
+  width: 100%;
+  background-repeat: repeat-x;
+  display: block;
+  position: relative;
+}
+
+/* line 236, ../sass/pages.scss */
+.splitter-arrow-dwn {
+  width: 138px;
+  height: 24px;
+  background-image: url("images/spritesheet.png");
+  background-repeat: no-repeat;
+  background-position: 0 -162px;
+  position: absolute;
+  left: 50%;
+  margin-left: -57px;
+}
+
+/*
+ ******************************* Каталог ************************
+ */
+/* line 250, ../sass/pages.scss */
+.view-id-kategorii .views-row {
+  margin-bottom: 1.5em;
+}
+/* line 253, ../sass/pages.scss */
+.view-id-kategorii .kategorii-img {
+  display: block;
+  height: 288px;
+  background-repeat: no-repeat;
+  background-color: #FFF;
+  background-position: 50% 50%;
+  -moz-transition: background-size 1s ease-in-out;
+  -o-transition: background-size 1s ease-in-out;
+  -webkit-transition: background-size 1s ease-in-out;
+  transition: background-size 1s ease-in-out;
+  -moz-background-size: 100%, auto;
+  -o-background-size: 100%, auto;
+  -webkit-background-size: 100%, auto;
+  background-size: 100%, auto;
+}
+/* line 268, ../sass/pages.scss */
+.view-id-kategorii a.views-field-name {
+  display: block;
+  width: 95%;
+  font-weight: normal;
+  color: black;
+  text-decoration: none;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-top: 0.66667em;
+  padding-bottom: 0.66667em;
+}
+/* line 280, ../sass/pages.scss */
+.view-id-kategorii a.views-field-name:visited {
+  color: black;
+}
+/* line 286, ../sass/pages.scss */
+.view-id-kategorii .views-field-field-tiser-description {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin: 0;
+}
+/* line 290, ../sass/pages.scss */
+.view-id-kategorii .categorii-inner {
+  border: 1px #d5d5d5 solid;
+}
+
+/* line 304, ../sass/pages.scss */
+.page-taxonomy-term #navigation a.contactus-form,
+.page-taxonomy-term .region-sidebar-first a.contactus-form {
+  float: left;
+}
+/* line 308, ../sass/pages.scss */
+.page-taxonomy-term #content a.contactus-form {
+  width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 1.125em;
+  line-height: 2.66667em;
+}
+
+/* 
+***************** Список изделий, список подкатегорий
+*/
+/* line 321, ../sass/pages.scss */
+.spisokisdelii {
+  text-align: center;
+  color: #222222;
+}
+
+/* line 326, ../sass/pages.scss */
+.spisokizdelii-inner {
+  -moz-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  -webkit-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+/* line 328, ../sass/pages.scss */
+.spisokizdelii-inner:hover {
+  -moz-transition: none;
+  -o-transition: none;
+  -webkit-transition: none;
+  transition: none;
+  background-color: #EEEEEE;
+}
+
+/* line 334, ../sass/pages.scss */
+.spisokisdelii-desc-field {
+  display: block;
+  font-size: 0.875em;
+  line-height: 1.28571em;
+  height: 6.85714em;
+  margin: 0;
+}
+
+/* line 341, ../sass/pages.scss */
+.spisokisdelii-articul-field {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin: 0;
+}
+
+/* line 346, ../sass/pages.scss */
+.spisokizd-prise-heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 0.875em;
+  line-height: 1.28571em;
+}
+
+/* line 352, ../sass/pages.scss */
+img.catalog_img_kategory,
+img.catalog_img_wiev {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+@media \0screen {
+  /* line 359, ../sass/pages.scss */
+  img.catalog_img_wiev {
+    width: auto;
+    /* для ie 8 */
+  }
+}
+/* 
+***************** Страницы изделий
+*/
+/* line 366, ../sass/pages.scss */
+.node-portfolioitem div.galleryformatter {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5em;
+}
+
+/* line 373, ../sass/pages.scss */
+.view-id-item_prise_group_view {
+  background-color: #FBFBFB;
+  background-image: url("images/fonshum.png");
+  background-repeat: repeat;
+  float: left;
+  margin-bottom: 1.5em;
+}
+/* line 379, ../sass/pages.scss */
+.view-id-item_prise_group_view .view-header {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VlZWVlZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #eeeeee));
+  background-image: -moz-linear-gradient(top, #ffffff, #eeeeee);
+  background-image: -webkit-linear-gradient(top, #ffffff, #eeeeee);
+  background-image: linear-gradient(to bottom, #ffffff, #eeeeee);
+  color: #6E6350;
+  font-family: "Roboto", sans-serif;
+}
+/* line 380, ../sass/pages.scss */
+.view-id-item_prise_group_view .view-header p {
+  margin-top: 0;
+}
+/* line 388, ../sass/pages.scss */
+.view-id-item_prise_group_view .view-content {
+  float: left;
+  clear: right;
+}
+/* line 392, ../sass/pages.scss */
+.view-id-item_prise_group_view .view-footer {
+  font-size: 0.8125em;
+  line-height: 1.84615em;
+  color: #3E1B00;
+}
+
+/* line 398, ../sass/pages.scss */
+.item-page-prise {
+  float: left;
+}
+/* line 400, ../sass/pages.scss */
+.item-page-prise table {
+  margin: 0 20px 0 0;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/* line 405, ../sass/pages.scss */
+.item-page-prise-descr {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  margin: 0;
+}
+
+/*
+ ************* Прайс-лист *************************************
+ */
+/* line 414, ../sass/pages.scss */
+.desc-left-inner-prise {
+  float: left;
+}
+/* line 415, ../sass/pages.scss */
+.desc-left-inner-prise table {
+  margin: 0 20px 0 0;
+}
+
+/* line 420, ../sass/pages.scss */
+.prise-page-img {
+  background-color: #EEEEEE;
+}
+/* line 421, ../sass/pages.scss */
+.prise-page-img a {
+  padding: 0;
+  margi: 0;
+  display: table-cell;
+  vertical-align: middle;
+  height: 110px;
+  width: 100px;
+}
+
+/* line 433, ../sass/pages.scss */
+.prise-page-row {
+  margin-right: 20px;
+  margin-bottom: 1.84615em;
+  font-size: 0.8125em;
+  line-height: 1.84615em;
+  text-align: center;
+  float: left;
+}
+
+/*
+ * фотогалерея
+ */
+/* line 443, ../sass/pages.scss */
+.node-photogallery div.field-item {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 447, ../sass/pages.scss */
+div.view-prgoj-to-items {
+  clear: left;
+}
+
+/* line 451, ../sass/pages.scss */
+.node-portfolioitem div.field-name-field-video-embed,
+.node-portfolioitem div.field-name-body {
+  clear: left;
+}
+
+/*
+ * сноски:
+*/
+/* line 458, ../sass/pages.scss */
+.field-name-field-keramic-help p,
+.snoska-ahtung p
+.snoska p {
+  font-size: 0.9em;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 465, ../sass/pages.scss */
+.snoska {
+  padding-top: 0.85714em;
+  padding-bottom: 0.85714em;
+  padding-left: 10px;
+  padding-right: 10px;
+  -moz-border-radius: 13em 0.5em/1em 0.5em;
+  -webkit-border-radius: 13em;
+  border-radius: 13em 0.5em/1em 0.5em;
+  background: #CFDDC0;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+
+/* line 474, ../sass/pages.scss */
+.field-name-field-keramic-help div.field-item,
+.snoska-ahtung {
+  background: #F1E6BE;
+  padding-top: 0.85714em;
+  padding-bottom: 0.85714em;
+  font-size: 0.875em;
+  line-height: 1.71429em;
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  border-radius: 0.5em;
+  clear: left;
+  margin-bottom: 1.71429em;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 490, ../sass/pages.scss */
+h2 .block-title {
+  color: #222222;
+}
+
+/*
+ * отступ первой строки абзаца
+*/
+/* line 498, ../sass/pages.scss */
+.imgleft {
+  float: left;
+  margin-right: 1em;
+}
+
+/* line 502, ../sass/pages.scss */
+.imgright {
+  float: right;
+  margin-left: 1em;
+}
+
+/* line 510, ../sass/pages.scss */
+div.view-kategorii {
+  margin-bottom: 1em;
+}
+
+/* line 513, ../sass/pages.scss */
+#index_aboutfr {
+  overflow: auto;
+}
+
+/*
+ * Content
+ */
+/* line 520, ../sass/pages.scss */
+.view-material-kategogy div.views-row {
+  overflow: auto;
+}
+
+/* line 523, ../sass/pages.scss */
+.view-material-kategogy div.views-row-last {
+  margin-bottom: 2em;
+}
+
+/* line 528, ../sass/pages.scss */
+h1#page-title {
+  margin-top: 0.75em;
+  font-size: 2em;
+  line-height: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+/* line 534, ../sass/pages.scss */
+.pane-menu-block-4 h2,
+h1.title,
+h2.node-title,
+h2.block-title,
+h2.title,
+h2.comment-form,
+h3.title {
+  /* Comment title */
+  margin: 0;
+}
+
+/* line 543, ../sass/pages.scss */
+#block-user-login ul,
+ul.menu {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 548, ../sass/pages.scss */
+ul ul.menu {
+  padding: 0 0 0 1em;
+}
+
+/* line 554, ../sass/pages.scss */
+#content thead th {
+  font-weight: normal;
+  color: white;
+  background-color: #6E6350;
+  padding: 0 4px 0 4px;
+}
+/* line 560, ../sass/pages.scss */
+#content tbody td {
+  padding: 0 4px 0 4px;
+}
+
+/* line 564, ../sass/pages.scss */
+tr.even {
+  /* Some tables have rows marked even or odd. */
+  /* background-color: #eee; */
+  /* Drupal core uses a #eee background */
+}
+
+/* line 568, ../sass/pages.scss */
+tr.odd {
+  /* background-color: #eee; */
+  /* Drupal core uses a #eee background */
+}
+
+/* line 572, ../sass/pages.scss */
+div.messages {
+  /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
+  margin: 1.5em 0;
+  /* Drupal core uses "6px 0" margin */
+}
+/* line 575, ../sass/pages.scss */
+div.messages ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 581, ../sass/pages.scss */
+div.status {
+  /* Normal priority messages */
+}
+
+/* line 584, ../sass/pages.scss */
+div.warning,
+tr.warning {
+  /* Medium priority messages */
+  /* border: 1px solid #f0c020; */
+  /* Drupal core uses: 1px solid #f0c020 */
+}
+
+/* line 589, ../sass/pages.scss */
+div.error,
+tr.error {
+  /* High priority messages. See also the .error declaration below. */
+}
+
+/* line 593, ../sass/pages.scss */
+.error {
+  /* Errors that are separate from div.messages status messages. */
+  /* color: #e55; */
+  /* Drupal core uses a #e55 background */
+}
+
+/* line 597, ../sass/pages.scss */
+.warning {
+  /* Warnings that are separate from div.messages status messages. */
+  /* color: #e09010; */
+  /* Drupal core uses a #e09010 background */
+}
+
+/* line 601, ../sass/pages.scss */
+.tabs {
+  /* See also the tabs.css file. */
+}
+
+/* line 604, ../sass/pages.scss */
+.region-help {
+  /* Help text on a page */
+}
+
+/* line 607, ../sass/pages.scss */
+.more-help-link {
+  /* Link to more help */
+}
+
+/* line 610, ../sass/pages.scss */
+.region-content {
+  /* Wrapper for the actual page content */
+}
+
+/* line 613, ../sass/pages.scss */
+ul.inline {
+  /* List of links generated by theme_links() */
+  display: inline;
+  padding: 0;
+}
+/* line 617, ../sass/pages.scss */
+ul.inline li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 1em 0 0;
+  /* LTR */
+}
+
+/* line 623, ../sass/pages.scss */
+span.field-label {
+  /* The inline field label used by the Fences module */
+  padding: 0 1em 0 0;
+  /* LTR */
+}
+
+/* line 627, ../sass/pages.scss */
+.item-list .pager {
+  /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+}
+/* line 633, ../sass/pages.scss */
+.item-list .pager li.pager-next a,
+.item-list .pager li.pager-first a,
+.item-list .pager li.pager-previous a,
+.item-list .pager li.pager-last a {
+  font-size: 0.875em;
+  line-height: 2.14286em;
+}
+/* line 639, ../sass/pages.scss */
+.item-list .pager li.pager-item a {
+  font-size: 1em;
+  line-height: 1.875em;
+}
+/* line 643, ../sass/pages.scss */
+.item-list .pager li.pager-current {
+  display: inline-block;
+  background-color: #D3C6B3;
+  font-size: 1em;
+  line-height: 1.875em;
+  height: 1.875em;
+}
+/* line 649, ../sass/pages.scss */
+.item-list .pager li {
+  /* Each page number in the pager list */
+  padding: 0 0.5em;
+}
+/* line 651, ../sass/pages.scss */
+.item-list .pager li a {
+  background-color: #d5d5d5;
+  display: inline-block;
+  padding: 0 0.5em;
+}
+/* line 652, ../sass/pages.scss */
+.item-list .pager li a:hover {
+  background-color: #222222;
+}
+
+/* line 662, ../sass/pages.scss */
+.feed-icon {
+  /* The link to the RSS or Atom feed for the current list of content */
+}
+
+/* line 665, ../sass/pages.scss */
+.more-link {
+  /* Aggregator, blog, and forum more link */
+}
+
+/*
+ * First sidebar (on left in LTR languages, on right in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-first
+ * (see the layout.css file.)
+ */
+/* line 674, ../sass/pages.scss */
+#shad-wr {
+  background-image: url("images/keramart-spritesheet-verticals.png");
+  background-repeat: repeat-y;
+}
+
+/* line 678, ../sass/pages.scss */
+#side-end {
+  background-image: url("images/spritesheet.png");
+  width: 12px;
+  height: 100px;
+}
+
+/* line 684, ../sass/pages.scss */
+.sidebar #user-login-form {
+  font-size: 0.8em;
+}
+
+/* line 688, ../sass/pages.scss */
+.region-sidebar-first #shad-wr {
+  background-position: right top;
+}
+/* line 691, ../sass/pages.scss */
+.region-sidebar-first #side-end {
+  float: right;
+  background-position: 0 -64px;
+}
+
+/*
+ * Second sidebar (on right in LTR languages, on left in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-second
+ * (see the layout.css file.)
+ */
+/* line 704, ../sass/pages.scss */
+.region-sidebar-second .block {
+  margin-left: 10px;
+}
+/* line 707, ../sass/pages.scss */
+.region-sidebar-second #shad-wr {
+  background-position: left top;
+}
+/* line 710, ../sass/pages.scss */
+.region-sidebar-second #side-end {
+  float: left;
+  background-position: -12px -62px;
+}
+
+/*
+ * Footer
+ */
+/* line 719, ../sass/pages.scss */
+#footer {
+  clear: left;
+  text-align: center;
+}
+/* line 721, ../sass/pages.scss */
+#footer #block-menu-menu-dopolnitelno li {
+  display: inline;
+}
+/* line 724, ../sass/pages.scss */
+#footer #block-block-3 {
+  font-size: 0.75em;
+  line-height: 2em;
+}
+
+/* line 729, ../sass/pages.scss */
+#footer li {
+  margin: 0 1em 0 1em;
+}
+
+/* line 732, ../sass/pages.scss */
+a.user-login {
+  float: left;
+}
+
+/* line 735, ../sass/pages.scss */
+#block-menu-menu-podval li {
+  display: inline;
+}
+
+/*
+ * Page bottom
+ */
+/* line 742, ../sass/pages.scss */
+.region-bottom {
+  /* Wrapper for any blocks placed in the page bottom region */
+}
+
+/*# sourceMappingURL=pages.css.map */

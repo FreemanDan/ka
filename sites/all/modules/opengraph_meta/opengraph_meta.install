@@ -1,0 +1,80 @@
+<?php
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function opengraph_meta_update_last_removed() {
+  return 6002;
+}
+
+/**
+ * Enable metatag_opengraph and select_or_other.
+ */
+function opengraph_meta_update_7001() {
+  module_enable(['metatag_opengraph', 'select_or_other']);
+}
+
+/**
+ * Migrate to metatag storage.
+ */
+function opengraph_meta_update_7002() {
+  $query = db_select('opengraph_meta', 'og');
+  $query->innerJoin('node', 'n', 'n.nid=og.nid');
+  $rows = $query->fields('og')
+    ->fields('n', ['vid', 'language'])
+    ->execute();
+  foreach ($rows as $row) {
+    $row->optional = unserialize($row->optional);
+    $metatags = metatag_metatags_load('node', $row->nid);
+    foreach ($row as $key => $value) {
+      if (!in_array($key, ['nid', 'vid', 'language', 'optional'])) {
+        if (!empty($value)) {
+          $metatags[$row->language]["og:$key"]['value'] = $value;
+        }
+      }
+    }
+    if (is_array($row->optional)) {
+      foreach ($row->optional as $key => $value) {
+        if (!empty($value)) {
+          $key = strtr($key, '-', '_');
+          $metatags[$row->language]["og:$key"]['value'] = $value;
+        }
+      }
+    }
+    metatag_metatags_save('node', $row->nid, $row->vid, $metatags, $row->language);
+  }
+  db_drop_table('opengraph_meta');
+
+  $global_defaults = [];
+  foreach (['site_name' => 'site_name', 'fallback_img' => 'image'] as $k => $v) {
+    if ($value = variable_get('opengraph_meta_' . $k)) {
+      $global_defaults["og:$v"]['value'] = $value;
+    }
+  }
+  foreach (variable_get('opengraph_meta_optional_tags', []) as $k => $v) {
+    if ($v) {
+      $global_defaults["og:$k"]['value'] = $v;
+    }
+  }
+  if ($global_defaults) {
+    $config = metatag_config_load('global');
+    $config->config = $global_defaults + $config->config;
+    metatag_config_save($config);
+  }
+
+  variable_del('opengraph_meta_types_enabled');
+  variable_del('opengraph_meta_site_name');
+  variable_del('opengraph_meta_fallback_img');
+  variable_del('opengraph_meta_optional_tags');
+  $types = node_type_get_types();
+  foreach ($types as $id => $d) {
+    // @TODO These default values need a migration!
+    variable_del('opengraph_meta_type_'.$id);
+    variable_del('opengraph_meta_cck_'.$id);
+  }
+
+  // front:page settings should never override node settings.
+  $config = variable_get('default_metatag_config', []);
+  $config['global:frontpage'] = TRUE;
+  variable_set('default_metatag_config', $config);
+}

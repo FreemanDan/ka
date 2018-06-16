@@ -1,0 +1,11 @@
+@import "compass/typography/vertical_rhythm";
+@import "compass/layout/grid-background";
+$base-font-size: 14px;
+$base-line-height: 24px;
+$rhythm-unit: "px";
+$grid-background-total-columns: 12;
+$grid-background-column-width: 70px;
+$grid-background-gutter-width: 30px;
+$grid-background-baseline-height: 24px;
+$grid-background-offset: 15px;
+$grid-background-force-fluid: true;

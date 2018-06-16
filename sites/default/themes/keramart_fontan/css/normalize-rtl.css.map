@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;;;;;;AAaA,EAAG;EACD,MAAM,EAAE,UAAoB;;;;;;;AAO9B;;;aAGoC;EAClC,OAAO,EAAE,UAAoB;;;;;;;;;;;;;AAsB/B,EAAG;EACD,UAAU,EAAE,KAAK",
+"sources": ["../sass/normalize-rtl.scss"],
+"names": [],
+"file": "normalize-rtl.css"
+}

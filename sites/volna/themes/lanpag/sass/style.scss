@@ -1,0 +1,14 @@
+//@import "bootstrap-compass";
+@import "base";
+@import "bootstrap-variables";
+@import "bootstrap";
+//@import "bootstrap-mincer";
+//@import "default";
+//@import "slick";
+//@import "mixin";
+//@import "fonts";0
+h1 {
+    @include adjust-font-size-to ($font-size-h1 );
+    @include rhythm(0.5, 0, 0, 0.5);
+}
+

@@ -1,0 +1,7 @@
+name = Lazy Load XT
+description = Add Lazy Load XT formatter for images
+package = Media
+core = 7.x
+
+dependencies[] = image
+dependencies[] = libraries

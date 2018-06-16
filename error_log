@@ -1,0 +1,18 @@
+[16-Jun-2018 09:51:35 Europe/Moscow] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 544 bytes) in /home/keramar8/public_html/includes/database/database.inc on line 2227
+[16-Jun-2018 09:51:35 Europe/Moscow] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/keramar8/public_html/includes/database/database.inc:2227
+Stack trace:
+#0 /home/keramar8/public_html/includes/database/database.inc(2227): PDOStatement->execute(Array)
+#1 /home/keramar8/public_html/includes/database/database.inc(697): DatabaseStatementBase->execute(Array, Array)
+#2 /home/keramar8/public_html/includes/database/database.inc(2406): DatabaseConnection->query('SELECT s.lid, t...', Array, Array)
+#3 /home/keramar8/public_html/modules/locale/locale.module(720): db_query('SELECT s.lid, t...', Array)
+#4 /home/keramar8/public_html/includes/bootstrap.inc(1755): locale('Error: !message...', '', 'ru')
+#5 /home/keramar8/drush/includes/output.inc(149) in /home/keramar8/public_html/includes/database/database.inc on line 2227
+[16-Jun-2018 11:58:35 Europe/Moscow] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 608 bytes) in /home/keramar8/public_html/includes/database/database.inc on line 2227
+[16-Jun-2018 11:58:35 Europe/Moscow] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000]: General error: 2014 Cannot execute queries while other unbuffered queries are active.  Consider using PDOStatement::fetchAll().  Alternatively, if your code is only ever going to run against mysql, you may enable query buffering by setting the PDO::MYSQL_ATTR_USE_BUFFERED_QUERY attribute.' in /home/keramar8/public_html/includes/database/database.inc:2227
+Stack trace:
+#0 /home/keramar8/public_html/includes/database/database.inc(2227): PDOStatement->execute(Array)
+#1 /home/keramar8/public_html/includes/database/database.inc(697): DatabaseStatementBase->execute(Array, Array)
+#2 /home/keramar8/public_html/includes/database/database.inc(2406): DatabaseConnection->query('SELECT s.lid, t...', Array, Array)
+#3 /home/keramar8/public_html/modules/locale/locale.module(720): db_query('SELECT s.lid, t...', Array)
+#4 /home/keramar8/public_html/includes/bootstrap.inc(1755): locale('Error: !message...', '', 'ru')
+#5 /home/keramar8/drush/includes/output.inc(149) in /home/keramar8/public_html/includes/database/database.inc on line 2227

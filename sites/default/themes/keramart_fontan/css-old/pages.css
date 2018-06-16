@@ -1,0 +1,689 @@
+/**
+ * @file
+ * Page Styling
+ *
+ * Style the markup found in page.tpl.php. Also includes some styling of
+ * miscellaneous Drupal elements that appear in the $content variable, such as
+ * ul.links, .pager, .more-link, etc.
+ */
+
+
+/*
+ * Body
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  font-style: normal;
+}
+
+#page {
+margin-top: 15px;
+}
+
+/*
+ * The skip-link link will be completely hidden until a user tabs to the link.
+ * See the element-focusable rule in system.base.css.
+ */
+
+#skip-link {
+  margin: 0;
+}
+#skip-link a,
+#skip-link a:visited {
+  display: block;
+  width: 100%;
+  padding: 2px 0 3px 0;
+  text-align: center;
+  background-color: #666;
+  color: #fff;
+}
+
+/*
+ * Header
+ */
+
+#header {
+}
+
+#logo { /* Wrapping link for logo */
+  float: left; /* LTR */
+  margin: 0;
+  padding: 0;
+}
+#logo img {
+  vertical-align: bottom;
+}
+#bandslogan {
+float: right;
+}
+#name-and-slogan { /* Wrapper for website name and slogan */
+  clear: both;
+  float: right;
+}
+
+#site-name { /* The name of the website */
+  margin: 0;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+#site-name a:link,
+#site-name a:visited {
+  color: #000;
+  text-decoration: none;
+}
+#site-name a:hover,
+#site-name a:focus {
+  text-decoration: underline;
+}
+
+#site-slogan { /* The slogan (or tagline) of a website */
+  margin: 0;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-family: sans-serif;
+  letter-spacing: 0.27em;
+}
+
+.region-header { /* Wrapper for any blocks placed in the header region */
+  /*clear: both;  Clear the logo */
+  float: right;
+}
+
+/*
+ * Main (container for everything else)
+ */
+
+ /*
+ * Font 1-nd
+*/
+h2.block-title,
+.breadcrumb,
+h1,
+div.sub-title,
+div.goods-heading1,
+.view-header h3,
+ h3.title,
+#block-webform-client-block-635 .free-scatch,
+#block-block-2 .header_phone,
+#block-block-2 .header_email,
+#block-webform-client-block-635 .form-submit,
+form.webform-client-form .form-actions .form-submit,
+.contact-form {
+font-family: 'Ubuntu Condensed', sans-serif;
+}
+/*
+ * Breadcrumb
+*/
+.breadcrumb a {
+text-transform:uppercase;
+}
+.breadcrumb a {
+text-decoration:none;
+}
+.breadcrumb {
+font-size:1.2em;
+}
+nav.breadcrumb {
+margin: 10px 10px 10px 0;
+}
+/*
+ * Splitter
+*/
+.splitter.header {
+margin: 0;
+}
+.splitter {
+display: inline-block;
+overflow: hidden;
+background-repeat: no-repeat;
+background-image: url('images/keramart-spritesheet-horizontals.png');
+width: 100px;
+height: 3px;
+background-position: 0 -500px;
+cursor: default;
+margin: 19px 0;
+width: 100%;
+background-repeat: repeat-x;
+display: block;
+}
+.region-sidebar-first .splitter {
+background-position: 0 -493px;
+margin: 5px 0;
+}
+ 
+#send-order-btm-block {
+-webkit-box-shadow:rgba(255, 255, 255, 0.2) 0 -4px 5px inset, rgba(255, 255, 255, 0.2) 0 1px 5px inset, #818181 0 2px 0px, #C4C4C4 0 4px 0px, #F0F0F0 0 5px 0;
+box-shadow:rgba(255, 255, 255, 0.2) 0 -4px 5px inset, rgba(255, 255, 255, 0.2) 0 1px 5px inset, #818181 0 2px 0px, #C4C4C4 0 4px 0px, #F0F0F0 0 5px 0;
+  background-color:#AC1414;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#B41A1A), color-stop(0.2, #CF6455), color-stop(0.9, #920404), to(#580303));
+  background-image: -moz-linear-gradient(center top, #B41A1A 0%, #CF6455 20%, #920404 90%, #580303 100%);
+  border:0;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  
+  color:#FFFFFF;
+  cursor:pointer;
+  display:inline-block;
+  font-style:normal;
+  font-size:1em;
+  font-variant:normal;
+  font-weight:normal;
+  line-height:1;
+  margin: 15px 0 5px;
+  padding:6px 12px 6px;
+  position:relative;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:rgba(0, 0, 0, 0.2) 0 1px 1px;
+}
+
+ 
+ /*
+ * Модальная форма обратной связи
+ */
+ 
+#block-webform-client-block-635  .form-item, form.webform-client-form .form-item {
+  margin-bottom:3px;
+  margin-right:5px;
+  margin-top:4px;
+  border:1px solid #E5E5E5;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  width:190px;
+}
+form.webform-client-form  #webform-component-fayl {
+font-size:0.8em;
+font-weight:normal;
+text-align:center;
+}
+#block-webform-client-block-635  .form-item  input, form.webform-client-form .form-item input {
+  border:none;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  margin:0;
+  padding:3px 12px 3px;
+  width:164px;
+}
+a.contact-form {
+display:block;
+}
+#content .contact-form {
+width:8em;
+}
+#block-webform-client-block-635 .form-submit, form.webform-client-form .form-actions .form-submit, .contact-form {
+  -webkit-box-shadow:rgba(255, 255, 255, 0.2) 0 -4px 5px inset, rgba(255, 255, 255, 0.2) 0 1px 5px inset, #627401 0 2px 0px, #5D7A02 0 4px 0px, #5B9502 0 5px 0;
+  background-color:#79880B;
+  background-image:-webkit-gradient(linear, 0 0%, 0 100%, from(#CDE612), color-stop(0.2, #CDE612), color-stop(0.9, #98BF04), to(#A4C606));
+  background-image: -moz-linear-gradient(center top , #CDE612 0%, #CDE612 20%, #98BF04 90%, #A4C606 100%);
+  border:0;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  box-shadow:rgba(255, 255, 255, 0.2) 0 -4px 5px inset, rgba(255, 255, 255, 0.2) 0 1px 5px inset, #627401 0 2px 0px, #5D7A02 0 4px 0px, #5B9502 0 5px 0;
+  color:#FFFFFF;
+  cursor:pointer;
+  display:inline-block;
+  font-style:normal;
+  font-size:1.5em;
+  font-variant:normal;
+  font-weight:normal;
+  line-height:1;
+  margin:0;
+  padding:4px 15px 4px;
+  position:relative;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:rgba(0, 0, 0, 0.2) 0 1px 1px;
+}
+article.node-642 form.webform-client-form  {
+width:200px;
+text-align:center;
+padding:5px;
+height:400px;
+}
+#cboxLoadedContent div.messages{
+display:none;
+}
+#edit-submitted-fayl-upload-button {
+width:auto;
+font-family:sans-serif;
+font-size:1em
+}
+article.node-642 {
+text-align:center;
+}
+div.sub-title, div.goods-heading1, .view-header h3 {
+font-size: 1.4em;
+margin-bottom: 10px;
+line-height: 1.6em;
+font-weight: normal;
+}
+/*
+ * Преимущ
+ */
+div.goods-block {
+width:50%;
+float:left;
+}
+div.goods-card {
+margin-right: 10px;
+margin-bottom:10px;
+position:relative;
+background: -moz-linear-gradient(top,  #fafafa 0%, #f5f5f5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fafafa), color-stop(100%,#f5f5f5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fafafa 0%,#f5f5f5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fafafa 0%,#f5f5f5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fafafa 0%,#f5f5f5 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fafafa 0%,#f5f5f5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#f5f5f5',GradientType=0 ); /* IE6-9 */
+  border-radius: 8px;
+   -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+	box-shadow:rgba(0, 0, 0, 0.0980392) 0 3px 5px 0;
+	-webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+
+  background: #fafafa; /* Old browsers */
+  background-image:linear-gradient(#FAFAFA 0%, #F5F5F5 100%);
+}
+div.goods-dig {
+text-align: center;
+float: left;
+color: #fff;
+-webkit-background-clip: padding;
+-moz-background-clip: padding;
+background-clip: padding-box;
+background-color: #89b556;
+background-image: -webkit-gradient(linear,left top,right bottom,color-stop(0,rgba(179,210,144,.3)),color-stop(0.5, #89b556),color-stop(1, #89b556));
+background-image: -webkit-linear-gradient(top left,rgba(179,210,144,.3) 0, #89b556 50%, #89b556 100%);
+background-image: -moz-linear-gradient(top left,rgba(179,210,144,.3) 0, #89b556 50%, #89b556 100%);
+background-image: -o-linear-gradient(top left,rgba(179,210,144,.3) 0, #89b556 50%, #89b556 100%);
+background-image: -ms-linear-gradient(top left,rgba(179,210,144,.3) 0, #89b556 50%, #89b556 100%);
+background-image: linear-gradient(top left,rgba(179,210,144,.3) 0, #89b556 50%, #89b556 100%);
+-webkit-border-radius: 15px;
+border-radius: 15px;
+-webkit-box-shadow: inset 0 2px 2px rgba(0,0,0,.3);
+box-shadow: inset 0 2px 2px rgba(0,0,0,.3);
+content: counter(step);
+display: inline-block;
+font-size: 20px;
+height: 30px;
+line-height: 30px;
+margin-right: 0px;
+margin-top: 5px;
+margin-left: 5px;
+text-shadow: rgba(0,0,0,.3) 0 2px 2px;
+width: 30px;
+}
+
+.goods-heading2 {
+font-size: 1.2em;
+height: 5px;
+clear: right;
+float: left;
+padding: 8px;
+}
+.goods-txt {
+padding: 10px;
+clear: both;
+}
+/*
+ * фотогалерея
+ */
+.node-photogallery div.field-item {
+float: left;
+margin-right: 10px;
+}
+div.view-prgoj-to-items {
+clear: left;
+}
+div.galleryformatter {
+width: 500px;
+float: left;
+margin-top: 1em;
+margin-bottom: 2em;
+margin-right: 1em;
+}
+.view-item-prise-group-view  {
+font-size: 0.9em;
+}
+.view-item-prise-group-view p {
+margin: 0;
+}
+.view-item-prise-group-view table.tablefield {
+margin: 0;
+}
+.node-portfolioitem div.view-item-prise-group-view {
+float: left;
+width: 30em;
+margin-bottom: 1em;
+}
+
+.view-item-prise-group-view div.dop-info {
+float: left;
+width: 30em;
+}
+.view-item-prise-group-view div.price-description {
+float: left;
+width: 11em;
+margin-left: 1em;
+margin-top: 2em;
+}
+.view-item-prise-group-view div.views-field-field-prise-groups-cost {
+float: left;
+}
+
+table.tablefield td ,
+table.tablefield th {
+padding: 2px 4px 2px 4px;
+}
+.node-portfolioitem div.field-name-field-video-embed ,
+.node-portfolioitem div.field-name-body {
+clear: left;
+}
+  
+h2 {
+font-size: 1.4em;
+font-weight: 500;
+}
+
+
+ /*
+ * сноски:
+*/
+.field-name-field-keramic-help p,
+.snoska-ahtung  p
+.snoska  p {
+font-size: 0.9em;
+ padding: 0; 
+ margin: 0; 
+}
+.snoska {
+padding: 0.4em;
+border-radius: 13em 0.5em/1em 0.5em;
+}
+.field-name-field-keramic-help div.field-item,
+.snoska-ahtung  {
+padding: 0.4em;
+border-radius: 0.5em;
+clear: left;
+}
+
+.taxonomy-term-description {
+padding-top: 1em;
+clear: left;
+}
+
+ /*
+ * отступ первой строки абзаца
+*/
+.field-name-field-tax-main-list-desc p,
+.taxonomy-term-description p {
+ text-indent: 2em; 
+} 
+
+ul.checkicon li {
+list-style-image: url(images/check.png);
+}
+.clearfix {
+clear: both;
+}
+.imgleft {
+float: left;
+margin-right: 1em;
+}
+.imgright {
+float: right;
+margin-left: 1em;
+}
+
+
+#block-menu-menu-podval li {
+display: inline;
+}
+
+.views-float-left-spisok div.views-row,
+.view-kategorii div.views-row,
+ .view-main-category-block div.views-row {
+margin: 0 0 4px 0;
+overflow: auto;
+}
+.views-float-left-spisok p,
+.view-main-category-block .views-row .field-content ul,
+.spisokisdelii p.field-content,
+.view-kategorii p.field-content,
+.view-main-category-block .views-row .field-content p {
+margin: 0;
+}
+.view-kategorii p.field-content {
+font-size: 0.85em;
+}
+.view-main-category-block .views-row .field-content ul {
+list-style: none;
+}
+
+.spisokisdelii p.field-content {
+line-height: 1.5em;
+font-size: 0.85em;
+margin: 0 0.5em 0 0.5em;
+}
+
+div.views-row.spisokisdelii {
+float: left;
+width: 16em; 
+height: 25em; 
+margin: 0 4px 4px 0;
+text-align: center;
+}
+
+div.view-kategorii {
+margin-bottom: 1em;
+}
+
+#main {
+}
+#index_aboutfr {
+overflow: auto;
+}
+/*
+ * Content
+ */
+div.content {
+padding-bottom: 1em;
+}
+.view-material-kategogy div.views-row {
+overflow: auto;
+}
+.view-material-kategogy div.views-row-last {
+margin-bottom: 2em;
+}
+.views-field-field-material-image img,
+.views-float-left-spisok img,
+.view-kategorii .views-field-field-tax-image-category,
+.view-main-category-block  .views-field-field-tax-image-category {
+float: left;
+margin-right: 1em;
+}
+
+h1 {
+font-size: 2em;
+}
+
+#content {
+padding-left: 10px
+}
+
+.region-highlighted {
+}
+
+.breadcrumb { /* The path to the current page in the form of a list of links */
+}
+.breadcrumb ol {
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1.title, /* The title of the page */
+h2.node-title, /* Title of a piece of content when it is given in a list of content */
+h2.block-title, /* Block title */
+h2.title, /* Comment section heading */
+h2.comment-form, /* Comment form heading */
+h3.title { /* Comment title */
+  margin: 0;
+}
+h1#page-title {
+margin-bottom: 1em;
+}
+h2.block-title { /* Block title */
+font-size: 1.4em;
+line-height: 1.1em;
+font-weight: 500;
+margin: 10px 20px 10px 0;
+}
+tr.even { /* Some tables have rows marked even or odd. */
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+tr.odd {
+  /* background-color: #eee; */ /* Drupal core uses a #eee background */
+}
+
+div.messages { /* Important messages (status, warning, and error) for the user. See also the declarations in messages.css. */
+  margin: 1.5em 0; /* Drupal core uses "6px 0" margin */
+}
+div.messages ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+div.status { /* Normal priority messages */
+}
+
+div.warning,
+tr.warning { /* Medium priority messages */
+  /* border: 1px solid #f0c020; */ /* Drupal core uses: 1px solid #f0c020 */
+}
+
+div.error,
+tr.error { /* High priority messages. See also the .error declaration below. */
+}
+
+.error { /* Errors that are separate from div.messages status messages. */
+  /* color: #e55; */ /* Drupal core uses a #e55 background */
+}
+
+.warning { /* Warnings that are separate from div.messages status messages. */
+  /* color: #e09010; */ /* Drupal core uses a #e09010 background */
+}
+
+.tabs { /* See also the tabs.css file. */
+}
+
+.region-help { /* Help text on a page */
+}
+
+.more-help-link { /* Link to more help */
+}
+
+.region-content { /* Wrapper for the actual page content */
+}
+
+ul.inline { /* List of links generated by theme_links() */
+  display: inline;
+  padding: 0;
+}
+ul.inline li {
+  display: inline;
+  list-style-type: none;
+  padding: 0 1em 0 0; /* LTR */
+}
+
+span.field-label { /* The inline field label used by the Fences module */
+  padding: 0 1em 0 0; /* LTR */
+}
+
+.item-list .pager { /* A list of page numbers when more than 1 page of content is available */
+  padding: 0;
+}
+.item-list .pager li { /* Each page number in the pager list */
+  padding: 0 0.5em;
+}
+
+.feed-icon { /* The link to the RSS or Atom feed for the current list of content */
+}
+
+.more-link { /* Aggregator, blog, and forum more link */
+}
+
+#block-user-login ul ,
+ul.menu  {
+padding: 0;
+margin: 0;
+}
+ul ul.menu  {
+padding: 0 0 0 1em;
+}
+/*
+ * First sidebar (on left in LTR languages, on right in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-first
+ * (see the layout.css file.)
+ */
+
+.region-sidebar-first {
+/* background-image: url('images/keramart-spritesheet-verticals.png'); */
+background-position: -508px 0;
+background-repeat: repeat-y;
+}
+.region-sidebar-first div.block {
+padding-right:5px;
+margin-bottom: 0;
+}
+.sidebar #user-login-form {
+font-size: 0.8em
+}
+/*
+ * Second sidebar (on right in LTR languages, on left in RTL)
+ *
+ * Remember to NOT add padding or margin to your .region-sidebar-second
+ * (see the layout.css file.)
+ */
+
+.region-sidebar-second {
+}
+
+/*
+ * Footer
+ */
+#footer {
+text-align: center;
+}
+#footer li {
+margin: 0 1em 0 1em;
+}
+a.user-login {
+float:left;
+}
+
+/*
+ * Page bottom
+ */
+
+.region-bottom { /* Wrapper for any blocks placed in the page bottom region */
+}

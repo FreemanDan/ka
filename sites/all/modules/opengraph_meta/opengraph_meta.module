@@ -1,0 +1,190 @@
+<?php
+
+/**
+ * Implementation of hook_form_alter.
+ */
+function opengraph_meta_form_alter(&$form, $form_state, $form_id) {
+  // if editing a node
+  if ('node_form' == stristr($form_id, 'node_form')) {
+    if (!isset($form['metatags'])) {
+      return;
+    }
+
+    $node = $form['#node'];
+    $lang = metatag_entity_get_language('node', $form['#node']);
+    $metatags = &$form['metatags'][$lang]['open-graph'];
+    $parents = ['metatags', $lang];
+
+    // add meta tags editing for making it easier to share on Facebook
+    $form['opengraph_meta'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Open Graph meta tags (e.g. for Facebook sharing)'),
+      '#description' => $metatags['#description'],
+      '#tree' => TRUE,
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#weight' => 100,
+    );
+
+    $form['opengraph_meta']['title'] = [
+      '#title' => t('Title'),
+      '#parents' => array_merge($parents, ['og:title', 'value']),
+    ] + $metatags['og:title']['value'];
+    unset($metatags['og:title']['value']);
+
+    $form['opengraph_meta']['description'] = [
+      '#title' => t('Description'),
+      '#parents' => array_merge($parents, ['og:description', 'value']),
+    ] + $metatags['og:description']['value'];
+    unset($metatags['og:description']['value']);
+
+    $form['opengraph_meta']['type'] = [
+      '#parents' => array_merge($parents, ['og:type', 'value']),
+    ] + $metatags['og:type']['value'];
+    unset($metatags['og:type']['value']);
+
+    // Location stuff
+    $form['opengraph_meta']['location'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Open Graph Location tags'),
+      '#description' => t('Here you can specify the location information.'),
+      '#tree' => TRUE,
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#weight' => 10,
+    );
+    $fields = array(
+      'latitude' => t('Geographical latitude as a decimal number.'),
+      'longitude' => t('Geographical longitude as a decimal number.'),
+      'street_address' => t('Local street address.'),
+      'locality' => t('E.g. town or city.'),
+      'region' => t('Region within country, e.g. a county.'),
+      'postal_code' => t('Postal code.'),
+      'country_name' => t('Full country name.'),
+    );
+    foreach ($fields as $f => $description) {
+      $form['opengraph_meta']['location'][$f] = [
+        '#description' => $description,
+        '#parents' => array_merge($parents, ["og:$f", 'value']),
+      ] + $metatags["og:$f"]['value'];
+      unset($metatags["og:$f"]['value']);
+    }
+
+    // Contact stuff
+    $form['opengraph_meta']['contact'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Open Graph Contact tags'),
+      '#description' => t('Here you can specify the contact information.'),
+      '#tree' => TRUE,
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#weight' => 9,
+    );
+    $fields = array(
+      'email' => t('Email address.'),
+      'phone_number' => t('Phone number.'),
+      'fax_number' => t('Fax number.'),
+    );
+    foreach ($fields as $f => $description) {
+      $form['opengraph_meta']['contact'][$f] = [
+        '#parents' => array_merge($parents, ["og:$f", 'value']),
+      ] + $metatags["og:$f"]['value'];
+      unset($metatags["og:$f"]['value']);
+    }
+
+    // if we have images in this node then show thumbnail selector
+    $images = OpenGraphMeta::instance()->harvestImagesFromNode($node);
+    $image_selector_options = [
+      '' => t('No image (Facebook will choose one automatically).'),
+    ];
+    foreach ($images as $url => $image) {
+      $image_selector_options[$url] = theme(
+        'opengraph_meta_thumbnail',
+        ['image' => $image]
+      );
+    }
+    $form['opengraph_meta']['image'] = [
+      '#title' => t('Thumbnail image'),
+      '#type' => 'select_or_other',
+      '#select_type' => 'radios',
+      '#default_value' => $metatags['og:image']['value']['#default_value'],
+      '#description' => t('The thumbnail image that will get shown in e.g. a Facebook preview. If left unset then then the first available image will be used. If none available then the global fallback image will be used.'),
+      '#options' => $image_selector_options,
+      '#attributes' => array('class' => array('opengraph-thumbs-wrapper','clearfix')),
+      '#other' => t('Provide a URL to a custom preview image.'),
+    ];
+    unset($metatags['og:image']['value']);
+
+    $form['opengraph_meta']['other'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Other'),
+      '#description' => t('Additional tags from the specification.'),
+      '#tree' => TRUE,
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+      '#weight' => 11,
+    );
+    foreach ($metatags as $ogkey => &$fields) {
+      if (isset($fields['value'])) {
+        $f = substr($ogkey, 3);
+        $form['opengraph_meta']['other'][$f] = [
+          '#parents' => array_merge($parents, ["og:$f", 'value']),
+        ] + $fields['value'];
+        unset($fields['value']);
+      }
+    }
+    $metatags['#type'] = 'container';
+
+    // Add our submit handler right before the metatag module's submit handler.
+    $submit = [];
+    foreach ($form['#submit'] as $func) {
+      if ($func == 'metatag_metatags_form_submit') {
+        $submit[] = 'opengraph_meta_node_form_submit';
+      }
+      $submit[] = $func;
+    }
+    $form['#submit'] = $submit;
+  }
+}
+
+function opengraph_meta_node_form_submit($form, &$form_state) {
+  $lang = metatag_entity_get_language('node', $form['#node']);
+  $metatag = &$form_state['values']['metatags'][$lang];
+  $opengraph_meta = &$form_state['values']['opengraph_meta'];
+
+  $metatag['og:image']['value'] = $opengraph_meta['image'];
+}
+
+/**
+ * Implements hook_metatag_info_alter().
+ */
+function opengraph_meta_metatag_info_alter(&$info) {
+  if (isset($info['tags']['og:image'])) {
+    $info['tags']['og:image']['class'] = 'OpengraphImageMetaTag';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function opengraph_meta_theme() {
+  $theme['opengraph_meta_thumbnail'] = [
+    'variables' => ['image' => NULL],
+  ];
+  return $theme;
+}
+
+function theme_opengraph_meta_thumbnail($vars) {
+  $image = $vars['image'];
+  $attributes = array('class' => 'opengraph-thumb');
+  $abs_path = url(ltrim($image['url'],'/'));
+  return theme('image',
+    array(
+      'path' => $abs_path,
+      'alt' => $image['alt'],
+      'height' => '60px',
+      'attributes' => array_merge($attributes, array('title' => $image['title']))
+    )
+  );
+}
+

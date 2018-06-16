@@ -1,0 +1,269 @@
+@charset "UTF-8";
+/**
+ * @file
+ * Form Styling
+ */
+/* gradient backgrounds and reflections */
+/* line 8, ../sass/forms.scss */
+.form-item {
+  /* Wrapper for a form element (or group of form elements) and its label */
+  margin: 0;
+}
+
+/* line 11, ../sass/forms.scss */
+#block-user-login .form-item {
+  margin: 0;
+}
+
+/* line 15, ../sass/forms.scss */
+.form-item input.error,
+.form-item textarea.error,
+.form-item select.error {
+  /* Highlight the form elements that caused a form submission error */
+  border: 1px solid #c00;
+}
+
+/* line 21, ../sass/forms.scss */
+.form-item label {
+  /* The label for a form element */
+  display: block;
+  font-weight: bold;
+}
+
+/* line 26, ../sass/forms.scss */
+.form-item label.option {
+  /* The label for a radio button or checkbox */
+  display: inline;
+  font-weight: normal;
+}
+
+/* line 31, ../sass/forms.scss */
+.form-required {
+  /* The part of the label that indicates a required field */
+  color: #c00;
+}
+
+/* line 35, ../sass/forms.scss */
+.form-item .description {
+  /* The descriptive help text (separate from the label) */
+  font-size: 0.85em;
+}
+
+/* line 39, ../sass/forms.scss */
+.form-checkboxes .form-item,
+.form-radios .form-item {
+  /* Pack groups of checkboxes and radio buttons closer together */
+  margin: 0;
+  /* Drupal core uses "0.4em 0" */
+}
+
+/* line 44, ../sass/forms.scss */
+.form-submit {
+  /* The submit button */
+}
+
+/* line 47, ../sass/forms.scss */
+.container-inline div,
+.container-inline label {
+  /* Inline labels and form divs */
+  display: inline;
+}
+
+/* line 52, ../sass/forms.scss */
+.tips {
+  /* Tips for Drupal's input formats */
+}
+
+/* line 55, ../sass/forms.scss */
+a.button {
+  /* Buttons used by contrib modules like Media */
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+/*
+ * Password confirmation
+ */
+/* line 65, ../sass/forms.scss */
+.password-parent,
+.confirm-parent {
+  margin: 0;
+}
+
+/*
+ * Search (search-block-form.tpl.php)
+ */
+/* line 74, ../sass/forms.scss */
+#block-search-form {
+  /* Wrapper for the search form */
+}
+
+/*
+ * Drupal's default login form block
+ */
+/* line 81, ../sass/forms.scss */
+#user-login-form {
+  text-align: left;
+  /* LTR */
+}
+
+/*
+ * OpenID
+ *
+ * The default styling for the OpenID login link seems to assume Garland's
+ * styling of list items.
+ */
+/* line 92, ../sass/forms.scss */
+#user-login-form ul {
+  /* OpenID creates a new ul above the login form's links. */
+  margin-bottom: 0;
+  /* Position OpenID's ul next to the rest of the links. */
+}
+
+/* line 96, ../sass/forms.scss */
+html.js #user-login-form li.openid-link,
+#user-login-form li.openid-link {
+  /* The "Log in using OpenID" link. */
+  margin-top: 1.5em;
+  margin-left: -20px;
+  /* LTR */
+  /* Un-do some of the padding on the ul list. */
+}
+
+/* line 102, ../sass/forms.scss */
+#user-login-form li.user-link {
+  /* The "Cancel OpenID login" link. */
+  margin-top: 1.5em;
+}
+
+/* line 106, ../sass/forms.scss */
+#user-login ul {
+  margin: 1.5em 0;
+}
+
+/*
+ * Drupal admin tables
+ *
+ * We overrode these styles in normalize.css, but restore them for the admin
+ * section of the site.
+ */
+/* line 117, ../sass/forms.scss */
+form th {
+  text-align: left;
+  /* LTR */
+  padding-right: 1em;
+  /* LTR */
+  border-bottom: 3px solid #ccc;
+}
+
+/* line 123, ../sass/forms.scss */
+form tbody {
+  border-top: 1px solid #ccc;
+}
+
+/* line 127, ../sass/forms.scss */
+form tr.even {
+  background-color: #fff;
+}
+
+/* line 131, ../sass/forms.scss */
+form table .item-list ul {
+  margin: 0;
+}
+
+/* line 135, ../sass/forms.scss */
+.lt-ie8 tr.even th,
+.lt-ie8 tr.even td,
+.lt-ie8 tr.odd th,
+.lt-ie8 tr.odd td {
+  border-bottom: 1px solid #ccc;
+  /* IE doesn't display borders on table rows */
+}
+
+/*
+ * Drupal core wrongly puts this in system.menus.css. Since we override that, add it back.
+ */
+/* line 146, ../sass/forms.scss */
+td.menu-disabled {
+  background: #ccc;
+}
+
+/* line 154, ../sass/forms.scss */
+#webform-client-form-642 input.form-text,
+#webform-client-form-642--2 input.form-text {
+  margin-bottom: 0.75em;
+  margin-top: 0.75em;
+}
+
+/*
+ * Созданные формы
+ */
+/* line 168, ../sass/forms.scss */
+.webform-client-form label {
+  font-size: 0.875em;
+  line-height: 1.71429em;
+}
+/* line 171, ../sass/forms.scss */
+.webform-client-form input.form-text,
+.webform-client-form textarea.form-textarea {
+  display: block;
+  border: 1px solid #4C4444;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2px 10px;
+}
+/* line 180, ../sass/forms.scss */
+.webform-client-form .form-actions {
+  margin: 0;
+}
+/* line 185, ../sass/forms.scss */
+.webform-client-form .form-actions .form-submit {
+  display: block;
+  padding: 0 10px;
+  text-decoration: none;
+  color: white;
+  background-color: #b92926;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-style: normal;
+  font-size: 1em;
+  line-height: 1.5em;
+  font-variant: normal;
+  font-weight: normal;
+  margin: 0;
+  padding: 2px 10px;
+  position: relative;
+  text-decoration: none;
+  border: none;
+}
+/* line 85, ../sass/_custom.scss */
+.webform-client-form .form-actions .form-submit:hover {
+  background-color: #d73e3b;
+}
+/* line 197, ../sass/forms.scss */
+.webform-client-form #webform-component-fayl {
+  background-color: #F5F3F0;
+  font-size: 0.8125em;
+  line-height: 1.84615em;
+  font-weight: normal;
+}
+
+/* line 207, ../sass/forms.scss */
+.webform-client-form-658 .form-item {
+  margin-bottom: 1.5em;
+}
+
+/* line 213, ../sass/forms.scss */
+#webform-component-stranica {
+  display: none;
+}
+
+/*# sourceMappingURL=forms.css.map */

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": ";;;;;;;;;AAYA,KAAM;;EACJ,KAAK,EAAE,KAAK;;;;;;;AAOd,YAAa;;EACX,OAAO,EAAE,YAAY;;EACrB,OAAO,EAAE,SAAS;;;;AAEpB,gBAAiB;;EACf,OAAO,EAAE,SAAS",
+"sources": ["../sass/pages-rtl.scss"],
+"names": [],
+"file": "pages-rtl.css"
+}

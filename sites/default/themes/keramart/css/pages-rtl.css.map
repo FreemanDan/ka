@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA;;;GAGG;ACyDH,0CAA0C;ADpD1C;;GAEG;;AAEH,KAAM;EAAE,4BAA4B;EAClC,KAAK,EAAE,KAAK;;;AAGd;;GAEG;;AAEH,YAAa;EAAE,mBAAmB;EAChC,OAAO,EAAE,YAAY;EAAE,mDAAmD;EAC1E,OAAO,EAAE,SAAS;;;;AAEpB,gBAAiB;EAAE,sDAAsD;EACvE,OAAO,EAAE,SAAS",
+"sources": ["../sass/pages-rtl.scss","../sass/_custom.scss"],
+"names": [],
+"file": "pages-rtl.css"
+}

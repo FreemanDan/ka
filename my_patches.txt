@@ -1,0 +1,1 @@
+строка 243 в файле /home/keramar8/public_html/sites/all/modules/simpleads/includes/simpleads.helper.inc 

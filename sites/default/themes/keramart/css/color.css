@@ -1,0 +1,148 @@
+@charset "UTF-8";
+/* gradient backgrounds and reflections */
+/*
+* форма заказа, акция.
+*/
+  /*
+ * сноска:
+*/
+/* line 10, ../sass/color.scss */
+.snoska {
+  background-color: #CFDDC0;
+}
+
+/* line 13, ../sass/color.scss */
+.field-name-field-keramic-help .field-item,
+.snoska-ahtung {
+  background-color: #F1E6BE;
+}
+
+/* line 18, ../sass/color.scss */
+h2 {
+  color: #464646;
+}
+
+/* line 21, ../sass/color.scss */
+#site-slogan,
+#block-block-2,
+#block-views-slogan-block,
+#block-block-11 {
+  color: black;
+}
+
+/* line 28, ../sass/color.scss */
+#footer {
+  background-color: #6E6350;
+}
+
+/* line 32, ../sass/color.scss */
+#block-menu-block-2 {
+  background-image: url(images/fonshum.png);
+  background-color: #6E6350;
+}
+/* line 35, ../sass/color.scss */
+#block-menu-block-2 li:hover {
+  background-color: #5C5240;
+}
+/* line 36, ../sass/color.scss */
+#block-menu-block-2 li.is-active,
+#block-menu-block-2 li.is-active-trail {
+  background-color: #d7d4d4;
+}
+/* line 39, ../sass/color.scss */
+#block-menu-block-2 li.is-active a,
+#block-menu-block-2 li.is-active-trail a {
+  color: black;
+}
+/* line 43, ../sass/color.scss */
+#block-menu-block-2 a {
+  color: white;
+}
+/* line 45, ../sass/color.scss */
+#block-menu-block-2 a:hover {
+  color: #d7d4d4;
+}
+
+/* line 50, ../sass/color.scss */
+.front #block-menu-block-2 {
+  background-color: #696969;
+}
+/* line 52, ../sass/color.scss */
+.front #block-menu-block-2 li:hover {
+  background-color: #282828;
+}
+
+/* line 55, ../sass/color.scss */
+.field-name-field-promo-description,
+.goods-heading2,
+.promo-goods-heading {
+  color: #555;
+}
+
+/* .region-sidebar-first div.block {
+background-color: #F5F5F5;
+} */
+/* line 67, ../sass/color.scss */
+#footer,
+#footer a,
+#footer a.active,
+ul.nice-menu a {
+  color: white;
+}
+
+/* line 73, ../sass/color.scss */
+#footer p {
+  margin: 0;
+}
+
+/* line 76, ../sass/color.scss */
+#footer div {
+  margin-bottom: 0.5em;
+}
+
+/* line 80, ../sass/color.scss */
+#block-menu-block-2
+ul.nice-menu li {
+  background-color: none;
+}
+/* line 83, ../sass/color.scss */
+#block-menu-block-2
+ul.nice-menu li a:hover {
+  color: #999999;
+}
+/* line 86, ../sass/color.scss */
+#block-menu-block-2
+ul.nice-menu li ul li {
+  background-color: #EEEEEE;
+}
+/* line 88, ../sass/color.scss */
+#block-menu-block-2
+ul.nice-menu li ul li a {
+  color: black;
+}
+/* line 90, ../sass/color.scss */
+#block-menu-block-2
+ul.nice-menu li ul li a:visited {
+  color: black;
+}
+/* line 91, ../sass/color.scss */
+#block-menu-block-2
+ul.nice-menu li ul li a:hover {
+  background-color: #705656;
+}
+
+/*.dekorativnye-fontany .lpbann {
+     background: {
+      repeat: no-repeat;
+      color: #FFF;
+    };
+    @include background-size(cover);
+}
+.dekorativnye-fontany .lpbann {
+     background-image: url('images/backgr-fount.jpg');
+}
+.page-taxonomy-term-67 .lpbann {
+    background-image: url('images/fountain-bamb-atm.jpg');
+} */
+
+/*# sourceMappingURL=color.css.map */
