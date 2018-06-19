@@ -84,6 +84,15 @@ function keramart_bootstrap_preprocess_image(&$variables) {
         unset($variables['width']);
         unset($variables['height']);
     }
+        if (isset($variables['style_name']) && $variables['style_name'] == '100x100_kvadrat') {
+        unset($variables['attributes']['class']);
+        $variables['attributes']['class'][] = 'media-object';
+        //unset($variables['attributes']['width']);
+        //unset($variables['attributes']['height']);
+        //unset($variables['width']);
+        //unset($variables['height']);
+
+    }
 }
 
 function keramart_bootstrap_form_alter(&$form, &$form_state, $form_id) {
