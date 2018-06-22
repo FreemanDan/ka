@@ -86,7 +86,7 @@
                 <?php if (!empty($site_name)): ?>
                     <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
                 <?php endif; ?>
-				<div class="phone visible-xs-inline-block">8 (351) 2150062</div>
+                <div class="phone visible-xs-inline-block">8 (351) 2150062</div>
 
                 <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -126,7 +126,6 @@
             </div>
         </div>
     <?php endif; ?>
-
     <section<?php print $content_column_class; ?>>
         <?php if (!empty($page['highlighted'])): ?>
             <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>

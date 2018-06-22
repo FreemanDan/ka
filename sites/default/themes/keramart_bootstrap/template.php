@@ -38,16 +38,16 @@ function keramart_bootstrap_preprocess_page(&$vars) {
         // add a generic suggestion for all panel pages
         $vars['theme_hook_suggestions'][] = 'page__panels';
         // add the panel page machine name to the template suggestions
-        //$variables['theme_hook_suggestions'][] = 'page__' . $panel_page['name'];
-        //$object = $panel_page['contexts']['argument_entity_id:node_1'];
-        //$result_array = get_object_vars($object);
-        //$value = $result_array['restrictions']['type']['0'];
+            $variables['theme_hook_suggestions'][] = 'page__' . $panel_page['name'];
+        /*$object = $panel_page['contexts']['argument_entity_id:node_1'];
+        $result_array = get_object_vars($object);
+        $value = $result_array['restrictions']['type']['0'];
         if ($panel_page['name'] == 'node_view' AND $value == 'product') {
             $vars['theme_hook_suggestions'][] = 'page__node_view_product';
         }
         if ($panel_page['name'] == 'node_view' AND $value == 'artist') {
             $vars['theme_hook_suggestions'][] = 'page__node_view_artist';
-        }
+        }*/
     }
 }
 
@@ -84,14 +84,29 @@ function keramart_bootstrap_preprocess_image(&$variables) {
         unset($variables['width']);
         unset($variables['height']);
     }
-        if (isset($variables['style_name']) && $variables['style_name'] == '100x100_kvadrat') {
+    if (isset($variables['style_name']) && $variables['style_name'] == '100x100_kvadrat') {
         unset($variables['attributes']['class']);
         $variables['attributes']['class'][] = 'media-object';
         //unset($variables['attributes']['width']);
         //unset($variables['attributes']['height']);
         //unset($variables['width']);
         //unset($variables['height']);
-
+    }
+    if (isset($variables['style_name']) && $variables['style_name'] == '-partner-logo') {
+        unset($variables['attributes']['class']);
+        $variables['attributes']['class'][] = 'center-block';
+        unset($variables['attributes']['width']);
+        unset($variables['attributes']['height']);
+        unset($variables['width']);
+        unset($variables['height']);
+    }
+    if (isset($variables['style_name']) && $variables['style_name'] == 'banner-wide-1140X216') {
+        //$variables['attributes']['class'][] = 'katalog-w280';
+        $variables['attributes']['class'][] = 'banner-wide-1140X216 img-responsive';
+        unset($variables['attributes']['width']);
+        unset($variables['attributes']['height']);
+        unset($variables['width']);
+        unset($variables['height']);
     }
 }
 
