@@ -40,12 +40,12 @@ $path_alias = drupal_lookup_path('alias',$path);
 <div class="info_container">
     <div class="sub_title">
         <?php echo $zagolovok; ?>
-        <?php echo '<span>Стоимость аналогичных работ<br>'.$csena.'</span>'; ?>
+        <?php /*echo '<span>Стоимость аналогичных работ<br>'.$csena.'</span>'; */?>
        <?php /* <a class="colorbox-node" href="zapros-ceny?width=300&height=470&arrowKey=false" onclick="yaCounter823781.reachGoal('PRFRMCLICK'); return true;">ЗАПРОС ЦЕНЫ</a> */ ?> 
         <a href="<?php echo $ssilka; ?>?width=90%25&height=90%25&maxWidth=1000&maxHeight=1200" 
            onclick="yaCounter823781.hit('<?php echo $ssilka; ?>', {
     title: '<?php echo $articul; ?>',
     referer: '/<?php echo $path_alias; ?>'
-}); return true;"class="colorbox-node">УЗНАТЬ ПОДРОБНЕЕ</a>
+}); return true;"class="colorbox-node lead-3">УЗНАТЬ ПОДРОБНЕЕ</a>
     </div>
 </div>

@@ -119,11 +119,16 @@
         </div>
     </div>
 </header>
-<?php print render($page['top_menu']); ?>
+
 <div class="main-container container">
     <div class="row">
         <?php print render($page['header']); ?> 
     </div>
+    <div class="row">
+        <?php print render($page['top_menu']); ?>
+
+    </div>
+
 
 
 

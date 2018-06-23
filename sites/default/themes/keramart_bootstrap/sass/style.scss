@@ -77,6 +77,12 @@ h1, h2, h3 {
 .lead-1 {
     @include leader(1);
 }
+.lead-2 {
+    @include leader(2);
+}
+.lead-3 {
+    @include leader(3);
+}
 .trail-1 {
     @include trailer(1);
 }

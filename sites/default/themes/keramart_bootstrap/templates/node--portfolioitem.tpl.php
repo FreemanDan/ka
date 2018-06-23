@@ -96,7 +96,7 @@
         <?php print render($content['body']); ?>
         <?php print render($content['field_video_embed']); ?>
             <div class="service_botton">
-                <a class="colorbox-node" href="<?php print $GLOBALS['base_url'];?>/cbox/zakaz?width=300&height=470&arrowKey=false">ЗАКАЗАТЬ ДЕКОРАТИВНЫЙ ФОНТАН</a>
+                <a class="colorbox-node" href="<?php print $GLOBALS['base_url'];?>/cbox/zakaz?width=300&height=470&arrowKey=false">ЗАКАЗАТЬ</a>
             </div>
         </div>
     <?php else : ?>
