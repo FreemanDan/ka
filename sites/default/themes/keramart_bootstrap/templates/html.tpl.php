@@ -67,7 +67,5 @@
   <?php print $page_top; ?>
   <?php print $page; ?>
   <?php print $page_bottom; ?>
-<link rel="stylesheet" href="https://cdn.callbackkiller.com/widget/cbk.css">
-<script type="text/javascript" src="https://cdn.callbackkiller.com/widget/cbk.js?wcb_code=88f616491d02677f086a7835af10bc69" charset="UTF-8" async></script>
 </body>
 </html>

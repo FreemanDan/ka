@@ -1,0 +1,72 @@
+/*
+Error: Undefined variable: "$screen-xs-min".
+        on line 5 of /home/dan/www/agava/sites/default/themes/keramart_bootstrap/sass/blocks/navbar.scss
+
+1: .navbar {
+2:     top: 0;
+3:     transition: top 1s;
+4: 
+5:     @media (min-width: $screen-xs-min) {
+6:         top: -100px;
+7:         @include padding-leader (0.5);
+8:     @include padding-trailer (0.5);
+9:       }
+10: }
+
+Backtrace:
+/home/dan/www/agava/sites/default/themes/keramart_bootstrap/sass/blocks/navbar.scss:5
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/script/tree/variable.rb:49:in `_perform'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/script/tree/node.rb:58:in `perform'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:543:in `block in run_interp_no_strip'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:541:in `map'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:541:in `run_interp_no_strip'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:548:in `run_interp'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:513:in `visit_media'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block (2 levels) in visit_rule'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `map'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:434:in `block in visit_rule'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:432:in `visit_rule'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `block in visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `block in with_base'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:115:in `with_frame'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/stack.rb:79:in `with_base'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:162:in `visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `map'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:171:in `block in visit_children'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:183:in `with_environment'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:170:in `visit_children'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `block in visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:190:in `visit_root'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/base.rb:36:in `visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:161:in `visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/visitors/perform.rb:10:in `visit'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:36:in `css_tree'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/tree/root_node.rb:29:in `render_with_sourcemap'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/engine.rb:384:in `_render_with_sourcemap'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/engine.rb:301:in `render_with_sourcemap'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `each'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapter.rb:254:in `report_changes'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapter.rb:323:in `poll_changed_directories'
+/var/lib/gems/2.5.0/gems/sass-3.4.25/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Undefined variable: \"$screen-xs-min\".\A         on line 5 of /home/dan/www/agava/sites/default/themes/keramart_bootstrap/sass/blocks/navbar.scss\A \A 1: .navbar {\A 2:     top: 0;\A 3:     transition: top 1s;\A 4: \A 5:     @media (min-width: $screen-xs-min) {\A 6:         top: -100px;\A 7:         @include padding-leader (0.5);\A 8:     @include padding-trailer (0.5);\A 9:       }\A 10: }"; }

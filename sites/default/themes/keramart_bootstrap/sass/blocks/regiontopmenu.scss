@@ -1,0 +1,146 @@
+// ----- top-menu -------
+
+.regiontopmenu {
+  border-top: 1px solid #e3e3e3;
+  @include padding-trailer (0.5);
+  @include padding-leader (0.5);
+
+  ul {
+    border-bottom: none;
+  }
+  li {
+    display: inline-block;
+  }
+  a {
+    display: inline-block;
+    color: #0f0f0f;
+  }
+  .has-children a {
+  &:after {
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg aria-hidden='true' focusable='false' data-prefix='fal' data-icon='angle-down' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 512' class='svg-inline--fa fa-angle-down fa-w-8 fa-3x'%3e%3cpath fill='currentColor' d='M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z' class=''%3e%3c/path%3e%3c/svg%3e");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 13px;
+      margin-left: 4px;
+  }
+}
+}
+
+
+
+
+.regiontopmenu__menu1 {
+  li {
+    display: inline-block;
+
+    a {
+      @include adjust-font-size-to(17px, 1);
+      padding-right: 15px;
+
+      &:hover {
+        color: black;
+
+      }
+
+    }
+  }
+
+
+}
+
+li.active {
+  color: black;
+
+  a {
+    color: black;
+    background-color: #F6F9FC;
+    padding: 0 15px;
+  }
+
+  &:before {}
+
+}
+
+#-top-menu-3 {
+  .menu-block-wrapper {
+    margin-left: -15px;
+  }
+
+  background-color: #F6F9FC;
+  background-image: url(../images/fonshum.png);
+
+  li {
+    display: inline-block;
+
+    a {
+      //@include adjust-font-size-to(16px, 1);
+      padding: 0 15px;
+      color: black;
+
+      &:hover {
+        background-color: #eaeaea;
+
+      }
+
+
+
+    }
+
+  }
+
+  li.active {
+    color: black;
+
+    a {
+      color: gray;
+      background-color: #F6F9FC;
+
+    }
+
+    &:before {}
+
+  }
+}
+
+#-top-menu-4 {
+  .menu-block-wrapper {
+    margin-left: -15px;
+  }
+
+  //background-color: #F6F9FC;
+  li {
+    display: inline-block;
+
+    a {
+      //@include adjust-font-size-to(16px, 1);
+      text-decoration: underline;
+      padding: 0 15px;
+      color: black;
+
+      &:hover {
+        background-color: #eaeaea;
+
+      }
+
+
+
+    }
+
+  }
+
+  li.active {
+    color: black;
+
+    a {
+      color: gray;
+      background-color: #F6F9FC;
+
+    }
+
+    &:before {}
+
+  }
+}

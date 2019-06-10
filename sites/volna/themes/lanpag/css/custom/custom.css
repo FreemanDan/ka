@@ -190,106 +190,109 @@ h2 {
   margin-right: 10px;
 }
 
-/* line 171, ../../sass/custom/custom.scss */
+/* line 168, ../../sass/custom/custom.scss */
+.bkg-blurred1 {
+  background: url("../img/backgrounds/blurred.jpg") 50% 20% no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* line 175, ../../sass/custom/custom.scss */
 #registration p {
   font-size: 18px;
   line-height: 24px;
 }
 
-/* line 176, ../../sass/custom/custom.scss */
-#node-8 #perubckgr {
+/* line 179, ../../sass/custom/custom.scss */
+#perubckgr {
   background: url("peru.jpg") no-repeat fixed center 100px transparent;
   margin-top: 0px;
   padding-top: 0px;
   padding-bottom: 24px;
   margin-bottom: 0px;
 }
-/* line 181, ../../sass/custom/custom.scss */
-#node-8 #screen-5 h2 {
-  color: white;
-}
-/* line 184, ../../sass/custom/custom.scss */
-#node-8 .peruheading {
+/* line 182, ../../sass/custom/custom.scss */
+#perubckgr .peruheading {
   font-size: 60px;
   line-height: 72px;
   text-transform: uppercase;
   color: black;
   letter-spacing: 60px;
 }
-/* line 190, ../../sass/custom/custom.scss */
-#node-8 .perucountry {
+/* line 188, ../../sass/custom/custom.scss */
+#perubckgr .perucountry {
   font-size: 22px;
   line-height: 24px;
   text-transform: uppercase;
   color: black;
   letter-spacing: 40px;
 }
-/* line 196, ../../sass/custom/custom.scss */
-#node-8 .leftblk {
+/* line 194, ../../sass/custom/custom.scss */
+#perubckgr .leftblk {
   margin-top: 72px;
   padding-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 0px;
 }
-/* line 198, ../../sass/custom/custom.scss */
-#node-8 .leftblk a.btn {
+/* line 196, ../../sass/custom/custom.scss */
+#perubckgr .leftblk a.btn {
   font-size: 25px;
   line-height: 48px;
 }
-/* line 202, ../../sass/custom/custom.scss */
-#node-8 .rightblk {
+/* line 200, ../../sass/custom/custom.scss */
+#perubckgr .rightblk {
   margin-top: 72px;
   padding-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 0px;
   color: #068b97;
 }
-/* line 205, ../../sass/custom/custom.scss */
-#node-8 .rightblk .d1 {
+/* line 203, ../../sass/custom/custom.scss */
+#perubckgr .rightblk .d1 {
   font-size: 48px;
   line-height: 48px;
 }
-/* line 208, ../../sass/custom/custom.scss */
-#node-8 .rightblk .d2 {
+/* line 206, ../../sass/custom/custom.scss */
+#perubckgr .rightblk .d2 {
   font-size: 48px;
   line-height: 48px;
 }
-/* line 211, ../../sass/custom/custom.scss */
-#node-8 .rightblk .d3 {
+/* line 209, ../../sass/custom/custom.scss */
+#perubckgr .rightblk .d3 {
   font-size: 70px;
   line-height: 72px;
 }
-/* line 215, ../../sass/custom/custom.scss */
-#node-8 .peru-edinst {
+/* line 213, ../../sass/custom/custom.scss */
+#perubckgr .peru-edinst {
   font-size: 25px;
   line-height: 48px;
   color: #068b97;
 }
-/* line 219, ../../sass/custom/custom.scss */
-#node-8 .peru-onural {
+/* line 217, ../../sass/custom/custom.scss */
+#perubckgr .peru-onural {
   font-size: 36px;
   line-height: 48px;
   color: #068b97;
 }
-/* line 223, ../../sass/custom/custom.scss */
-#node-8 .peru-time1 {
+/* line 221, ../../sass/custom/custom.scss */
+#perubckgr .peru-time1 {
   font-size: 22px;
   line-height: 48px;
 }
-/* line 226, ../../sass/custom/custom.scss */
-#node-8 .peru-time {
+/* line 224, ../../sass/custom/custom.scss */
+#perubckgr .peru-time {
   font-size: 27px;
   line-height: 48px;
   color: #068b97;
 }
-/* line 230, ../../sass/custom/custom.scss */
-#node-8 .peru-chel {
+/* line 228, ../../sass/custom/custom.scss */
+#perubckgr .peru-chel {
   font-size: 63px;
   line-height: 72px;
   color: #068b97;
 }
-/* line 234, ../../sass/custom/custom.scss */
-#node-8 .dover-prirod {
+/* line 232, ../../sass/custom/custom.scss */
+#perubckgr .dover-prirod {
   margin-top: 72px;
   padding-top: 0px;
   padding-bottom: 0px;
@@ -298,184 +301,184 @@ h2 {
   color: white;
   text-transform: uppercase;
 }
-/* line 239, ../../sass/custom/custom.scss */
-#node-8 .dover-prirod .d1 {
+/* line 237, ../../sass/custom/custom.scss */
+#perubckgr .dover-prirod .d1 {
   font-size: 48px;
   line-height: 72px;
 }
-/* line 242, ../../sass/custom/custom.scss */
-#node-8 .dover-prirod .d2 {
+/* line 240, ../../sass/custom/custom.scss */
+#perubckgr .dover-prirod .d2 {
   font-size: 20px;
   line-height: 48px;
 }
 @media (max-width: 768px) {
-  /* line 175, ../../sass/custom/custom.scss */
-  #node-8 {
+  /* line 179, ../../sass/custom/custom.scss */
+  #perubckgr {
     background-size: cover;
     background-position: 50% 116px !important;
   }
-  /* line 249, ../../sass/custom/custom.scss */
-  #node-8 .peruheading {
+  /* line 247, ../../sass/custom/custom.scss */
+  #perubckgr .peruheading {
     letter-spacing: 9px;
     font-size: 50px;
     line-height: 72px;
   }
-  /* line 254, ../../sass/custom/custom.scss */
-  #node-8 .perucountry {
+  /* line 252, ../../sass/custom/custom.scss */
+  #perubckgr .perucountry {
     letter-spacing: 17px;
   }
-  /* line 257, ../../sass/custom/custom.scss */
-  #node-8 .leftblk {
+  /* line 255, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk {
     margin-top: 432px;
     padding-top: 0px;
     padding-bottom: 0px;
     margin-bottom: 0px;
     background-color: rgba(255, 255, 255, 0.7);
   }
-  /* line 260, ../../sass/custom/custom.scss */
-  #node-8 .leftblk br {
+  /* line 258, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk br {
     display: none;
   }
-  /* line 264, ../../sass/custom/custom.scss */
-  #node-8 .leftblk span:after {
+  /* line 262, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk span:after {
     content: " ";
   }
-  /* line 268, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-edinst, #node-8 .leftblk .peru-time, #node-8 .leftblk .peru-time1, #node-8 .leftblk .peru-chel1, #node-8 .leftblk .peru-onural {
+  /* line 266, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-edinst, #perubckgr .leftblk .peru-time, #perubckgr .leftblk .peru-time1, #perubckgr .leftblk .peru-chel1, #perubckgr .leftblk .peru-onural {
     font-size: 20px;
     line-height: 48px;
   }
-  /* line 273, ../../sass/custom/custom.scss */
-  #node-8 .rightblk {
+  /* line 271, ../../sass/custom/custom.scss */
+  #perubckgr .rightblk {
     margin-top: 0px;
     padding-top: 24px;
     padding-bottom: 24px;
     margin-bottom: 0px;
     background-color: rgba(255, 255, 255, 0.7);
   }
-  /* line 276, ../../sass/custom/custom.scss */
-  #node-8 .rightblk br {
+  /* line 274, ../../sass/custom/custom.scss */
+  #perubckgr .rightblk br {
     display: none;
   }
-  /* line 280, ../../sass/custom/custom.scss */
-  #node-8 .rightblk span:after {
+  /* line 278, ../../sass/custom/custom.scss */
+  #perubckgr .rightblk span:after {
     content: " ";
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  /* line 175, ../../sass/custom/custom.scss */
-  #node-8 {
+  /* line 179, ../../sass/custom/custom.scss */
+  #perubckgr {
     margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 24px;
     margin-bottom: 0px;
   }
-  /* line 289, ../../sass/custom/custom.scss */
-  #node-8 .peru-edinst {
+  /* line 287, ../../sass/custom/custom.scss */
+  #perubckgr .peru-edinst {
     font-size: 16px;
     line-height: 24px;
     color: #068b97;
   }
-  /* line 294, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-onural {
+  /* line 292, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-onural {
     font-size: 24px;
     line-height: 48px;
     color: #068b97;
   }
-  /* line 298, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-time1 {
+  /* line 296, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-time1 {
     font-size: 14px;
     line-height: 24px;
   }
-  /* line 301, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-time {
+  /* line 299, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-time {
     font-size: 17px;
     line-height: 24px;
     color: #068b97;
     font-weight: bold;
   }
-  /* line 306, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-chel {
+  /* line 304, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-chel {
     font-size: 40px;
     line-height: 48px;
     color: #068b97;
   }
-  /* line 310, ../../sass/custom/custom.scss */
-  #node-8 .leftblk a.btn {
+  /* line 308, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk a.btn {
     font-size: 17px;
     line-height: 24px;
     font-weight: bold;
   }
-  /* line 316, ../../sass/custom/custom.scss */
-  #node-8 .rightblk .d1 {
+  /* line 314, ../../sass/custom/custom.scss */
+  #perubckgr .rightblk .d1 {
     font-size: 37px;
     line-height: 48px;
   }
-  /* line 319, ../../sass/custom/custom.scss */
-  #node-8 .rightblk .d2 {
+  /* line 317, ../../sass/custom/custom.scss */
+  #perubckgr .rightblk .d2 {
     font-size: 39px;
     line-height: 48px;
   }
-  /* line 322, ../../sass/custom/custom.scss */
-  #node-8 .rightblk .d3 {
+  /* line 320, ../../sass/custom/custom.scss */
+  #perubckgr .rightblk .d3 {
     font-size: 55px;
     line-height: 72px;
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  /* line 175, ../../sass/custom/custom.scss */
-  #node-8 {
+  /* line 179, ../../sass/custom/custom.scss */
+  #perubckgr {
     margin-top: 0px;
     padding-top: 0px;
     padding-bottom: 24px;
     margin-bottom: 0px;
   }
-  /* line 330, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-edinst {
+  /* line 328, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-edinst {
     font-size: 20px;
     line-height: 24px;
     color: #068b97;
   }
-  /* line 334, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-onural {
+  /* line 332, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-onural {
     font-size: 29px;
     line-height: 48px;
     color: #068b97;
   }
-  /* line 338, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-time1 {
+  /* line 336, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-time1 {
     font-size: 18px;
     line-height: 24px;
   }
-  /* line 341, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-time {
+  /* line 339, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-time {
     font-size: 21px;
     line-height: 48px;
     color: #068b97;
     font-weight: bold;
   }
-  /* line 346, ../../sass/custom/custom.scss */
-  #node-8 .leftblk .peru-chel {
+  /* line 344, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk .peru-chel {
     font-size: 50px;
     line-height: 72px;
     color: #068b97;
   }
-  /* line 350, ../../sass/custom/custom.scss */
-  #node-8 .leftblk a.btn {
+  /* line 348, ../../sass/custom/custom.scss */
+  #perubckgr .leftblk a.btn {
     font-size: 20px;
     line-height: 24px;
     font-weight: bold;
   }
 }
 
-/* line 357, ../../sass/custom/custom.scss */
+/* line 355, ../../sass/custom/custom.scss */
 #allpartners {
   margin-top: 24px;
   padding-top: 0px;
   padding-bottom: 0px;
   margin-bottom: 48px;
 }
-/* line 359, ../../sass/custom/custom.scss */
+/* line 357, ../../sass/custom/custom.scss */
 #allpartners .partnerlogo {
   margin-top: 12px;
   padding-top: 0px;
@@ -483,7 +486,7 @@ h2 {
   margin-bottom: 12px;
   height: 72px;
 }
-/* line 362, ../../sass/custom/custom.scss */
+/* line 360, ../../sass/custom/custom.scss */
 #allpartners .partnerlogo img {
   position: absolute;
   top: 0;
@@ -495,56 +498,56 @@ h2 {
   margin: auto;
 }
 
-/* line 375, ../../sass/custom/custom.scss */
+/* line 373, ../../sass/custom/custom.scss */
 .main-container {
   margin-top: 72px;
 }
 
-/* line 379, ../../sass/custom/custom.scss */
+/* line 377, ../../sass/custom/custom.scss */
 .logged-in .main-container {
   margin-top: 120px;
 }
-/* line 383, ../../sass/custom/custom.scss */
+/* line 381, ../../sass/custom/custom.scss */
 .logged-in .navbar-default {
   margin-top: 48px;
 }
 
-/* line 391, ../../sass/custom/custom.scss */
+/* line 389, ../../sass/custom/custom.scss */
 .block-title {
   text-align: center;
 }
 
-/* line 400, ../../sass/custom/custom.scss */
+/* line 398, ../../sass/custom/custom.scss */
 #block-webform-client-block-11 h2 {
   display: none;
 }
-/* line 403, ../../sass/custom/custom.scss */
+/* line 401, ../../sass/custom/custom.scss */
 #block-webform-client-block-11 .input-lg, #block-webform-client-block-11 .btn-lg {
   margin: 12px 0;
 }
 
-/* line 407, ../../sass/custom/custom.scss */
+/* line 405, ../../sass/custom/custom.scss */
 #sub button:hover {
   color: #ffffff;
   background-color: #ec7063;
   border-color: #ec7063;
 }
 
-/* line 412, ../../sass/custom/custom.scss */
+/* line 410, ../../sass/custom/custom.scss */
 .scrn1 {
   padding-left: 40px;
   float: left;
   width: 50%;
 }
 
-/* line 418, ../../sass/custom/custom.scss */
+/* line 416, ../../sass/custom/custom.scss */
 .scrn2 {
   width: 50%;
   float: left;
 }
 
 @media (max-width: 350px) {
-  /* line 424, ../../sass/custom/custom.scss */
+  /* line 422, ../../sass/custom/custom.scss */
   .navbar-brand {
     display: none;
   }

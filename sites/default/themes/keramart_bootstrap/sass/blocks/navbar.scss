@@ -1,0 +1,47 @@
+.navbar {
+    top: 0;
+    transition: top 1s;
+
+    @media (min-width: $screen-xs-min) {
+        top: -100px;
+        @include padding-leader (0.5);
+    @include padding-trailer (0.5);
+      }
+}
+
+.logged-in .navbar {
+
+    padding-top: 39px;
+    z-index: 90;
+}.phone_navbar {
+    @include adjust-font-size-to(25px, 2);
+}
+
+
+.navbar .menu a {
+        font-family: "helveticaneuecyrlight";
+        font-size: 17px;
+        &:after {
+            content: "|";
+            padding: 0 10px;           
+        }
+    }
+    ul ul a:after {
+        display: none;
+    }
+    .collapse.in a:after {
+        display: none;
+    }
+    .menu li:last-of-type a:after {
+        display: none;       
+    }
+    i.fa {
+        padding-right: 4px;
+    }
+
+    .navbar_visible {
+
+        top: 0;
+    }
+
+

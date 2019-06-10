@@ -231,3 +231,12 @@ function keramart_bootstrap_field__field_tax_image_category($variables) {
     return $output;
     //return $bg_img;
 }
+
+
+function keramart_bootstrap_preprocess_region(&$variables) { //даем дополнительные классы регионам
+
+   if ($variables['region'] == "top_menu") {
+    $variables['classes_array'][] = "regiontopmenu";
+   }
+
+  }
